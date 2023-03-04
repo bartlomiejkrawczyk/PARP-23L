@@ -3,12 +3,15 @@
 :- dynamic
         i_am_at/1, 
         at/2, 
-        holding/1.
+        holding/1,
+        time_to_death/1.
 
 :- 
     retractall(at(_, _)), 
     retractall(i_am_at(_)), 
-    retractall(alive(_)).
+    retractall(holding(_)),
+    retractall(alive(_)),
+    retractall(time_to_death(_)).
 
 :-
     ensure_loaded(story/story),

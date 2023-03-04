@@ -10,6 +10,13 @@ w :- go(w).
 
 /* This rule tells how to move in a given direction. */
 
+go(_) :- 
+    time_to_death(Time),
+    retract(time_to_death(Time)),
+    TimeAfter is Time - 1,
+    assert(time_to_death(TimeAfter)), 
+    fail.
+
 go(Direction) :-
     i_am_at(Here),
     locked_path(Here, Direction, There, Object), 

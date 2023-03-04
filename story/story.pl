@@ -2,6 +2,7 @@
 
 i_am_at(someplace1).
 
+time_to_death(100).
 
 % Someplace1
 
