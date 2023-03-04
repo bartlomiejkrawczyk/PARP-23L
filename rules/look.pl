@@ -17,3 +17,32 @@ notice_objects_at(Place) :-
     fail.
 
 notice_objects_at(_).
+
+look_around :- 
+    look_direction(n),
+    look_direction(s),
+    look_direction(e),
+    look_direction(w).
+
+look_direction(Direction) :-
+    i_am_at(Place),
+    locked_path(Place, Direction, OtherPlace, Object),
+    write(Direction),
+    write(': '),
+    write(OtherPlace),
+    write(' - you need '),
+    write(Object),
+    write(' to open the door!'),
+    nl,
+    !.
+
+look_direction(Direction) :-
+    i_am_at(Place),
+    path(Place, Direction, OtherPlace),
+    write(Direction),
+    write(': '),
+    write(OtherPlace),
+    nl,
+    !.
+
+look_direction(Direction) :- write(Direction), write(':'), nl, !.
