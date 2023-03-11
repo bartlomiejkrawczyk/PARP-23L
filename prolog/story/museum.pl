@@ -37,7 +37,7 @@ info(greek_exhibit_hall) :-
     write('into the art and culture of ancient Greece.').
 
 info(egyptian_exhibit_hall) :-
-    write('You are at Egyptian museum exhibit without a golden mask,'), nl,
+    write('You are at Egyptian museum exhibit without an ancient statue,'), nl,
     write('there are numerous other treasures such as hieroglyphics on stone tablets,'), nl,
     write('ornately decorated sarcophagi, and intricate jewelry.'), nl,
     write('Additionally, there are mysterious footprints leading to'), nl,
