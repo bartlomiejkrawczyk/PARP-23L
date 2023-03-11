@@ -1,3 +1,4 @@
+:- multifile i_am_at/1, at/2, holding/1.
 
 /* These rules describe how to pick up an object. */
 
@@ -32,3 +33,11 @@ drop(X) :-
 drop(_) :-
     write('You aren''t holding it!'),
     nl.
+
+inventory :-
+    holding(X), 
+    write(X), 
+    nl, 
+    fail.
+
+inventory.

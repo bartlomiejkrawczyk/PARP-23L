@@ -1,13 +1,18 @@
+:- multifile holding/1.
+
 /* These rules define the positioning of places */
 
 % City
 two_way_path(baker_street, n, detectives_office).
-two_way_path(baker_street, s, detectives_house).
+two_way_path(baker_street, s, detectives_house). 
+two_way_path(detectives_house, e, mailbox). 
 two_way_path(baker_street, e, city_square). 
 two_way_path(city_square, s, police_station). 
 two_way_path(city_square, e, westbourne_road).
 two_way_path(westbourne_road, n, museum).
 two_way_path(westbourne_road, e, forest).
+two_way_path(forest, e, forest_path).
+two_way_path(forest, n, forest).
 
 % Museum
 two_way_path(museum, n, reception).
@@ -21,7 +26,7 @@ two_way_path(egyptian_exhibit_hall, n, roman_exhibit_hall).
 two_way_path(bathroom, n, womens_bathroom).
 two_way_path(bathroom, s, mens_bathroom).
 
-two_way_path(greek_exhibit_hall, w, janitors_closet, old_key).
+locked_two_way_path(greek_exhibit_hall, w, janitors_closet, old_key).
 locked_two_way_path(greek_exhibit_hall, e, cctv_room, key_card).
 locked_two_way_path(roman_exhibit_hall, n, renovated_exhibit, key).
 

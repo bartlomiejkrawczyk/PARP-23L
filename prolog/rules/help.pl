@@ -1,4 +1,4 @@
-:- ensure_loaded(rules/look).
+:- multifile introduction/0, look/0.
 
 /* Under UNIX, the "halt." command quits Prolog but does not
    remove the output window. On a PC, however, the window
@@ -28,6 +28,7 @@ instructions :-
     write('n.  s.  e.  w.     -- to go in that direction.'), nl,
     write('take(Object).      -- to pick up an object.'), nl,
     write('drop(Object).      -- to put down an object.'), nl,
+    write('inventory.         -- to list all currently held items.'), nl,
     write('look.              -- to search for things.'), nl,
     write('look_around.       -- to look around you.'), nl,
     write('instructions.      -- to see this message again.'), nl,

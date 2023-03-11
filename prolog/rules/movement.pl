@@ -1,3 +1,5 @@
+:- multifile look/0, i_am_at/1, path/3, locked_path/4, holding/1.
+
 /* These rules define the direction letters as calls to go/1. */
 
 n :- go(n).
