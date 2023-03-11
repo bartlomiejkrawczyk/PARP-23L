@@ -16,6 +16,7 @@
 :-
     ensure_loaded(story/story),
     ensure_loaded(story/paths),
+    ensure_loaded(story/office),
     ensure_loaded(story/house),
     ensure_loaded(rules/help),
     ensure_loaded(rules/inventory),

@@ -12,10 +12,10 @@ introduction :-
         nl,
         write('You receive a call from the museum director who informs you that'), nl, 
         write('the prized artifact, an ancient Egyptian statue, has been stolen from'), nl,
-        write('the museum\'s exhibit hall. The museum staff has no leads, and the local police'), nl, 
+        write('the museum''s exhibit hall. The museum staff has no leads, and the local police'), nl, 
         write('are overwhelmed with other cases.'), nl, 
         nl,
-        write('You\'re the last hope to find the thief and retrieve the statue.'), nl.
+        write('You''re the last hope to find the thief and retrieve the statue.'), nl.
 
 at(thing, detectives_office).
 

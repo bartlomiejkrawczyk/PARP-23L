@@ -5,7 +5,6 @@
 % City
 two_way_path(baker_street, n, detectives_office).
 two_way_path(baker_street, s, detectives_house). 
-two_way_path(detectives_house, e, mailbox). 
 two_way_path(baker_street, e, city_square). 
 two_way_path(city_square, s, police_station). 
 two_way_path(city_square, e, westbourne_road).
@@ -25,6 +24,14 @@ two_way_path(egyptian_exhibit_hall, e, garden).
 two_way_path(egyptian_exhibit_hall, n, roman_exhibit_hall).
 two_way_path(bathroom, n, womens_bathroom).
 two_way_path(bathroom, s, mens_bathroom).
+
+% House
+two_way_path(detectives_house, e, mailbox).
+two_way_path(detectives_house, w, fridge).
+
+% Office
+two_way_path(detectives_office, n, desk).
+locked_two_way_path(detectives_office, e, fingerprints_detecting_machine, powder).
 
 locked_two_way_path(greek_exhibit_hall, w, janitors_closet, old_key).
 locked_two_way_path(greek_exhibit_hall, e, cctv_room, key_card).
