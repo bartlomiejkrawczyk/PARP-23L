@@ -50,8 +50,8 @@ notice_person_at(_).
 
 look_around :- 
     look_direction(n),
-    look_direction(s),
     look_direction(e),
+    look_direction(s),
     look_direction(w).
 
 look_direction(Direction) :-

@@ -87,3 +87,9 @@ info(renovated_exhibit) :-
     write('The museum staff is working hard to improve and update the exhibition,'), nl,
     write('and visitors can look forward to a renewed'), nl,
     write('and refreshed experience once the work is complete.').
+
+% People
+
+% Items
+
+
