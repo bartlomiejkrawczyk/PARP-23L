@@ -14,6 +14,7 @@ finish :-
 /* This rule prints out instructions and tells where you are. */
 
 start :-
+    introduction,
     instructions,
     look.
 
