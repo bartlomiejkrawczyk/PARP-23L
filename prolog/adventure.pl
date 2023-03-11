@@ -4,7 +4,7 @@
         i_am_at/1, 
         at/2, 
         holding/1,
-        time_to_death/1.
+        items_number/1.
 
 :- 
     retractall(at(_, _)), 
