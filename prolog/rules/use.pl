@@ -13,7 +13,7 @@ use(Item, Tool) :-
     produce(Item, Tool, Outcome),
     retract(holding(Item)),
     assert(holding(Outcome)),
-    write('You make '), write(Outcome), write(' from '),
+    write('You made '), write(Outcome), write(' from '),
     write(Item), write(' using '), write(Tool), write('!'), nl,
     !.
 
