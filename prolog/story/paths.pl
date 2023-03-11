@@ -4,9 +4,9 @@
 
 % City
 two_way_path(baker_street, n, detectives_office).
-two_way_path(baker_street, s, detectives_house). 
-two_way_path(baker_street, e, city_square). 
-two_way_path(city_square, s, police_station). 
+two_way_path(baker_street, s, detectives_house).
+two_way_path(baker_street, e, city_square).
+two_way_path(city_square, s, police_station).
 two_way_path(city_square, e, westbourne_road).
 two_way_path(westbourne_road, n, museum).
 two_way_path(westbourne_road, e, forest).
@@ -29,6 +29,10 @@ two_way_path(bathroom, s, mens_bathroom).
 two_way_path(detectives_house, e, mailbox).
 two_way_path(detectives_house, w, fridge).
 
+% Police
+two_way_path(police_station, e, policeman_office).
+two_way_path(police_station, w, cage).
+
 % Office
 two_way_path(detectives_office, n, desk).
 locked_two_way_path(detectives_office, e, fingerprints_detector, powder).
@@ -42,11 +46,11 @@ locked_two_way_path(roman_exhibit_hall, n, renovated_exhibit, key).
 locked_path(Here, Direction, There, Object) :- locked_two_way_path(Here, Direction, There, Object).
 
 locked_path(Here, Direction, There, Object) :-
-        opposite_directions(Direction, OppositeDirection), 
+        opposite_directions(Direction, OppositeDirection),
         locked_two_way_path(There, OppositeDirection, Here, Object), !.
 
 path(Here, Direction, There) :-
-            locked_path(Here, Direction, There, Object), 
+            locked_path(Here, Direction, There, Object),
             holding(Object),
             !.
 
