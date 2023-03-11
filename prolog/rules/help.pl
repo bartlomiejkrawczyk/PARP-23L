@@ -27,7 +27,8 @@ instructions :-
     write('n.  s.  e.  w.     -- to go in that direction.'), nl,
     write('take(Object).      -- to pick up an object.'), nl,
     write('drop(Object).      -- to put down an object.'), nl,
-    write('look.              -- to look around you again.'), nl,
+    write('look.              -- to search for things.'), nl,
+    write('look_around.       -- to look around you.'), nl,
     write('instructions.      -- to see this message again.'), nl,
     write('halt.              -- to end the game and quit.'), nl,
     nl.
