@@ -1,4 +1,4 @@
-:- multifile at/2.
+:- multifile at/2, holding/1.
 
 % Info
 
@@ -29,7 +29,13 @@ info(mailbox) :-
 
 % People
 
+person_at(dorothy, detectives_house).
+subject(dorothy, love, 'I love you sweety!').
+subject(dorothy, dinner, 'Dinner will be ready soon!').
+subject(dorothy, vodka, 'You shouldn''t be parading with vodka around town!') :- holding(vodka).
+
 % Items
+
 at(fork, detectives_house).
 at(spoon, detectives_house).
 at(tea_spoon, detectives_house).
@@ -42,8 +48,10 @@ at(water, fridge).
 at(milk, fridge).
 at(beer, fridge).
 at(vodka, fridge).
+
 fingerprints(vodka, tom).
 info(vodka) :- write('Your friend tom left if after a party!').
+
 at(whiskey, fridge).
 at(ice, fridge).
 at(cheese, fridge).
@@ -67,3 +75,4 @@ at(turkey, fridge).
 at(ketchup, fridge).
 
 at(letter, mailbox).
+produce(letter, knife, written_piece_of_paper).

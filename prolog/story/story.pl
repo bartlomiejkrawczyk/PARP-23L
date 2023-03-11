@@ -3,8 +3,6 @@
 
 i_am_at(detectives_office).
 
-% time_to_death(100).
-
 introduction :- 
         write('Welcome to "The Case of the Missing Artifact", a text game about detective work.'), nl,
         write('In this game, you play the role of a seasoned detective tasked with solving'), nl,
