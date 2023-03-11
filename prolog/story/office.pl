@@ -1,4 +1,4 @@
-:- multifile at/2.
+:- multifile at/2, person_at/2.
 
 % Info
 
@@ -22,7 +22,13 @@ info(fingerprints_detector) :-
 
 % People
 
+person_at(new_client, detectives_office).
+subject(new_client, magazines, 'Your magazine collection is overwhelming!').
+subject(new_client, wait, 'Ok. I will wait till you solve your current case!').
+
 % Items
+
+at(old_magazine, detectives_office).
 
 at(files, desk).
 at(folders, desk).

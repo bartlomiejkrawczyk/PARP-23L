@@ -1,3 +1,5 @@
+:- multifile holding/1.
+
 % Info
 
 info(police_station) :-
@@ -23,3 +25,32 @@ info(cage) :-
     write('for a narrow bed and a toilet in the corner.'), nl,
     write('The walls are made of cold, gray concrete'), nl,
     write('and the only light comes from a small window high up near the ceiling.').
+
+% People
+
+person_at(scary_prisoner, cage).
+subject(scary_prisoner, reason, 'I killed a man').
+
+person_at(policeman, police_station).
+subject(policeman, help, 'I cannot help you. I''m busy at the moment!').
+
+person_at(sheriff, policeman_office).
+subject(sheriff, case, 'We are looking for a #1 wanted interpol criminal.\nHe was seen fleeing into the forest!').
+
+% Items
+
+at(makeshift_knife, cage).
+info(makeshift_knife) :- 
+    write('Better take it from here!'), nl,
+    write('I don''t want it to fall into the wrong hands'), nl.
+
+at(weed, cage) :- holding(four_leaf_clover).
+
+at(handcuffs, police_station).
+at(gun, police_station).
+at(ammunition, police_station).
+at(suitcase, police_station).
+
+at(pen, policeman_office).
+at(paper, policeman_office).
+at(blank_paper, policeman_office).

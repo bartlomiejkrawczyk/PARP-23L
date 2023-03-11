@@ -1,4 +1,4 @@
-:- multifile at/2, holding/1.
+:- multifile at/2, holding/1, person_at/2, subject/3.
 
 % Info
 
