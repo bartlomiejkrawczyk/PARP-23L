@@ -2,10 +2,30 @@
 
 % Info
 
-info(detectives_house) :- write('Your house has a cozy living room with a fireplace and vintage posters, and a fully-equipped modern kitchen with a sleek frige. Outside, the mailbox stands by the front door, waiting for the detective\'s daily dose of letters, packages, and clues.').
-info(fridge) :- write('Your frige is sleek and modern, with a stainless steel finish and a minimalist design. Inside it is well stocked with a variety of products').
-info(mailbox) :- at(letter, mailbox), write('Your mailbox stands by the front door, painted in a faded red hue and adorned with small dents and scratches. There is a letter here. You can pick it up.'), !.
-info(mailbox) :- write('Your mailbox stands by the front door, painted in a faded red hue and adorned with small dents and scratches. The mailbox is empty! Check it later'), !.
+info(detectives_house) :-
+    write('Your house has a cozy living room with a fireplace and vintage posters,'), nl,
+    write('and a fully-equipped modern kitchen with a sleek frige. Outside, the mailbox'), nl,
+    write('stands by the front door, waiting for the detective''s daily dose of letters,'), nl,
+    write('packages, and clues.').
+
+info(fridge) :- 
+    write('Your frige is sleek and modern, with a stainless steel finish and a minimalist'), nl,
+    write('design. Inside it is well stocked with a variety of products').
+
+info(mailbox) :- 
+    at(letter, mailbox), 
+    write('Your mailbox stands by the front door, painted in a faded red hue and adorned'), nl,
+    write('with small dents and scratches.'), nl,
+    nl,
+    write('There is a letter here. You can pick it up.'),
+    !.
+
+info(mailbox) :- 
+    write('Your mailbox stands by the front door, painted in a faded red hue and adorned'), nl,
+    write('with small dents and scratches.'), nl,
+    nl,
+    write('The mailbox is empty! Check it later'), 
+    !.
 
 % People
 
