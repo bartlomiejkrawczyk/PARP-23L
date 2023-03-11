@@ -1,16 +1,18 @@
-:- multifile at/2, i_am_at/1, describe/1, locked_path/4, path/3.
+:- multifile at/2, i_am_at/1, person_at/2, describe/1, locked_path/4, path/3.
 
-/* This rule tells how to look about you. */
+/* This rule tells how to look around the place. */
 
 look :-
     i_am_at(Place),
     describe(Place),
     nl,
+    people,
+    nl, nl,
     list_objects_at(Place),
+    nl,
     nl.
 
-/* These rules set up a loop to mention all the objects
-in your vicinity. */
+/* These rules set up a loop to mention all the objects in your vicinity. */
 
 list_objects_at(Place) :-
     at(_, Place), !,
@@ -26,6 +28,25 @@ notice_object_at(Place) :-
     fail.
 
 notice_object_at(_).
+
+/* These rules set up a loop to mention all the people in your vicinity. */
+
+people :-
+    i_am_at(Place),
+    person_at(_, Place), !,
+    write('People:'), nl,
+    notice_person_at(Place).
+
+people :- write('You are alone here!').
+
+notice_person_at(Place) :-
+    person_at(Person, Place),
+    write(Person),
+    fail.
+
+notice_person_at(_).
+
+/* These rules define how to look around you to search for available places you can go to. */
 
 look_around :- 
     look_direction(n),

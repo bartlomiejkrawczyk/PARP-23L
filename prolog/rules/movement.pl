@@ -20,7 +20,7 @@ go(Direction) :-
     retract(i_am_at(Here)),
     assert(i_am_at(There)),
     !, 
-    look, 
+    look,
     look_around.
 
 go(Direction) :-
@@ -28,7 +28,7 @@ go(Direction) :-
     locked_path(Here, Direction, _, Object),
     not(holding(Object)),
     write('This place is available only with '), write(Object), write('!'), nl,
-    !, 
+    !,
     look, 
     look_around.
 
@@ -37,7 +37,7 @@ go(Direction) :-
     path(Here, Direction, There),
     retract(i_am_at(Here)),
     assert(i_am_at(There)),
-    !, 
+    !,
     look, 
     look_around.
 
