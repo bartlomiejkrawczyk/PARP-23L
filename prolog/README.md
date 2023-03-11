@@ -20,7 +20,7 @@ As you investigate further, you discover that the new security guard, Mike, has 
 
 You start to put the clues together and realize that the thief must have used Mike's security card to enter the museum and bypass the security system. You also suspect that Tom may have helped the thief by providing him with information about the museum's layout and security system.
 
-As you confront the suspects, they deny any involvement in the theft. However, you're able to find the stolen artifact hidden in Tom's locker, along with a red jacket that matches the one seen in the CCTV footage.
+As you confront the suspects, they deny any involvement in the theft. However, you're able to find the stolen artifact hidden in Tom's backyard, along with a red jacket that matches the one seen in the CCTV footage.
 
 You have solved the case! You arrest Tom and Mike and return the artifact to the museum, where it is displayed once again for all to see. Congratulations, detective, on a job well done!
 

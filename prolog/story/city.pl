@@ -1,4 +1,4 @@
-:- multifile holding/1, items_number/1, person_at/2, subject/3.
+:- multifile holding/1, items_number/1, person_at/2, subject/3, drop/1, conversation_result/2.
 
 % Info
 
@@ -50,7 +50,10 @@ person_at(old_freak, forest).
 subject(old_freak, age, 'I''am 104 years old!').
 subject(old_freak, knowledge, 'I know it all!').
 subject(old_freak, food, 'Boss! Can you give me some spare change? I''d like to buy something to eat!').
-subject(old_freak, share_beer, 'How can I thank you?') :- holding(beer).
+subject(old_freak, give_beer, 'How can I thank you?') :- holding(beer).
+conversation_result(old_freak, give_beer) :-
+    drop(beer),
+    retract(at(beer, forest)).
 
 % Items
 

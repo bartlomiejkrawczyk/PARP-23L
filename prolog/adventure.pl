@@ -7,7 +7,9 @@
         i_am_at/1, 
         at/2, 
         holding/1,
-        items_number/1.
+        items_number/1,
+        subject/3,
+        conversation_result/2.
 
 :- 
     retractall(at(_, _)), 

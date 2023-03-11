@@ -54,6 +54,14 @@ locked_two_way_path(old_tree, e, digging_marks, shovel).
 
 path(forest_glade, e, forest).
 
+path(toms_house, n, forest).
+path(toms_house, e, forest).
+path(toms_house, w, forest).
+
+path(digging_marks, n, forest).
+path(digging_marks, e, forest).
+path(digging_marks, s, forest).
+
 path(old_tree, s, forest).
 path(old_tree, w, forest).
 

@@ -1,4 +1,4 @@
-:- multifile person_at/2, i_am_at/1, subject/3.
+:- multifile person_at/2, i_am_at/1, subject/3, conversation_result/2.
 
 /* These rules define how list person available subjects */
 
@@ -33,8 +33,14 @@ ask(Person, Subject) :-
     i_am_at(Place), 
     subject(Person, Subject, Message),
     write(Message), 
-    nl, 
+    nl,
+    conversation_result(Person, Subject),
     !.
+
+ask(Person, Subject) :-
+    person_at(Person, Place),
+    i_am_at(Place), 
+    subject(Person, Subject, _), !.
 
 ask(Person, Subject) :-
     person_at(Person, Place),

@@ -90,6 +90,51 @@ info(renovated_exhibit) :-
 
 % People
 
+person_at(attendant_julie, reception).
+subject(attendant_julie, missing_artifact, 'TODO').
+subject(attendant_julie, alibi, 'TODO').
+subject(attendant_julie, gossip, 'TODO').
+subject(attendant_julie, janitor, 'He called sick and haven''t shown in work for a while.'). % TODO
+subject(attendant_julie, closed_exhibit, 'Here you go! You can take this key to the renovated exhibit!').
+conversation_result(attendant_julie, closed_exhibit) :- 
+    assert(at(key, reception)),
+    retractall(subject(attendant_julie, closed_exhibit, _)),
+    assert(subject(attendant_julie, closed_exhibit, 'I have already given you the key to the exibit!')),
+    retractall(conversation_result(attendant_julie, closed_exhibit)).
+
+person_at(guard_mike, cctv_room).
+subject(guard_mike, cameras, 'TODO').
+subject(guard_mike, information, 'TODO').
+subject(guard_mike, alibi, 'TODO').
+
+person_at(cashier_anne, gift_shop).
+subject(cashier_anne, missing_artifact, 'TODO').
+subject(cashier_anne, alibi, 'TODO').
+subject(cashier_anne, gossip, 'TODO').
+
+person_at(guide_mary, roman_exhibit_hall).
+subject(guide_mary, tour, 'TODO').
+subject(guide_mary, missing_artifact, 'TODO').
+subject(guide_mary, alibi, 'TODO').
+subject(guide_mary, gossip, 'TODO').
+
+person_at(renovator_theodore).
+subject(renovator_theodore, work, 'TODO').
+subject(renovator_theodore, missing_artifact, 'TODO').
+subject(renovator_theodore, alibi, 'TODO').
+subject(renovator_theodore, gossip, 'TODO').
+
 % Items
+
+at(shovel, janitors_closet).
+
+at(shattered_glass, display_case).
+at(metal_debris, display_case).
+
+at(key_card, garden).
+at(red_piece_of_fabric, garden).
+
+at(dvd, cctv_room).
+info(dvd) :- write('You review the CCTV footage from the museum''s security cameras, but it doesn''t\nprovide any clear visuals of the thief''s face. However, you do notice that\nthe thief was wearing a distinctive red jacket.').
 
 
