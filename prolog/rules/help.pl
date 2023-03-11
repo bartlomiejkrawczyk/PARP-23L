@@ -31,6 +31,7 @@ instructions :-
     write('drop(Object).         -- to put down an object.'), nl,
     write('inspect(Object).      -- to take a closer look at an object.'), nl,
     write('scan(Object).         -- to scan objects for fingerprints.'), nl,
+    write('use(Item, Tool).      -- to use the tool on the item.'), nl,
     write('ask(Person, Subject). -- to ask person about a subject.'), nl,
     write('inventory.            -- to list all currently held items.'), nl,
     write('talk(Person).         -- to list all available subjects you can ask a person.'), nl,

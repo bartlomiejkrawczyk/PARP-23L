@@ -25,4 +25,5 @@
     ensure_loaded(rules/look),
     ensure_loaded(rules/movement),
     ensure_loaded(rules/talk),
-    ensure_loaded(rules/scan).
+    ensure_loaded(rules/scan),
+    ensure_loaded(rules/use).

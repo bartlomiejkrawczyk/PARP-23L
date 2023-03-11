@@ -75,3 +75,4 @@ at(turkey, fridge).
 at(ketchup, fridge).
 
 at(letter, mailbox).
+produce(letter, knife, written_piece_of_paper).
