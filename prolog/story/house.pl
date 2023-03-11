@@ -22,6 +22,8 @@ at(water, fridge).
 at(milk, fridge).
 at(beer, fridge).
 at(vodka, fridge).
+fingerprints(vodka, tom).
+info(vodka) :- write('Your friend tom left if after a party!').
 at(whiskey, fridge).
 at(ice, fridge).
 at(cheese, fridge).

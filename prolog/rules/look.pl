@@ -37,7 +37,7 @@ look_direction(Direction) :-
     i_am_at(Place),
     locked_path(Place, Direction, OtherPlace, Object),
     write(Direction), write(': '), write(OtherPlace),
-    write(' - you need '), write(Object), write(' to open the door!'), nl, !.
+    write(' - you need '), write(Object), nl, !.
 
 look_direction(Direction) :-
     i_am_at(Place),

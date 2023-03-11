@@ -1,4 +1,4 @@
-:- multifile introduction/0, look/0.
+:- multifile introduction/0, look/0, look_around/0.
 
 /* Under UNIX, the "halt." command quits Prolog but does not
    remove the output window. On a PC, however, the window
@@ -16,7 +16,8 @@ finish :-
 start :-
     introduction,
     instructions,
-    look.
+    look,
+    look_around.
 
 /* This rule just writes out game instructions. */
 
@@ -28,6 +29,8 @@ instructions :-
     write('n.  s.  e.  w.     -- to go in that direction.'), nl,
     write('take(Object).      -- to pick up an object.'), nl,
     write('drop(Object).      -- to put down an object.'), nl,
+    write('inspect(Object).   -- to take a closer look at an object.'), nl,
+    write('scan(Object).      -- to scan objects for fingerprints.'), nl,
     write('inventory.         -- to list all currently held items.'), nl,
     write('look.              -- to search for things.'), nl,
     write('look_around.       -- to look around you.'), nl,

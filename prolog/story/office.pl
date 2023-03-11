@@ -2,8 +2,8 @@
 
 % Info
 info(desk) :- write('Your desk is neat and tidy').
-info(fingerprints_detecting_machine) :-
-    write('You can scan objects for fingerprints in here.').
+info(fingerprints_detector) :-
+    write('You can inspect objects for fingerprints in here.').
 
 % People
 

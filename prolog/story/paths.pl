@@ -31,7 +31,7 @@ two_way_path(detectives_house, w, fridge).
 
 % Office
 two_way_path(detectives_office, n, desk).
-locked_two_way_path(detectives_office, e, fingerprints_detecting_machine, powder).
+locked_two_way_path(detectives_office, e, fingerprints_detector, powder).
 
 locked_two_way_path(greek_exhibit_hall, w, janitors_closet, old_key).
 locked_two_way_path(greek_exhibit_hall, e, cctv_room, key_card).

@@ -21,4 +21,5 @@
     ensure_loaded(rules/help),
     ensure_loaded(rules/inventory),
     ensure_loaded(rules/look),
-    ensure_loaded(rules/movement).
+    ensure_loaded(rules/movement),
+    ensure_loaded(rules/scan).
