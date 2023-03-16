@@ -18,6 +18,7 @@
     retractall(alive(_)).
 
 :-
+    ensure_loaded(rules/talk),
     ensure_loaded(story/story),
     ensure_loaded(story/paths),
     ensure_loaded(story/office),
@@ -29,6 +30,5 @@
     ensure_loaded(rules/inventory),
     ensure_loaded(rules/look),
     ensure_loaded(rules/movement),
-    ensure_loaded(rules/talk),
     ensure_loaded(rules/scan),
     ensure_loaded(rules/use).

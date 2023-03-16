@@ -52,3 +52,7 @@ ask(Person, Subject) :-
 ask(Person, _) :-
     write('There is no one named '), write(Person), write(' nearby!'), 
     nl, !.
+
+subject(Person, hello, Message) :- 
+    atom_concat('Hi! I''m ', Person, X),
+    atom_concat(X, '!', Message).
