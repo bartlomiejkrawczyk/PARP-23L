@@ -16,7 +16,7 @@ go(Direction) :-
     i_am_at(Here),
     locked_path(Here, Direction, There, Object), 
     holding(Object),
-    write('You successfully entered '), write(Here), write(' with '), write(Object), write('!'), nl,
+    write('You successfully entered '), write(There), write(' with '), write(Object), write('!'), nl,
     retract(i_am_at(Here)),
     assert(i_am_at(There)),
     !, 
