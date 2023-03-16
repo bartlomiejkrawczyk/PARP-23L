@@ -52,15 +52,39 @@ You have solved the case! You arrest Tom and Mike and return the artifact to the
     - na temat **alibi** - siedział w closed_exhibit cały czas, nie ma tu kamer - nikt tego nie potwierdzi
     - na temat **missing_tool** - czy coś ci nie zniknęło ostatnio - tak zniknęło (dopiero po sprawdzeniu odcisków)
     - na temat **fingerprints** - tłumaczy się, że to jest narzędzie które zgubił i złodziej musiał mieć rękawiczki - na płycie dvd która nagrała złodzieja teraz widnieje kurtka czerwona + białe rękawiczki xD  (dopiero po spytaniu o missing_tool)
+    - **gossip** - od kilku dni nie ma woźnego (he called in sick) i nie ma kto posprzątać zniszczonego wokół wystawy
 9. Idziesz po kartę do ogrodu
 10. Idziesz do cctv room
 11. Po rozmowie z anną pojawił się w tym pomieszczeniu Mike - ochroniarz
     - **hello**
+    - **key_card** - odpowiada, że każdy z pracowników ma taką kartę
     - **artifact_dvd** - na początku widać tylko złodzieja w czerwonej kurtce - później w kurtce + rękawiczkach
     - **anna_dvd** - potwierdzasz jej alibi
     - **alibi** - cctv room - nagranie jak siedzi przed ekranem i kilka razy wychodzi do toalety - akurat był w toalecie (damskiej) gdy ukradli
     - **womans_toilet** - w męskiej jest brudno, więc po godzinach chodzi do damskiej
-    - **criminal_record** - po pojawieniu się listu od policji
+    - **criminal_record** - po przeczytaniu listu od policji - tłumaczy się, że ma nie podważalne alibi, a teraz jest zmienionym człowiekiem (jeśli plotkowałeś z renowatorem to pojawia się teraz woźny na rynku)
 12. Idziesz na policje
     - **hello**
     - **employees_criminal_record** - teraz jesteśmy zajęci, wyślemy ci pocztą - za jakiś czas sprawdź skrzynkę w domu (list przyjdzie po pierwszej rozmowie z Mikiem)
+13. Idziesz sprawdzić pocztę
+    - pojawia się **criminal_record** Mike'a
+14. Spotykasz woźnego na rynku
+    - **sick** - *Caugh* *Caugh* - przyszedł kupić leki - (wydaje się udawać chorobę) - pojawia się jego dom w lesie
+    - **alibi** - był w swoim domu w lesie - jego żona może potwierdzić
+15. Rozmawiasz z dziećmi przed muzeum
+    - **something_suspicious** - ktoś coś zakopał koło starego drzewa w lesie (pojawia się stare drzewo)
+16. Idziesz do mieszkania woźnego - spotykasz jego żonę
+    - **janitors_alibi** - potwierdza, że był wtedy w domu
+- w mieszkaniu znajdujesz klucz do janitors_closet - możesz go podnieść
+17. Widzisz koło jego domu coś zakopanego - potrzebujesz łopaty
+18. Idziesz po łopatę do janitors_closet
+    - okazuje się, że łopata jest w złym stanie i potrzebujesz śrubokrętu, żeby móc coś kopać
+    - śrubokręt znajdziesz u siebie w domu
+19. Idziesz do lasu wykopać zakopany skarb
+20. Znajdujesz artefakt, czerwoną kurtkę i rękawiczki
+    (Mike i Tom znikają z mapy)
+21. Jeśli przetestujesz kurtkę i rękawiczki w poszukiwaniu śladów palców to dowiesz się, że są tam odciski Mike'a i Tom'a
+22. Idziesz oddać artefakt do muzeum (przed muzeum pojawia się dyrektor)
+23. Dyrektor dziękuje ci za odnalezienie artefaktu i mówi, że Mike i Tom nie pojawili się w pracy, dzięki tobie zgłosił ich na policję i są teraz poszukiwani
+
+THE END
