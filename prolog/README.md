@@ -24,67 +24,43 @@ As you confront the suspects, they deny any involvement in the theft. However, y
 
 You have solved the case! You arrest Tom and Mike and return the artifact to the museum, where it is displayed once again for all to see. Congratulations, detective, on a job well done!
 
-# Map
+# Ciąg Zdarzeń
 
-## City
-```mermaid
-flowchart LR
-    subgraph B[Baker Street]
-        direction TB
-        O[Detective's Office]
-        S1[Street]
-        H[Detective's House]
-
-        O --- S1
-        S1 --- H
-    end
-    subgraph City Center
-        direction TB
-        S[Square]
-        P[Police Station]
-
-        S1 --- S
-        S --- P
-    end
-
-    subgraph W[Westbourne Road]
-        direction TB
-        M[Museum]
-        S2[Street]
-        M --- S2
-    end
-
-    subgraph F1[Forest]
-    
-        F[Forest]
-        J[Janitor's House]
-    end
-```
-
-## Museum
-```mermaid
-flowchart LR
-    subgraph E[Egyptian Exhibit Hall]
-        D[Display Case]
-    end
-    R[Renovated Exhibit]
-    C[CCTV Room]
-    R[Reception]
-    J[Janitor Closet]
-    B[Bathroom]
-    M[Men's Bathroom]
-    W[Women's Bathroom]
-    G[Garden]
-    S[Gift Shop]
-```
-
-## Office
-```mermaid
-flowchart LR
-
-```
-
-## Detective's Home
-```mermaid
-flowchart LR
-```
+1. Dzwoni do Ciebie dyrektor z muzeum odnośnie skradzionego artefaktu.
+2. Udajesz się do muzeum
+3. Rozmawiasz z recepcjonistką Julią
+    - na temat **hello** - Hi! I'm attendant_julie!
+    - na temat **missing_artifact** - ona odpowiada, że ukradziono go z hali egipskiej
+    - na temat **potental_witnesses** - listuje pracowników, którzy pracowali w trakcie zdarzenia i gdzie ich znaleźć
+        1. kasjerka - która zamykała wtedy sklep - po lewo w sklepie z pamiątkami
+        2. renowator - który siedział dalej nad renowacją, na końcu sali
+    - na temat **alibi** - byłam w domu z mężem - jest on policjantem i może potwierdzić
+4. Idziesz obejrzeć miejsce zbrodni
+    - widzisz ślady stóp - nie wiesz dokąd prowadzą
+    - widzisz rozwalony display case
+    - widzisz młotek obok między rozwalonym szkłem - młotek musiał być użyty do zniszczenia szkła ochronnego, możesz przetestować go w poszukiwaniu śladów palców - po sprawdzeniu odcisków okazuje się, że odciski znalezione są renowatora (złodziej ukradł od niego młotek) - zaczynasz podejrzewać renowatora
+5. Rozmawiasz z kasjerką Anną
+    - na temat **hello**
+    - na temat **store**
+    - na temat **artifact_replica** - możesz kupić
+    - na temat **alibi** - widać ją na kamerze - możesz sprawdzić czy w tym czasie było ją widać - dvd z nią się dopiero teraz pojawi w cctv room + pojawia się w tym pomieszczeniu ochroniarz (wcześniej było puste)
+6. Idziesz porozmawiać z renowatorem - drzwi są zamknięte
+7. Wracasz do recepcjoniski - ona daje ci klucz
+8. Rozmawiasz z renowatorem
+    - na temat **hello**
+    - na temat **admire** - podziwiasz jego pracę
+    - na temat **alibi** - siedział w closed_exhibit cały czas, nie ma tu kamer - nikt tego nie potwierdzi
+    - na temat **missing_tool** - czy coś ci nie zniknęło ostatnio - tak zniknęło (dopiero po sprawdzeniu odcisków)
+    - na temat **fingerprints** - tłumaczy się, że to jest narzędzie które zgubił i złodziej musiał mieć rękawiczki - na płycie dvd która nagrała złodzieja teraz widnieje kurtka czerwona + białe rękawiczki xD  (dopiero po spytaniu o missing_tool)
+9. Idziesz po kartę do ogrodu
+10. Idziesz do cctv room
+11. Po rozmowie z anną pojawił się w tym pomieszczeniu Mike - ochroniarz
+    - **hello**
+    - **artifact_dvd** - na początku widać tylko złodzieja w czerwonej kurtce - później w kurtce + rękawiczkach
+    - **anna_dvd** - potwierdzasz jej alibi
+    - **alibi** - cctv room - nagranie jak siedzi przed ekranem i kilka razy wychodzi do toalety - akurat był w toalecie (damskiej) gdy ukradli
+    - **womans_toilet** - w męskiej jest brudno, więc po godzinach chodzi do damskiej
+    - **criminal_record** - po pojawieniu się listu od policji
+12. Idziesz na policje
+    - **hello**
+    - **employees_criminal_record** - teraz jesteśmy zajęci, wyślemy ci pocztą - za jakiś czas sprawdź skrzynkę w domu (list przyjdzie po pierwszej rozmowie z Mikiem)
