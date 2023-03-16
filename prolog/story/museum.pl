@@ -133,6 +133,7 @@ at(shovel, janitors_closet).
 
 at(shattered_glass, display_case).
 at(metal_debris, display_case).
+at(hammer).
 
 at(key_card, garden).
 at(red_piece_of_fabric, garden).
@@ -140,4 +141,6 @@ at(red_piece_of_fabric, garden).
 at(dvd, cctv_room).
 info(dvd) :- write('You review the CCTV footage from the museum''s security cameras, but it doesn''t\nprovide any clear visuals of the thief''s face. However, you do notice that\nthe thief was wearing a distinctive red jacket.').
 
+info(hammer) :- write('TODO: młotek musiał być użyty do zniszczenia szkła ochronnego, mogę przetestować go w poszukiwaniu śladów palców').
+fingerprints(hammer, renovator_theodore).
 
