@@ -1,3 +1,4 @@
+:- multifile seen_closed_exhibit/0.
 % Info
 
 info(reception) :-
@@ -95,9 +96,11 @@ subject(attendant_julie, missing_artifact, 'TODO').
 subject(attendant_julie, alibi, 'TODO').
 subject(attendant_julie, gossip, 'TODO').
 subject(attendant_julie, janitor, 'He called sick and haven''t shown in work for a while.'). % TODO
-subject(attendant_julie, closed_exhibit, 'Here you go! You can take this key to the renovated exhibit!').
+subject(attendant_julie, closed_exhibit, 'Here you go! You can take this key to the renovated exhibit!') :-
+    seen_closed_exhibit.
+
 conversation_result(attendant_julie, closed_exhibit) :- 
-    assert(at(key, reception)),
+    assert(at(key_to_the_exhibit, reception)),
     retractall(subject(attendant_julie, closed_exhibit, _)),
     assert(subject(attendant_julie, closed_exhibit, 'I have already given you the key to the exibit!')),
     retractall(conversation_result(attendant_julie, closed_exhibit)).

@@ -9,10 +9,11 @@
         holding/1,
         items_number/1,
         subject/3,
-        conversation_result/2.
+        conversation_result/2,
+        seen_closed_exhibit/0.
 
 :- 
-    retractall(at(_, _)), 
+    retractall(at(_, _)),
     retractall(i_am_at(_)), 
     retractall(holding(_)),
     retractall(alive(_)).
