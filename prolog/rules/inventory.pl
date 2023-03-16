@@ -17,7 +17,7 @@ take(Item) :-
 take(Item) :-
     i_am_at(Place),
     at(Item, Place),
-    retract(at(Item, Place)),
+    retractall(at(Item, Place)),
     assert(holding(Item)),
 
     items_number(CurrentItemsNumber),

@@ -1,4 +1,4 @@
-:- multifile at/2, holding/1, person_at/2, subject/3.
+:- multifile at/2, holding/1, person_at/2, subject/3, asked_for_criminal_record/0, talked_with_mike/0, fingerprints/2.
 
 % Info
 
@@ -74,5 +74,6 @@ at(jam, fridge).
 at(turkey, fridge).
 at(ketchup, fridge).
 
-at(letter, mailbox).
-produce(letter, knife, written_piece_of_paper).
+at(letter, mailbox) :- asked_for_criminal_record, talked_with_mike.
+produce(letter, knife, mikes_criminal_record).
+info(mikes_criminal_record) :- write('TODO').

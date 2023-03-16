@@ -10,7 +10,9 @@
         items_number/1,
         subject/3,
         conversation_result/2,
-        seen_closed_exhibit/0.
+        seen_closed_exhibit/0,
+        asked_for_criminal_record/0,
+        talked_with_mike/0.
 
 :- 
     retractall(at(_, _)),

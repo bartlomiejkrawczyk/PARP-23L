@@ -106,9 +106,7 @@ conversation_result(attendant_julie, closed_exhibit) :-
     retractall(conversation_result(attendant_julie, closed_exhibit)).
 
 person_at(guard_mike, cctv_room).
-subject(guard_mike, cameras, 'TODO').
-subject(guard_mike, information, 'TODO').
-subject(guard_mike, alibi, 'TODO').
+subject(guard_mike, alibi, 'TODO') :- assert(talked_with_mike).
 
 person_at(cashier_anne, gift_shop).
 subject(cashier_anne, missing_artifact, 'TODO').
