@@ -7,7 +7,10 @@
 
 finish :-
     nl,
-    write('The game is over. Please enter the "halt." command.'),
+    ansi_format([bold, fg(green)], 'The game is over!', []), nl,
+    write('Please enter the '),
+    ansi_format([bold, fg(red)], '"halt."', []),
+    write(' command.'),
     nl.
 
 
@@ -24,7 +27,7 @@ start :-
 instructions :-
     nl,
     write('Enter commands using standard Prolog syntax.'), nl,
-    write('Available commands are:'), nl,
+    ansi_format([bold, fg(cyan)], 'Available commands:', []), nl,
     write('start.                -- to start the game.'), nl,
     write('n.  s.  e.  w.        -- to go in that direction.'), nl,
     write('take(Object).         -- to pick up an object.'), nl,

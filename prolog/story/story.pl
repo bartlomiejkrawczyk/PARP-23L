@@ -4,7 +4,8 @@
 i_am_at(detectives_office).
 
 introduction :- 
-        write('Welcome to "The Case of the Missing Artifact", a text game about detective work.'), nl,
+        write('Welcome to '), ansi_format([bold, fg(green)], '"The Case of the Missing Artifact"', []),
+        write(', a text game about detective work.'), nl,
         write('In this game, you play the role of a seasoned detective tasked with solving'), nl,
         write('a mysterious theft of a valuable artifact from a museum.'), nl,
         nl,
@@ -18,7 +19,7 @@ introduction :-
 at(thing, detectives_office).
 
 describe(Place) :-
-        write('You are at '), 
+        ansi_format([bold, fg(cyan)], 'Place:', []), nl,
         write(Place),
         nl, nl, 
         info(Place),

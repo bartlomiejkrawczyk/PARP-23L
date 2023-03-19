@@ -25,7 +25,20 @@
     retractall(at(_, _)),
     retractall(i_am_at(_)), 
     retractall(holding(_)),
-    retractall(alive(_)).
+    retractall(alive(_)),
+    retractall(items_number(_)),
+    retractall(subject(_, _, _)),
+    retractall(conversation_result(_, _)),
+    retractall(seen_closed_exhibit),
+    retractall(asked_for_criminal_record),
+    retractall(talked_with_mike),
+    retractall(asked_mike_about_criminal_record),
+    retractall(gossiped_with_renovator_theodore),
+    retractall(janitors_house_available),
+    retractall(old_tree_available),
+    retractall(statue_scanned),
+    retractall(red_jacket_scanned),
+    retractall(white_gloves_scanned).
 
 :-
     ensure_loaded(rules/talk),

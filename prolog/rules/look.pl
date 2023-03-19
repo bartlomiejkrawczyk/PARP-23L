@@ -16,7 +16,7 @@ look :-
 
 list_objects_at(Place) :-
     at(_, Place), !,
-    write('Items:'), nl,
+    ansi_format([bold, fg(cyan)], 'Items:', []), nl,
     notice_object_at(Place).
 
 list_objects_at(_) :- write('There is nothing interesting to pick up here').
@@ -34,7 +34,7 @@ notice_object_at(_).
 people :-
     i_am_at(Place),
     person_at(_, Place), !,
-    write('People:'), nl,
+    ansi_format([bold, fg(cyan)], 'People:', []), nl,
     notice_person_at(Place).
 
 people :- write('You are alone here!').
@@ -49,6 +49,7 @@ notice_person_at(_).
 /* These rules define how to look around you to search for available places you can go to. */
 
 look_around :- 
+    ansi_format([bold, fg(cyan)], 'Directions:', []), nl,
     look_direction(n),
     look_direction(e),
     look_direction(s),
