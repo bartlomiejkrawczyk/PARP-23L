@@ -19,7 +19,8 @@
         old_tree_available/0,
         statue_scanned/0,
         red_jacket_scanned/0,
-        white_gloves_scanned/0.
+        white_gloves_scanned/0,
+        can_finish/0.
 
 :- 
     retractall(at(_, _)),
@@ -38,7 +39,8 @@
     retractall(old_tree_available),
     retractall(statue_scanned),
     retractall(red_jacket_scanned),
-    retractall(white_gloves_scanned).
+    retractall(white_gloves_scanned),
+    retractall(can_finish).
 
 :-
     ensure_loaded(rules/talk),

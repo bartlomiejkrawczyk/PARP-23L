@@ -1,4 +1,4 @@
-:- multifile introduction/0, look/0, look_around/0.
+:- multifile introduction/0, look/0, look_around/0, can_finish/0.
 
 /* Under UNIX, the "halt." command quits Prolog but does not
    remove the output window. On a PC, however, the window
@@ -7,11 +7,20 @@
 
 finish :-
     nl,
-    ansi_format([bold, fg(green)], 'The game is over!', []), nl,
+    can_finish,
+    ansi_format([bold, fg(green)], 'You WON! The game is over!', []), nl,
     write('Please enter the '),
     ansi_format([bold, fg(red)], '"halt."', []),
     write(' command.'),
-    nl.
+    nl, !.
+
+finish :- 
+    nl, ansi_format([bold, fg(red)], 'The game is not over yet!', []), nl,
+    write('If you still want to finish despit it.\nPlease enter the '),
+        ansi_format([bold, fg(red)], '"halt."', []),
+        write(' command.'),
+        nl.
+
 
 
 /* This rule prints out instructions and tells where you are. */

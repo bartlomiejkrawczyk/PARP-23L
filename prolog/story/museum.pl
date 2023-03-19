@@ -134,9 +134,9 @@ subject(museum_director_john, missing_statue, 'TODO: congratulate on finding sta
 conversation_result(museum_director_john, missing_statue) :-
     drop(missing_statue),
     retractall(at(missing_statue, _)),
+    retractall(can_finish),
+    assert(can_finish),
     finish.
-
-% TODO: finish the story
 
 % Items
 
