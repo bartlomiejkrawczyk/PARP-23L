@@ -88,3 +88,4 @@ You have solved the case! You arrest Tom and Mike and return the artifact to the
 23. Dyrektor dziękuje ci za odnalezienie artefaktu i mówi, że Mike i Tom nie pojawili się w pracy, dzięki tobie zgłosił ich na policję i są teraz poszukiwani
 
 THE END
+

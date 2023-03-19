@@ -1,4 +1,4 @@
-:- multifile at/2, holding/1, person_at/2, subject/3, asked_for_criminal_record/0, talked_with_mike/0, fingerprints/2.
+:- multifile at/2, holding/1, person_at/2, subject/3, asked_for_criminal_record/0, talked_with_mike/0, fingerprints/2, produce/3.
 
 % Info
 
@@ -41,6 +41,7 @@ at(spoon, detectives_house).
 at(tea_spoon, detectives_house).
 at(knife, detectives_house).
 at(cup, detectives_house).
+at(screwdriver, detectives_house).
 at(plate, detectives_house).
 at(bowl, detectives_house).
 
@@ -49,8 +50,8 @@ at(milk, fridge).
 at(beer, fridge).
 at(vodka, fridge).
 
-fingerprints(vodka, tom).
-info(vodka) :- write('Your friend tom left if after a party!').
+fingerprints(vodka, tim).
+info(vodka) :- write('Your friend tim left if after a party!').
 
 at(whiskey, fridge).
 at(ice, fridge).
@@ -76,4 +77,5 @@ at(ketchup, fridge).
 
 at(letter, mailbox) :- asked_for_criminal_record, talked_with_mike.
 produce(letter, knife, mikes_criminal_record).
+info(letter) :- write('TODO: list od policji - muszę go otworzyć').
 info(mikes_criminal_record) :- write('TODO').

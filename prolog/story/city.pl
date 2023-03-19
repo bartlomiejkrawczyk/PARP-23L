@@ -1,4 +1,12 @@
-:- multifile holding/1, items_number/1, person_at/2, subject/3, drop/1, conversation_result/2.
+:- multifile 
+    holding/1, 
+    items_number/1, 
+    person_at/2, 
+    subject/3, 
+    drop/1, 
+    conversation_result/2, 
+    asked_mike_about_criminal_record/0, 
+    gossiped_with_renovator_theodore/0.
 
 % Info
 
@@ -43,8 +51,23 @@ subject(book_worms, book, 'I''am reading now! Can''t you see!').
 person_at(politician, city_square).
 subject(politician, money, 'We are working to make our future brighter!').
 
+person_at(janitor_tom, city_square) :- asked_mike_about_criminal_record.
+subject(janitor_tom, sick, 'TODO: *Caugh* *Caugh* - przyszedł kupić leki - (wydaje się udawać chorobę)').
+subject(janitor_tom, alibi, 'TODO: był w swoim domu w lesie - jego żona może potwierdzić - pojawia się jego dom w lesie').
+conversation_result(janitor_tom, alibi) :- retractall(janitors_house_available), assert(janitors_house_available).
+
 person_at(tourists, westbourne_road).
 subject(tourists, missing_artifact, 'Nie mówię po angielsku.\nNie rozumiem co do mnie mówisz!').
+
+person_at(playing_popular_kid, westbourne_road).
+subject(playing_popular_kid, something_suspicious, 'TODO: niczego nie widział').
+
+person_at(playing_quiet_kid, westbourne_road).
+subject(playing_quiet_kid, something_suspicious, 'TODO: ktoś coś zakopał koło starego drzewa w lesie (pojawia się stare drzewo)').
+conversation_result(playing_quiet_kid, something_suspicious) :- retractall(old_tree_available), assert(old_tree_available).
+
+person_at(playing_athletic_kid, westbourne_road).
+subject(playing_athletic_kid, something_suspicious, 'TODO: niczego nie widział').
 
 person_at(old_freak, forest).
 subject(old_freak, age, 'I''am 104 years old!').

@@ -1,4 +1,4 @@
-:- multifile seen_closed_exhibit/0.
+:- multifile seen_closed_exhibit/0, statue_scanned/0, red_jacket_scanned/0, white_gloves_scanned/0, drop/1, finish/0.
 % Info
 
 info(reception) :-
@@ -125,9 +125,25 @@ subject(renovator_theodore, missing_artifact, 'TODO').
 subject(renovator_theodore, alibi, 'TODO').
 subject(renovator_theodore, gossip, 'TODO').
 
+person_at(museum_director_john, museum) :-
+    statue_scanned,
+    red_jacket_scanned,
+    white_gloves_scanned.
+
+subject(museum_director_john, missing_statue, 'TODO: congratulate on finding statue and say that mike and tom escaped and thanks to you are looked by police').
+conversation_result(museum_director_john, missing_statue) :-
+    drop(missing_statue),
+    retractall(at(missing_statue, _)),
+    finish.
+
+% TODO: finish the story
+
 % Items
 
-at(shovel, janitors_closet).
+at(wobbly_shovel, janitors_closet).
+produce(wobbly_shovel, screwdriver, shovel).
+info(wobbly_shovel) :- write('TODO: nic nie uda się wykopać łopatą w tym stanie, muszę ją wzmocnić').
+info(shovel) :- write('TODO: po przykręceniu luźnej śrubki łopata jest w dobrym stanie').
 
 at(shattered_glass, display_case).
 at(metal_debris, display_case).

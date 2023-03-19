@@ -1,4 +1,4 @@
-:- multifile holding/1.
+:- multifile holding/1, old_tree_available/0, janitors_house_available/0.
 
 /* These rules define the positioning of places */
 
@@ -14,9 +14,9 @@ two_way_path(westbourne_road, e, forest).
 % Forest
 two_way_path(forest, n, forest).
 two_way_path(forest, e, forest_path).
-two_way_path(forest_path, e, forest_glade). % TODO: powinno być ustawiane przy rozmowie z tomem
+two_way_path(forest_path, e, forest_glade) :- janitors_house_available.
 two_way_path(forest_glade, n, toms_house).
-two_way_path(forest_glade, s, old_tree). % TODO: powinno być ustawiane przy rozmowie z dziećmi
+two_way_path(forest_glade, s, old_tree) :- old_tree_available.
 
 % Museum
 two_way_path(museum, n, reception).
@@ -48,11 +48,13 @@ locked_two_way_path(roman_exhibit_hall, n, renovated_exhibit, key_to_the_exhibit
         retractall(seen_closed_exhibit),
         assert(seen_closed_exhibit).
 
-locked_two_way_path(old_tree, e, digging_marks, shovel).
+locked_two_way_path(old_tree, e, digging_marks, shovel) :-
+        retractall(person_at(guard_mike, _)),
+        retractall(person_at(janitor_tom, _)).
 
 % One-way forest roads
-% path(forest_glade, s, forest). % TODO: powinno być usuwane przy rozmowie z dziećmi
-% path(forest_path, e, forest).  % TODO: powinno być usuwane przy rozmowie z tomem
+path(forest_glade, s, forest) :- not(old_tree_available).
+path(forest_path, e, forest) :- not(janitors_house_available).
 
 path(forest_glade, e, forest).
 

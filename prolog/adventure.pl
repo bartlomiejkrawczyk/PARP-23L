@@ -12,7 +12,14 @@
         conversation_result/2,
         seen_closed_exhibit/0,
         asked_for_criminal_record/0,
-        talked_with_mike/0.
+        talked_with_mike/0,
+        asked_mike_about_criminal_record/0,
+        gossiped_with_renovator_theodore/0,
+        janitors_house_available/0,
+        old_tree_available/0,
+        statue_scanned/0,
+        red_jacket_scanned/0,
+        white_gloves_scanned/0.
 
 :- 
     retractall(at(_, _)),
@@ -29,6 +36,7 @@
     ensure_loaded(story/city),
     ensure_loaded(story/museum),
     ensure_loaded(story/police),
+    ensure_loaded(story/janitor),
     ensure_loaded(rules/help),
     ensure_loaded(rules/inventory),
     ensure_loaded(rules/look),
