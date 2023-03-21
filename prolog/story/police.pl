@@ -36,10 +36,12 @@ subject(policeman, help, 'I cannot help you. I''m busy at the moment!').
 
 person_at(sheriff, policeman_office).
 subject(sheriff, case, 'We are looking for a #1 wanted interpol criminal.\nHe was seen fleeing into the forest!').
-subject(employees_criminal_record) :-
-    write('TODO'),
+subject(sheriff, employees_criminal_record, 'TODO: jestesmy zajeci, wyslemy poczta').
+
+conversation_result(sheriff, employees_criminal_record) :- 
     retractall(asked_for_criminal_record), 
     assert(asked_for_criminal_record).
+
 % Items
 
 at(makeshift_knife, cage).

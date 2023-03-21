@@ -12,7 +12,10 @@
         conversation_result/2,
         seen_closed_exhibit/0,
         asked_for_criminal_record/0,
+        talked_with_anne/0,
         talked_with_mike/0,
+        asked_about_hammer/0,
+        asked_about_fingerprints/0,
         asked_mike_about_criminal_record/0,
         gossiped_with_renovator_theodore/0,
         janitors_house_available/0,
@@ -20,6 +23,7 @@
         statue_scanned/0,
         red_jacket_scanned/0,
         white_gloves_scanned/0,
+        hammer_scanned/0,
         can_finish/0.
 
 :- 
@@ -33,7 +37,11 @@
     retractall(seen_closed_exhibit),
     retractall(asked_for_criminal_record),
     retractall(talked_with_mike),
+    retractall(talked_with_anne),
     retractall(asked_mike_about_criminal_record),
+    retractall(asked_about_hammer),
+    retractall(asked_about_fingerprints),
+    retractall(hammer_scanned),
     retractall(gossiped_with_renovator_theodore),
     retractall(janitors_house_available),
     retractall(old_tree_available),

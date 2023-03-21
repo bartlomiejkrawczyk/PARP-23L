@@ -32,7 +32,7 @@ ask(Person, Subject) :-
     person_at(Person, Place),
     i_am_at(Place), 
     subject(Person, Subject, Message),
-    write(Message), 
+    write(Message),
     nl,
     conversation_result(Person, Subject),
     !.

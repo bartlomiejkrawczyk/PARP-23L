@@ -51,7 +51,7 @@ subject(book_worms, book, 'I''am reading now! Can''t you see!').
 person_at(politician, city_square).
 subject(politician, money, 'We are working to make our future brighter!').
 
-person_at(janitor_tom, city_square) :- asked_mike_about_criminal_record.
+person_at(janitor_tom, city_square) :- asked_mike_about_criminal_record, gossiped_with_renovator_theodore.
 subject(janitor_tom, sick, 'TODO: *Caugh* *Caugh* - przyszedł kupić leki - (wydaje się udawać chorobę)').
 subject(janitor_tom, alibi, 'TODO: był w swoim domu w lesie - jego żona może potwierdzić - pojawia się jego dom w lesie').
 conversation_result(janitor_tom, alibi) :- retractall(janitors_house_available), assert(janitors_house_available).

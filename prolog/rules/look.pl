@@ -41,7 +41,7 @@ people :- write('You are alone here!').
 
 notice_person_at(Place) :-
     person_at(Person, Place),
-    write(Person),
+    write(Person), nl,
     fail.
 
 notice_person_at(_).
