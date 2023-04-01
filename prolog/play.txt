@@ -1,0 +1,3862 @@
+?- start.
+Welcome to "The Case of the Missing Artifact", a text game about detective work.
+In this game, you play the role of a seasoned detective tasked with solving
+a mysterious theft of a valuable artifact from a museum.
+
+You receive a call from the museum director who informs you that
+the prized artifact, an ancient Egyptian statue, has been stolen from
+the museum's exhibit hall. The museum staff has no leads, and the local police
+are overwhelmed with other cases.
+
+You're the last hope to find the thief and retrieve the statue.
+
+Enter commands using standard Prolog syntax.
+Available commands:
+start.                -- to start the game.
+n.  s.  e.  w.        -- to go in that direction.
+take(Object).         -- to pick up an object.
+drop(Object).         -- to put down an object.
+inspect(Object).      -- to take a closer look at an object.
+scan(Object).         -- to scan objects for fingerprints.
+use(Item, Tool).      -- to use the tool on the item.
+inventory.            -- to list all currently held items.
+people.               -- to look for all nearby people.
+talk(Person).         -- to list all available subjects you can ask a person.
+ask(Person, Subject). -- to ask person about a subject.
+look.                 -- to search for things.
+look_around.          -- to look around you.
+instructions.         -- to see this message again.
+halt.                 -- to end the game and quit.
+
+Place:
+detectives_office
+
+Your office is a compact yet efficient space, with a sturdy wooden desk
+positioned against one wall. A state-of-the-art fingerprint detector
+is mounted on another wall nearby, which the detective uses
+to analyze crime scenes and identify suspects. The walls are lined
+with bookshelves filled with forensic manuals and reference materials,
+and a large window offers a panoramic view of the city's skyline.
+
+People:
+new_client
+
+
+Items:
+thing
+old_magazine
+
+
+Directions:
+n: desk
+e: fingerprints_detector - you need powder
+s: baker_street
+w:
+true.
+
+?- e.
+This place is available only with powder!
+Place:
+detectives_office
+
+Your office is a compact yet efficient space, with a sturdy wooden desk
+positioned against one wall. A state-of-the-art fingerprint detector
+is mounted on another wall nearby, which the detective uses
+to analyze crime scenes and identify suspects. The walls are lined
+with bookshelves filled with forensic manuals and reference materials,
+and a large window offers a panoramic view of the city's skyline.
+
+People:
+new_client
+
+
+Items:
+thing
+old_magazine
+
+
+Directions:
+n: desk
+e: fingerprints_detector - you need powder
+s: baker_street
+w:
+true.
+
+?- n.
+Place:
+desk
+
+Your desk is a sturdy wooden piece of furniture positioned against one wall
+of the office. It's cluttered with files, folders, a lamp, and various office
+supplies, reflecting the detective's busy and methodical work style.
+
+You are alone here!
+
+Items:
+files
+folders
+lamp
+pen
+blank_paper
+notepad
+calendar
+ashtray
+vase
+
+
+Directions:
+n:
+e:
+s: detectives_office
+w:
+true.
+
+?- s.
+Place:
+detectives_office
+
+Your office is a compact yet efficient space, with a sturdy wooden desk
+positioned against one wall. A state-of-the-art fingerprint detector
+is mounted on another wall nearby, which the detective uses
+to analyze crime scenes and identify suspects. The walls are lined
+with bookshelves filled with forensic manuals and reference materials,
+and a large window offers a panoramic view of the city's skyline.
+
+People:
+new_client
+
+
+Items:
+thing
+old_magazine
+
+
+Directions:
+n: desk
+e: fingerprints_detector - you need powder
+s: baker_street
+w:
+true.
+
+?- talk(new_client).
+You can ask new_client about:
+hello
+magazines
+wait
+true.
+
+?- ask(new_client, hello).
+Hi! I'm new_client!
+true.
+
+?- ask(new_client, magazines).
+Your magazine collection is overwhelming!
+true.
+
+?- ask(new_client, wait).
+Ok. I will wait till you solve your current case!
+true.
+
+?- take(thing).
+OK.
+true.
+
+?- inventory.
+Items 1/5:
+thing
+
+true.
+
+?- inspect(thing).
+The thing is a regular thing.
+There is nothing unusual about it!
+true.
+
+?- drop(thing).
+OK.
+true.
+
+?- s.
+Place:
+baker_street
+
+You see Baker Street is a quaint, off-the-beaten-track street nestled between two hills.
+It's lined with charming, old-fashioned buildings,
+including your office and house, as well as a cozy cafe and a vintage bookstore.
+The street exudes a sense of peaceful seclusion,
+making it the perfect spot for the detective
+to solve cases away from the bustle of the city.
+
+People:
+book_worms
+
+
+Items:
+flyer
+litter
+
+
+Directions:
+n: detectives_office
+e: city_square
+s: detectives_house
+w:
+true.
+
+?- s.
+Place:
+detectives_house
+
+Your house has a cozy living room with a fireplace and vintage posters,
+and a fully-equipped modern kitchen with a sleek fridge. Outside, the mailbox
+stands by the front door, waiting for the detective's daily dose of letters,
+packages, and clues.
+
+People:
+dorothy
+
+
+Items:
+fork
+spoon
+tea_spoon
+knife
+cup
+screwdriver
+plate
+bowl
+
+
+Directions:
+n: baker_street
+e: mailbox
+s:
+w: fridge
+true.
+
+?- talk(dorothy).
+You can ask dorothy about:
+hello
+love
+dinner
+true.
+
+?- ask(dorothy, hello).
+Hi! I'm dorothy!
+true.
+
+?- ask(dorothy, love).
+I love you sweety!
+true.
+
+?- ask(dorothy, dinner).
+Dinner will be ready soon!
+true.
+
+?- w.
+Place:
+fridge
+
+Your fridge is sleek and modern, with a stainless steel finish and a minimalist
+design. Inside it is well stocked with a variety of products
+
+You are alone here!
+
+Items:
+water
+milk
+beer
+vodka
+whiskey
+ice
+cheese
+ham
+chicken_wings
+leftovers
+fish
+pizza
+watermelon
+banana
+lettuce
+salad
+powder
+ice_cream
+cola
+egg
+butter
+honey
+jam
+turkey
+ketchup
+
+
+Directions:
+n:
+e: detectives_house
+s:
+w:
+true.
+
+?- take(powder).
+OK.
+true.
+
+?- inspect(powder).
+The powder is a regular powder.
+There is nothing unusual about it!
+true.
+
+?- e.
+Place:
+detectives_house
+
+Your house has a cozy living room with a fireplace and vintage posters,
+and a fully-equipped modern kitchen with a sleek fridge. Outside, the mailbox
+stands by the front door, waiting for the detective's daily dose of letters,
+packages, and clues.
+
+People:
+dorothy
+
+
+Items:
+fork
+spoon
+tea_spoon
+knife
+cup
+screwdriver
+plate
+bowl
+
+
+Directions:
+n: baker_street
+e: mailbox
+s:
+w: fridge
+true.
+
+?- e.
+Place:
+mailbox
+
+Your mailbox stands by the front door, painted in a faded red hue and adorned
+with small dents and scratches.
+
+The mailbox is empty! Check it later
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n:
+e:
+s:
+w: detectives_house
+true.
+
+?- w.
+Place:
+detectives_house
+
+Your house has a cozy living room with a fireplace and vintage posters,
+and a fully-equipped modern kitchen with a sleek fridge. Outside, the mailbox
+stands by the front door, waiting for the detective's daily dose of letters,
+packages, and clues.
+
+People:
+dorothy
+
+
+Items:
+fork
+spoon
+tea_spoon
+knife
+cup
+screwdriver
+plate
+bowl
+
+
+Directions:
+n: baker_street
+e: mailbox
+s:
+w: fridge
+true.
+
+?- n.
+Place:
+baker_street
+
+You see Baker Street is a quaint, off-the-beaten-track street nestled between two hills.
+It's lined with charming, old-fashioned buildings,
+including your office and house, as well as a cozy cafe and a vintage bookstore.
+The street exudes a sense of peaceful seclusion,
+making it the perfect spot for the detective
+to solve cases away from the bustle of the city.
+
+People:
+book_worms
+
+
+Items:
+flyer
+litter
+
+
+Directions:
+n: detectives_office
+e: city_square
+s: detectives_house
+w:
+true.
+
+?- e.
+Place:
+city_square
+
+You see City Square is a bustling, energetic hub located in the heart of the city.
+It's surrounded by tall skyscrapers,
+historical buildings, and busy streets.
+The square is home to the police station, city hall,
+and other important government buildings,
+making it a central location for civic activities and public events.
+
+People:
+politician
+
+
+Items:
+broken_glass
+yesterdays_newspaper
+
+
+Directions:
+n:
+e: westbourne_road
+s: police_station
+w: baker_street
+true.
+
+?- e.
+Place:
+westbourne_road
+
+You see Westbourne Road is a winding street that
+leads to a dense forest on the outskirts of the city.
+It's a peaceful drive, with few buildings and little traffic along the way.
+Visitors can find an antique museum showcasing
+Egyptian antiquities on this road,
+offering a unique and fascinating glimpse into the ancient world.
+
+People:
+tourists
+playing_popular_kid
+playing_quiet_kid
+playing_athletic_kid
+
+
+Items:
+stick_cane
+
+
+Directions:
+n: museum
+e: forest
+s:
+w: city_square
+true.
+
+?- n.
+Place:
+museum
+
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: reception
+e:
+s: westbourne_road
+w:
+true.
+
+?- n.
+Place:
+reception
+
+You see reception desk at the museum located near the entrance
+and is staffed by friendly personnel who welcome visitors and provide information.
+The desk is adorned with brochures,
+maps, and other promotional materials to help guide visitors through the museum.
+
+People:
+attendant_julie
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n: greek_exhibit_hall
+e: bathroom
+s: museum
+w: gift_shop
+true.
+
+?- talk(attendant_julie).
+You can ask attendant_julie about:
+hello
+missing_artifact
+alibi
+potential_witnesses
+gossip
+true.
+
+?- ask(attendant_julie, hello).
+Hi! I'm attendant_julie!
+true.
+
+?- ask(attendant_julie, missing_artifact).
+The burglary happened a few days ago, the burglars broke into the Egyptian hall, they stole the artifact from there.
+true.
+
+?- ask(attendant_julie, alibi).
+As for me, I couldn't do it, I spent the whole day with my husband, he is a police officer, you can talk to him, you will find him at the police station.
+true.
+
+?- ask(attendant_julie, potential_witnesses).
+You can try to talk to the cashier who is on the left in the gift shop, she must have been in the museum at the time, she must have been closing the shop. You can also try to interrogate the renovator who is at the end of the hall and is still renovating the hall.
+true.
+
+?- ask(attendant_julie, gossip).
+I would bet that the restorer must have stolen the statue, he seemed suspicious to me from the beginning, only he is constantly hanging around monuments.
+true.
+attendant_julie does not know anything about janitor
+true.
+
+?- n.
+Place:
+greek_exhibit_hall
+
+You are at Greek exhibition in the museum showcases
+a collection of ancient artifacts, including pottery, statues, and jewelry.
+The items are displayed in glass cases
+with detailed information about their history and significance.
+The exhibit provides a fascinating glimpse
+into the art and culture of ancient Greece.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: egyptian_exhibit_hall
+e: cctv_room - you need key_card
+s: reception
+w: janitors_closet - you need old_key
+true.
+
+?- n.
+Place:
+egyptian_exhibit_hall
+
+You are at Egyptian museum exhibit without an ancient statue,
+there are numerous other treasures such as hieroglyphics on stone tablets,
+ornately decorated sarcophagi, and intricate jewelry.
+Additionally, there are mysterious footprints leading to
+and from one of the artifacts,
+leaving visitors wondering about their significance
+and potential connection to ancient Egyptian beliefs and customs.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: roman_exhibit_hall
+e: garden
+s: greek_exhibit_hall
+w: display_case
+true.
+
+?- w.
+Place:
+display_case
+
+You see display case where the statue was kept
+appears to have been forcefully opened by the thief using some kind of tool,
+with shattered glass and metal debris scattered around the base.
+
+You are alone here!
+
+Items:
+shattered_glass
+metal_debris
+hammer
+
+
+Directions:
+n:
+e: egyptian_exhibit_hall
+s:
+w:
+true.
+
+?- take(shattered_glass).
+OK.
+true.
+
+?- inspect(shattered_glass).
+The shattered_glass is a regular shattered_glass.
+There is nothing unusual about it!
+true.
+
+?- scan(shattered_glass).
+You need a fingerprints_detector to scan for fingerprints!
+true.
+
+?- take(metal_debris).
+OK.
+true.
+
+?- inspect(metal_debris).
+The metal_debris is a regular metal_debris.
+There is nothing unusual about it!
+true.
+
+?- take(hammer).
+OK.
+true.
+
+?- inspect(hammer).
+The burglars must have broken the protective glass with this hammer, I have to take it and see if there are any fingerprints on it
+true.
+
+?- inventory.
+Items 4/5:
+powder
+shattered_glass
+metal_debris
+hammer
+
+true.
+
+?- e.
+Place:
+egyptian_exhibit_hall
+
+You are at Egyptian museum exhibit without an ancient statue,
+there are numerous other treasures such as hieroglyphics on stone tablets,
+ornately decorated sarcophagi, and intricate jewelry.
+Additionally, there are mysterious footprints leading to
+and from one of the artifacts,
+leaving visitors wondering about their significance
+and potential connection to ancient Egyptian beliefs and customs.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: roman_exhibit_hall
+e: garden
+s: greek_exhibit_hall
+w: display_case
+true.
+
+?- n.
+Place:
+roman_exhibit_hall
+
+You are at Roman exhibition in the museum features an impressive collection of artifacts,
+including statues, mosaics, and architectural fragments.
+Visitors can immerse themselves in the history of the Roman Empire
+and gain insights into the daily life
+and cultural achievements of its people.
+
+People:
+guide_mary
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n: renovated_exhibit - you need key_to_the_exhibit
+e:
+s: egyptian_exhibit_hall
+w:
+true.
+
+?- n.
+This place is available only with key_to_the_exhibit!
+Place:
+roman_exhibit_hall
+
+You are at Roman exhibition in the museum features an impressive collection of artifacts,
+including statues, mosaics, and architectural fragments.
+Visitors can immerse themselves in the history of the Roman Empire
+and gain insights into the daily life
+and cultural achievements of its people.
+
+People:
+guide_mary
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n: renovated_exhibit - you need key_to_the_exhibit
+e:
+s: egyptian_exhibit_hall
+w:
+true.
+
+?- talk(guide_mary).
+You can ask guide_mary about:
+hello
+tour
+missing_artifact
+alibi
+gossip
+true.
+
+?- ask(guide_mary, hello).
+Hi! I'm guide_mary!
+true.
+
+?- ask(guide_mary, tour).
+To the right we can see a large statue of Julius Ceraz, from the Battle of Alesia, this battle was fought between the Roman army besieging the Gallic city of Alesia and the forces of the rebel Gauls. It took place in 52 BCE. during the conquest of Gaul by Gaius Julius Caesar. The actions of Roman forces near Alesia are the largest siege operation in the history of ancient wars.
+true.
+
+?- ask(guide_mary, missing_artifact).
+TODO
+true.
+
+?- ask(guide_mary, alibi).
+I not only work at the museum here, I have many other activities, that day I was anticipating a school trip, we were in the nearby park at the time
+true.
+
+?- ask(guide_mary, gossip).
+I don't know anything, but they say in the city that he's an orchard, after all, he always closes the whole museum.
+true.
+
+?- s.
+Place:
+egyptian_exhibit_hall
+
+You are at Egyptian museum exhibit without an ancient statue,
+there are numerous other treasures such as hieroglyphics on stone tablets,
+ornately decorated sarcophagi, and intricate jewelry.
+Additionally, there are mysterious footprints leading to
+and from one of the artifacts,
+leaving visitors wondering about their significance
+and potential connection to ancient Egyptian beliefs and customs.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: roman_exhibit_hall
+e: garden
+s: greek_exhibit_hall
+w: display_case
+true.
+
+?- s.
+Place:
+greek_exhibit_hall
+
+You are at Greek exhibition in the museum showcases
+a collection of ancient artifacts, including pottery, statues, and jewelry.
+The items are displayed in glass cases
+with detailed information about their history and significance.
+The exhibit provides a fascinating glimpse
+into the art and culture of ancient Greece.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: egyptian_exhibit_hall
+e: cctv_room - you need key_card
+s: reception
+w: janitors_closet - you need old_key
+true.
+
+?- s.
+Place:
+reception
+
+You see reception desk at the museum located near the entrance
+and is staffed by friendly personnel who welcome visitors and provide information.
+The desk is adorned with brochures,
+maps, and other promotional materials to help guide visitors through the museum.
+
+People:
+attendant_julie
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n: greek_exhibit_hall
+e: bathroom
+s: museum
+w: gift_shop
+true.
+
+?- w.
+Place:
+gift_shop
+
+You see gift shop filled with an assortment of souvenirs
+and merchandise related to the museum's exhibits.
+Visitors can purchase books, postcards, toys,
+and other items as a memento of their visit.
+
+People:
+cashier_anne
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n:
+e: reception
+s:
+w:
+true.
+
+?- talk(cashier_anne).
+You can ask cashier_anne about:
+hello
+missing_artifact
+artifact_replica
+gossip
+alibi
+true.
+
+?- ask(cashier_anne, hello).
+Hi! I'm cashier_anne!
+true.
+
+?- ask(cashier_anne, missing_artifact).
+TODO
+true.
+
+?- ask(cashier_anne, artifact_replica).
+How can I help you? Maybe you want to buy a gold statue artifact replica?
+true.
+
+?- ask(cashier_anne, gossip).
+Did you talk to the guide, maybe he stole it when no one was looking, he often walks around with unaware kids, he seems strange
+true.
+
+?- ask(cashier_anne, alibi).
+There are cameras all over the store, you can check them and you'll find out I was behind the counter at the time.
+true.
+
+?- e.
+Place:
+reception
+
+You see reception desk at the museum located near the entrance
+and is staffed by friendly personnel who welcome visitors and provide information.
+The desk is adorned with brochures,
+maps, and other promotional materials to help guide visitors through the museum.
+
+People:
+attendant_julie
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n: greek_exhibit_hall
+e: bathroom
+s: museum
+w: gift_shop
+true.
+
+?- s.
+Place:
+museum
+
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: reception
+e:
+s: westbourne_road
+w:
+true.
+
+?- s.
+Place:
+westbourne_road
+
+You see Westbourne Road is a winding street that
+leads to a dense forest on the outskirts of the city.
+It's a peaceful drive, with few buildings and little traffic along the way.
+Visitors can find an antique museum showcasing
+Egyptian antiquities on this road,
+offering a unique and fascinating glimpse into the ancient world.
+
+People:
+tourists
+playing_popular_kid
+playing_quiet_kid
+playing_athletic_kid
+
+
+Items:
+stick_cane
+
+
+Directions:
+n: museum
+e: forest
+s:
+w: city_square
+true.
+
+?- w.
+Place:
+city_square
+
+You see City Square is a bustling, energetic hub located in the heart of the city.
+It's surrounded by tall skyscrapers,
+historical buildings, and busy streets.
+The square is home to the police station, city hall,
+and other important government buildings,
+making it a central location for civic activities and public events.
+
+People:
+politician
+
+
+Items:
+broken_glass
+yesterdays_newspaper
+
+
+Directions:
+n:
+e: westbourne_road
+s: police_station
+w: baker_street
+true.
+
+?- w.
+Place:
+baker_street
+
+You see Baker Street is a quaint, off-the-beaten-track street nestled between two hills.
+It's lined with charming, old-fashioned buildings,
+including your office and house, as well as a cozy cafe and a vintage bookstore.
+The street exudes a sense of peaceful seclusion,
+making it the perfect spot for the detective
+to solve cases away from the bustle of the city.
+
+People:
+book_worms
+
+
+Items:
+flyer
+litter
+
+
+Directions:
+n: detectives_office
+e: city_square
+s: detectives_house
+w:
+true.
+
+?- n.
+Place:
+detectives_office
+
+Your office is a compact yet efficient space, with a sturdy wooden desk
+positioned against one wall. A state-of-the-art fingerprint detector
+is mounted on another wall nearby, which the detective uses
+to analyze crime scenes and identify suspects. The walls are lined
+with bookshelves filled with forensic manuals and reference materials,
+and a large window offers a panoramic view of the city's skyline.
+
+People:
+new_client
+
+
+Items:
+old_magazine
+thing
+
+
+Directions:
+n: desk
+e: fingerprints_detector - you need powder
+s: baker_street
+w:
+true.
+
+?- e.
+You successfully entered fingerprints_detector with powder!
+Place:
+fingerprints_detector
+
+Your fingerprint detector is a state-of-the-art device mounted on the wall
+of the office. It's used to collect and analyze fingerprints found at crime
+scenes, helping the detective to identify suspects and solve cases.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n:
+e:
+s:
+w: detectives_office - you need powder
+true.
+
+?- inventory.
+Items 4/5:
+powder
+shattered_glass
+metal_debris
+hammer
+
+true.
+
+?- scan(hammer).
+Detector found renovator_theodore's fingerprints on hammer!
+true.
+
+?- scan(metal_debris).
+The only fingerprints you find on metal_debris are your fingerprints!
+true.
+
+?- scan(shattered_glass).
+The only fingerprints you find on shattered_glass are your fingerprints!
+true.
+
+?- drop(metal_debris).
+OK.
+true.
+
+?- drop(shattered_glass).
+OK.
+true.
+
+?- look.
+Place:
+fingerprints_detector
+
+Your fingerprint detector is a state-of-the-art device mounted on the wall
+of the office. It's used to collect and analyze fingerprints found at crime
+scenes, helping the detective to identify suspects and solve cases.
+
+You are alone here!
+
+Items:
+metal_debris
+shattered_glass
+
+
+true.
+
+?- inventory.
+Items 2/5:
+powder
+hammer
+
+true.
+
+?- w.
+You successfully entered detectives_office with powder!
+Place:
+detectives_office
+
+Your office is a compact yet efficient space, with a sturdy wooden desk
+positioned against one wall. A state-of-the-art fingerprint detector
+is mounted on another wall nearby, which the detective uses
+to analyze crime scenes and identify suspects. The walls are lined
+with bookshelves filled with forensic manuals and reference materials,
+and a large window offers a panoramic view of the city's skyline.
+
+People:
+new_client
+
+
+Items:
+old_magazine
+thing
+
+
+Directions:
+n: desk
+e: fingerprints_detector - you need powder
+s: baker_street
+w:
+true.
+
+?- s.
+Place:
+baker_street
+
+You see Baker Street is a quaint, off-the-beaten-track street nestled between two hills.
+It's lined with charming, old-fashioned buildings,
+including your office and house, as well as a cozy cafe and a vintage bookstore.
+The street exudes a sense of peaceful seclusion,
+making it the perfect spot for the detective
+to solve cases away from the bustle of the city.
+
+People:
+book_worms
+
+
+Items:
+flyer
+litter
+
+
+Directions:
+n: detectives_office
+e: city_square
+s: detectives_house
+w:
+true.
+
+?- e.
+Place:
+city_square
+
+You see City Square is a bustling, energetic hub located in the heart of the city.
+It's surrounded by tall skyscrapers,
+historical buildings, and busy streets.
+The square is home to the police station, city hall,
+and other important government buildings,
+making it a central location for civic activities and public events.
+
+People:
+politician
+
+
+Items:
+broken_glass
+yesterdays_newspaper
+
+
+Directions:
+n:
+e: westbourne_road
+s: police_station
+w: baker_street
+true.
+
+?- e.
+Place:
+westbourne_road
+
+You see Westbourne Road is a winding street that
+leads to a dense forest on the outskirts of the city.
+It's a peaceful drive, with few buildings and little traffic along the way.
+Visitors can find an antique museum showcasing
+Egyptian antiquities on this road,
+offering a unique and fascinating glimpse into the ancient world.
+
+People:
+tourists
+playing_popular_kid
+playing_quiet_kid
+playing_athletic_kid
+
+
+Items:
+stick_cane
+
+
+Directions:
+n: museum
+e: forest
+s:
+w: city_square
+true.
+
+?- n.
+Place:
+museum
+
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: reception
+e:
+s: westbourne_road
+w:
+true.
+
+?- n.
+Place:
+reception
+
+You see reception desk at the museum located near the entrance
+and is staffed by friendly personnel who welcome visitors and provide information.
+The desk is adorned with brochures,
+maps, and other promotional materials to help guide visitors through the museum.
+
+People:
+attendant_julie
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n: greek_exhibit_hall
+e: bathroom
+s: museum
+w: gift_shop
+true.
+
+?- talk(attendant_julie).
+You can ask attendant_julie about:
+hello
+missing_artifact
+alibi
+potential_witnesses
+gossip
+janitor
+closed_exhibit
+true.
+
+?- ask(attendant_julie, janitor).
+He called sick and haven't shown in work for a while.
+true.
+
+?- ask(attendant_julie, closed_exhibit).
+Here you go! You can take this key to the renovated exhibit!
+true.
+
+?- ask(attendant_julie, closed_exhibit).
+I have already given you the key to the exibit!
+true.
+
+?- look.
+Place:
+reception
+
+You see reception desk at the museum located near the entrance
+and is staffed by friendly personnel who welcome visitors and provide information.
+The desk is adorned with brochures,
+maps, and other promotional materials to help guide visitors through the museum.
+
+People:
+attendant_julie
+
+
+Items:
+key_to_the_exhibit
+
+
+true.
+
+?- take(key_to_the_exhibit).
+OK.
+true.
+
+?- n.
+Place:
+greek_exhibit_hall
+
+You are at Greek exhibition in the museum showcases
+a collection of ancient artifacts, including pottery, statues, and jewelry.
+The items are displayed in glass cases
+with detailed information about their history and significance.
+The exhibit provides a fascinating glimpse
+into the art and culture of ancient Greece.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: egyptian_exhibit_hall
+e: cctv_room - you need key_card
+s: reception
+w: janitors_closet - you need old_key
+true.
+
+?- n.
+Place:
+egyptian_exhibit_hall
+
+You are at Egyptian museum exhibit without an ancient statue,
+there are numerous other treasures such as hieroglyphics on stone tablets,
+ornately decorated sarcophagi, and intricate jewelry.
+Additionally, there are mysterious footprints leading to
+and from one of the artifacts,
+leaving visitors wondering about their significance
+and potential connection to ancient Egyptian beliefs and customs.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: roman_exhibit_hall
+e: garden
+s: greek_exhibit_hall
+w: display_case
+true.
+
+?- n.
+Place:
+roman_exhibit_hall
+
+You are at Roman exhibition in the museum features an impressive collection of artifacts,
+including statues, mosaics, and architectural fragments.
+Visitors can immerse themselves in the history of the Roman Empire
+and gain insights into the daily life
+and cultural achievements of its people.
+
+People:
+guide_mary
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n: renovated_exhibit - you need key_to_the_exhibit
+e:
+s: egyptian_exhibit_hall
+w:
+true.
+
+?- n.
+You successfully entered renovated_exhibit with key_to_the_exhibit!
+Place:
+renovated_exhibit
+
+You see an exhibition under renovation.
+Due to ongoing renovation work,
+the exhibition in the museum is currently inaccessible to visitors,
+with restricted access signs posted at the entrance.
+The museum staff is working hard to improve and update the exhibition,
+and visitors can look forward to a renewed
+and refreshed experience once the work is complete.
+
+People:
+renovator_theodore
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n:
+e:
+s: roman_exhibit_hall - you need key_to_the_exhibit
+w:
+true.
+
+?- talk(renovator_theodore).
+You can ask renovator_theodore about:
+hello
+admire
+missing_artifact
+alibi
+gossip
+missing_tool
+true.
+
+?- ask(renovator_theodore, hello).
+Hi! I'm renovator_theodore!
+true.
+
+?- ask(renovator_theodore, admire).
+I'm glad there are people like you, I hope you get things sorted out as soon as possible.
+true.
+
+?- ask(renovator_theodore, missing_artifact).
+TODO
+true.
+
+?- ask(renovator_theodore, alibi).
+That day I had a lot of work, I was very busy and I spent the whole day in the renovated hall, you will surely find someone who will confirm it.
+true.
+
+?- ask(renovator_theodore, gossip).
+A terrible mess is still in the Egyptian hall, there is no one to clean it up, the janitor just after the burglary says that he got sick.
+true.
+
+?- ask(renovator_theodore, missing_tool).
+Wait, I'll check right now, I don't think so ... And that's your fate, I don't see my hammer anywhere, I must have left it somewhere.
+true.
+
+?- s.
+You successfully entered roman_exhibit_hall with key_to_the_exhibit!
+Place:
+roman_exhibit_hall
+
+You are at Roman exhibition in the museum features an impressive collection of artifacts,
+including statues, mosaics, and architectural fragments.
+Visitors can immerse themselves in the history of the Roman Empire
+and gain insights into the daily life
+and cultural achievements of its people.
+
+People:
+guide_mary
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n: renovated_exhibit - you need key_to_the_exhibit
+e:
+s: egyptian_exhibit_hall
+w:
+true.
+
+?- s.
+Place:
+egyptian_exhibit_hall
+
+You are at Egyptian museum exhibit without an ancient statue,
+there are numerous other treasures such as hieroglyphics on stone tablets,
+ornately decorated sarcophagi, and intricate jewelry.
+Additionally, there are mysterious footprints leading to
+and from one of the artifacts,
+leaving visitors wondering about their significance
+and potential connection to ancient Egyptian beliefs and customs.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: roman_exhibit_hall
+e: garden
+s: greek_exhibit_hall
+w: display_case
+true.
+
+?- e.
+Place:
+garden
+
+You are in museum garden is a tranquil oasis filled with lush greenery
+and colorful blooms,
+offering visitors a peaceful escape from the hustle and bustle of the city.
+The garden features winding pathways, benches for seating,
+and artistic sculptures that blend seamlessly with the natural surroundings.
+
+You are alone here!
+
+Items:
+key_card
+red_piece_of_fabric
+
+
+Directions:
+n:
+e:
+s:
+w: egyptian_exhibit_hall
+true.
+
+?- take(key_card).
+OK.
+true.
+
+?- inventory.
+Items 4/5:
+powder
+hammer
+key_to_the_exhibit
+key_card
+
+true.
+
+?- drop(key_to_the_exhibit).
+OK.
+true.
+
+?- w.
+Place:
+egyptian_exhibit_hall
+
+You are at Egyptian museum exhibit without an ancient statue,
+there are numerous other treasures such as hieroglyphics on stone tablets,
+ornately decorated sarcophagi, and intricate jewelry.
+Additionally, there are mysterious footprints leading to
+and from one of the artifacts,
+leaving visitors wondering about their significance
+and potential connection to ancient Egyptian beliefs and customs.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: roman_exhibit_hall
+e: garden
+s: greek_exhibit_hall
+w: display_case
+true.
+
+?- s.
+Place:
+greek_exhibit_hall
+
+You are at Greek exhibition in the museum showcases
+a collection of ancient artifacts, including pottery, statues, and jewelry.
+The items are displayed in glass cases
+with detailed information about their history and significance.
+The exhibit provides a fascinating glimpse
+into the art and culture of ancient Greece.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: egyptian_exhibit_hall
+e: cctv_room - you need key_card
+s: reception
+w: janitors_closet - you need old_key
+true.
+
+?- e.
+You successfully entered cctv_room with key_card!
+Place:
+cctv_room
+
+You are in CCTV room is a secure area of the building
+where trained personnel monitor the various cameras installed throughout the premises.
+The room typically features multiple screens displaying live footage
+from different areas of the building,
+allowing the staff to keep a watchful eye on the premises
+and ensure the safety of visitors and staff.
+
+People:
+guard_mike
+
+
+Items:
+dvd
+
+
+Directions:
+n:
+e:
+s:
+w: greek_exhibit_hall - you need key_card
+true.
+
+?- take(dvd).
+OK.
+true.
+
+?- inspect(dvd).
+You review the CCTV footage from the museum's security cameras, but it doesn't
+provide any clear visuals of the thief's face. However, you do notice that
+the thief was wearing a distinctive red jacket.
+true.
+
+?- talk(guard_mike).
+You can ask guard_mike about:
+hello
+alibi
+key_card
+artifact_dvd
+anna_dvd
+womans_toilet
+true.
+
+?- ask(guard_mike, hello).
+Hi! I'm guard_mike!
+true.
+
+?- ask(guard_mike, alibi).
+
+I am clean as you can see on camera number 1, here I am sitting in front of the camera screen in the camera room. And if there are burglars, you can see on the fourth camera that I go into the women's toilet.
+true.
+
+?- ask(guard_mike, key_card).
+Each of the museum employees has such a card, it is used to move around the museum
+true.
+
+?- ask(guard_mike, artifact_dvd).
+Oh, look at camera number 9 here for a moment there is a man in a red jacket
+true.
+
+?- ask(guard_mike, anna_dvd).
+Look at camera number 20, our cashier Anna was standing behind the counter at the time, looking through some leaflet
+true.
+
+?- ask(guard_mike, womans_toilet).
+Have you ever been to the men's toilet at our museum? they are terrible, I hate going there, that's why I always go to the women's toilet.
+true.
+
+?- w.
+You successfully entered greek_exhibit_hall with key_card!
+Place:
+greek_exhibit_hall
+
+You are at Greek exhibition in the museum showcases
+a collection of ancient artifacts, including pottery, statues, and jewelry.
+The items are displayed in glass cases
+with detailed information about their history and significance.
+The exhibit provides a fascinating glimpse
+into the art and culture of ancient Greece.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: egyptian_exhibit_hall
+e: cctv_room - you need key_card
+s: reception
+w: janitors_closet - you need old_key
+true.
+
+?- s.
+Place:
+reception
+
+You see reception desk at the museum located near the entrance
+and is staffed by friendly personnel who welcome visitors and provide information.
+The desk is adorned with brochures,
+maps, and other promotional materials to help guide visitors through the museum.
+
+People:
+attendant_julie
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n: greek_exhibit_hall
+e: bathroom
+s: museum
+w: gift_shop
+true.
+
+?- e.
+Place:
+bathroom
+
+You are in bathrooms in museums have tiled floors and walls,
+and are usually maintained regularly to ensure cleanliness.
+They are separated by gender.
+Basic amenities such as soap, paper towels, and toilet paper are provided.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: womens_bathroom
+e:
+s: mens_bathroom
+w: reception
+true.
+
+?- n.
+Place:
+womens_bathroom
+
+You are in women's bathroom. There is dimly lit
+and has a flickering fluorescent light above the sink,
+with graffiti scrawled on the walls and a clogged toilet in the corner.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n:
+e:
+s: bathroom
+w:
+true.
+
+?- s.
+Place:
+bathroom
+
+You are in bathrooms in museums have tiled floors and walls,
+and are usually maintained regularly to ensure cleanliness.
+They are separated by gender.
+Basic amenities such as soap, paper towels, and toilet paper are provided.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: womens_bathroom
+e:
+s: mens_bathroom
+w: reception
+true.
+
+?- s.
+Place:
+mens_bathroom
+
+You are in men's bathroom which is in ruins.
+There are broken tiles on the floor,
+a cracked mirror above the sink, and a musty odor from the leaky pipes in the wall.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: bathroom
+e:
+s:
+w:
+true.
+
+?- n.
+Place:
+bathroom
+
+You are in bathrooms in museums have tiled floors and walls,
+and are usually maintained regularly to ensure cleanliness.
+They are separated by gender.
+Basic amenities such as soap, paper towels, and toilet paper are provided.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: womens_bathroom
+e:
+s: mens_bathroom
+w: reception
+true.
+
+?- w.
+Place:
+reception
+
+You see reception desk at the museum located near the entrance
+and is staffed by friendly personnel who welcome visitors and provide information.
+The desk is adorned with brochures,
+maps, and other promotional materials to help guide visitors through the museum.
+
+People:
+attendant_julie
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n: greek_exhibit_hall
+e: bathroom
+s: museum
+w: gift_shop
+true.
+
+?- s.
+Place:
+museum
+
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: reception
+e:
+s: westbourne_road
+w:
+true.
+
+?- s.
+Place:
+westbourne_road
+
+You see Westbourne Road is a winding street that
+leads to a dense forest on the outskirts of the city.
+It's a peaceful drive, with few buildings and little traffic along the way.
+Visitors can find an antique museum showcasing
+Egyptian antiquities on this road,
+offering a unique and fascinating glimpse into the ancient world.
+
+People:
+tourists
+playing_popular_kid
+playing_quiet_kid
+playing_athletic_kid
+
+
+Items:
+stick_cane
+
+
+Directions:
+n: museum
+e: forest
+s:
+w: city_square
+true.
+
+?- w.
+Place:
+city_square
+
+You see City Square is a bustling, energetic hub located in the heart of the city.
+It's surrounded by tall skyscrapers,
+historical buildings, and busy streets.
+The square is home to the police station, city hall,
+and other important government buildings,
+making it a central location for civic activities and public events.
+
+People:
+politician
+
+
+Items:
+broken_glass
+yesterdays_newspaper
+
+
+Directions:
+n:
+e: westbourne_road
+s: police_station
+w: baker_street
+true.
+
+?- s.
+Place:
+police_station
+
+You are inside of a police building that has a lot of traffic is bustling with activity,
+with officers and visitors moving quickly through the halls.
+The sound of phones ringing
+and radios crackling can be heard constantly in the background.
+The walls are lined with bulletin boards
+and posters filled with information and updates related to ongoing cases.
+
+People:
+policeman
+
+
+Items:
+handcuffs
+gun
+ammunition
+suitcase
+
+
+Directions:
+n: city_square
+e: policeman_office
+s:
+w: cage
+true.
+
+?- talk(policeman).
+You can ask policeman about:
+hello
+help
+true.
+
+?- ask(policeman, hello).
+Hi! I'm policeman!
+true.
+
+?- ask(policeman, help).
+I cannot help you. I'm busy at the moment!
+true.
+
+?- w.
+Place:
+cage
+
+You see cells at the police station
+where there are many detainees are small and cramped,
+with just enough room
+for a narrow bed and a toilet in the corner.
+The walls are made of cold, gray concrete
+and the only light comes from a small window high up near the ceiling.
+
+People:
+scary_prisoner
+
+
+Items:
+makeshift_knife
+
+
+Directions:
+n:
+e: police_station
+s:
+w:
+true.
+
+?- talk(scary_prisoner).
+You can ask scary_prisoner about:
+hello
+reason
+true.
+
+?- ask(scary_prisoner, hello).
+Hi! I'm scary_prisoner!
+true.
+
+?- ask(scary_prisoner, reason).
+I killed a man
+true.
+
+?- take(makeshift_knife).
+OK.
+true.
+
+?- inspect(makeshift_knife).
+Better take it from here!
+I don't want it to fall into the wrong hands
+
+true.
+
+?- look_around.
+Directions:
+n:
+e: police_station
+s:
+w:
+true.
+
+?- e.
+Place:
+police_station
+
+You are inside of a police building that has a lot of traffic is bustling with activity,
+with officers and visitors moving quickly through the halls.
+The sound of phones ringing
+and radios crackling can be heard constantly in the background.
+The walls are lined with bulletin boards
+and posters filled with information and updates related to ongoing cases.
+
+People:
+policeman
+
+
+Items:
+handcuffs
+gun
+ammunition
+suitcase
+
+
+Directions:
+n: city_square
+e: policeman_office
+s:
+w: cage
+true.
+
+?- e.
+Place:
+policeman_office
+
+You are in office of a policeman who is very busy is cluttered
+with piles of paperwork and files,
+as well as various items of police equipment scattered throughout the room.
+The desk is usually covered with a computer,
+radio, phone, and other tools of the trade,
+with little space for anything else.
+
+People:
+sheriff
+
+
+Items:
+pen
+paper
+blank_paper
+
+
+Directions:
+n:
+e:
+s:
+w: police_station
+true.
+
+?- talk(sheriff).
+You can ask sheriff about:
+hello
+case
+employees_criminal_record
+true.
+
+?- ask(sheriff, hello).
+Hi! I'm sheriff!
+true.
+
+?- ask(sheriff, case).
+We are looking for a #1 wanted interpol criminal.
+He was seen fleeing into the forest!
+true.
+
+?- ask(sheriff, employees_criminal_record).
+What are you here for? Can't you see we don't have time now? We'll mail everything to you, now get out, because as you can see, we're very busy.
+true.
+
+?- drop(makeshift_knife).
+OK.
+true.
+
+?- w.
+Place:
+police_station
+
+You are inside of a police building that has a lot of traffic is bustling with activity,
+with officers and visitors moving quickly through the halls.
+The sound of phones ringing
+and radios crackling can be heard constantly in the background.
+The walls are lined with bulletin boards
+and posters filled with information and updates related to ongoing cases.
+
+People:
+policeman
+
+
+Items:
+handcuffs
+gun
+ammunition
+suitcase
+
+
+Directions:
+n: city_square
+e: policeman_office
+s:
+w: cage
+true.
+
+?- n.
+Place:
+city_square
+
+You see City Square is a bustling, energetic hub located in the heart of the city.
+It's surrounded by tall skyscrapers,
+historical buildings, and busy streets.
+The square is home to the police station, city hall,
+and other important government buildings,
+making it a central location for civic activities and public events.
+
+People:
+politician
+
+
+Items:
+broken_glass
+yesterdays_newspaper
+
+
+Directions:
+n:
+e: westbourne_road
+s: police_station
+w: baker_street
+true.
+
+?- w.
+Place:
+baker_street
+
+You see Baker Street is a quaint, off-the-beaten-track street nestled between two hills.
+It's lined with charming, old-fashioned buildings,
+including your office and house, as well as a cozy cafe and a vintage bookstore.
+The street exudes a sense of peaceful seclusion,
+making it the perfect spot for the detective
+to solve cases away from the bustle of the city.
+
+People:
+book_worms
+
+
+Items:
+flyer
+litter
+
+
+Directions:
+n: detectives_office
+e: city_square
+s: detectives_house
+w:
+true.
+
+?- s.
+Place:
+detectives_house
+
+Your house has a cozy living room with a fireplace and vintage posters,
+and a fully-equipped modern kitchen with a sleek fridge. Outside, the mailbox
+stands by the front door, waiting for the detective's daily dose of letters,
+packages, and clues.
+
+People:
+dorothy
+
+
+Items:
+fork
+spoon
+tea_spoon
+knife
+cup
+screwdriver
+plate
+bowl
+
+
+Directions:
+n: baker_street
+e: mailbox
+s:
+w: fridge
+true.
+
+?- e.
+Place:
+mailbox
+
+Your mailbox stands by the front door, painted in a faded red hue and adorned
+with small dents and scratches.
+
+There is a letter here. You can pick it up.
+
+You are alone here!
+
+Items:
+letter
+
+
+Directions:
+n:
+e:
+s:
+w: detectives_house
+true.
+
+?- take(letter).
+OK.
+true.
+
+?- inspect(letter).
+TODO: list od policji - muszę go otworzyć
+true.
+
+?- instructions.
+
+Enter commands using standard Prolog syntax.
+Available commands:
+start.                -- to start the game.
+n.  s.  e.  w.        -- to go in that direction.
+take(Object).         -- to pick up an object.
+drop(Object).         -- to put down an object.
+inspect(Object).      -- to take a closer look at an object.
+scan(Object).         -- to scan objects for fingerprints.
+use(Item, Tool).      -- to use the tool on the item.
+inventory.            -- to list all currently held items.
+people.               -- to look for all nearby people.
+talk(Person).         -- to list all available subjects you can ask a person.
+ask(Person, Subject). -- to ask person about a subject.
+look.                 -- to search for things.
+look_around.          -- to look around you.
+instructions.         -- to see this message again.
+halt.                 -- to end the game and quit.
+
+true.
+
+?- w.
+Place:
+detectives_house
+
+Your house has a cozy living room with a fireplace and vintage posters,
+and a fully-equipped modern kitchen with a sleek fridge. Outside, the mailbox
+stands by the front door, waiting for the detective's daily dose of letters,
+packages, and clues.
+
+People:
+dorothy
+
+
+Items:
+fork
+spoon
+tea_spoon
+knife
+cup
+screwdriver
+plate
+bowl
+
+
+Directions:
+n: baker_street
+e: mailbox
+s:
+w: fridge
+true.
+
+?- take(knife).
+Your inventory is full! Drop something before picking knife up!
+true.
+
+?- inventory.
+Items 5/5:
+powder
+hammer
+key_card
+dvd
+letter
+
+true.
+
+?- drop(dvd).
+OK.
+true.
+
+?- take(knife).
+OK.
+true.
+
+?- use(letter, knife).
+You made mikes_criminal_record from letter using knife!
+true.
+
+?- inventory.
+Items 5/5:
+powder
+hammer
+key_card
+knife
+mikes_criminal_record
+
+true.
+
+?- inspect(mikes_criminal_record).
+TODO
+true.
+
+?- n.
+Place:
+baker_street
+
+You see Baker Street is a quaint, off-the-beaten-track street nestled between two hills.
+It's lined with charming, old-fashioned buildings,
+including your office and house, as well as a cozy cafe and a vintage bookstore.
+The street exudes a sense of peaceful seclusion,
+making it the perfect spot for the detective
+to solve cases away from the bustle of the city.
+
+People:
+book_worms
+
+
+Items:
+flyer
+litter
+
+
+Directions:
+n: detectives_office
+e: city_square
+s: detectives_house
+w:
+true.
+
+?- e.
+Place:
+city_square
+
+You see City Square is a bustling, energetic hub located in the heart of the city.
+It's surrounded by tall skyscrapers,
+historical buildings, and busy streets.
+The square is home to the police station, city hall,
+and other important government buildings,
+making it a central location for civic activities and public events.
+
+People:
+politician
+
+
+Items:
+broken_glass
+yesterdays_newspaper
+
+
+Directions:
+n:
+e: westbourne_road
+s: police_station
+w: baker_street
+true.
+
+?- e.
+Place:
+westbourne_road
+
+You see Westbourne Road is a winding street that
+leads to a dense forest on the outskirts of the city.
+It's a peaceful drive, with few buildings and little traffic along the way.
+Visitors can find an antique museum showcasing
+Egyptian antiquities on this road,
+offering a unique and fascinating glimpse into the ancient world.
+
+People:
+tourists
+playing_popular_kid
+playing_quiet_kid
+playing_athletic_kid
+
+
+Items:
+stick_cane
+
+
+Directions:
+n: museum
+e: forest
+s:
+w: city_square
+true.
+
+?- n.
+Place:
+museum
+
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: reception
+e:
+s: westbourne_road
+w:
+true.
+
+?- n.
+Place:
+reception
+
+You see reception desk at the museum located near the entrance
+and is staffed by friendly personnel who welcome visitors and provide information.
+The desk is adorned with brochures,
+maps, and other promotional materials to help guide visitors through the museum.
+
+People:
+attendant_julie
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n: greek_exhibit_hall
+e: bathroom
+s: museum
+w: gift_shop
+true.
+
+?- n.
+Place:
+greek_exhibit_hall
+
+You are at Greek exhibition in the museum showcases
+a collection of ancient artifacts, including pottery, statues, and jewelry.
+The items are displayed in glass cases
+with detailed information about their history and significance.
+The exhibit provides a fascinating glimpse
+into the art and culture of ancient Greece.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: egyptian_exhibit_hall
+e: cctv_room - you need key_card
+s: reception
+w: janitors_closet - you need old_key
+true.
+
+?- e.
+You successfully entered cctv_room with key_card!
+Place:
+cctv_room
+
+You are in CCTV room is a secure area of the building
+where trained personnel monitor the various cameras installed throughout the premises.
+The room typically features multiple screens displaying live footage
+from different areas of the building,
+allowing the staff to keep a watchful eye on the premises
+and ensure the safety of visitors and staff.
+
+People:
+guard_mike
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n:
+e:
+s:
+w: greek_exhibit_hall - you need key_card
+true.
+
+?- talk(guard_mike).
+You can ask guard_mike about:
+hello
+alibi
+key_card
+artifact_dvd
+anna_dvd
+womans_toilet
+criminal_record
+true.
+
+?- ask(guard_mike, criminal_record).
+These are some slander and fabricated evidence, and besides, even if it were me, I haven't been dealing with such things for twelve years, I'm a different person, I've changed, really if it were me, I certainly wouldn't do such things things, I have a family of children to feed.
+true.
+
+?- w.
+You successfully entered greek_exhibit_hall with key_card!
+Place:
+greek_exhibit_hall
+
+You are at Greek exhibition in the museum showcases
+a collection of ancient artifacts, including pottery, statues, and jewelry.
+The items are displayed in glass cases
+with detailed information about their history and significance.
+The exhibit provides a fascinating glimpse
+into the art and culture of ancient Greece.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: egyptian_exhibit_hall
+e: cctv_room - you need key_card
+s: reception
+w: janitors_closet - you need old_key
+true.
+
+?- s.
+Place:
+reception
+
+You see reception desk at the museum located near the entrance
+and is staffed by friendly personnel who welcome visitors and provide information.
+The desk is adorned with brochures,
+maps, and other promotional materials to help guide visitors through the museum.
+
+People:
+attendant_julie
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n: greek_exhibit_hall
+e: bathroom
+s: museum
+w: gift_shop
+true.
+
+?- s.
+Place:
+museum
+
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: reception
+e:
+s: westbourne_road
+w:
+true.
+
+?- s.
+Place:
+westbourne_road
+
+You see Westbourne Road is a winding street that
+leads to a dense forest on the outskirts of the city.
+It's a peaceful drive, with few buildings and little traffic along the way.
+Visitors can find an antique museum showcasing
+Egyptian antiquities on this road,
+offering a unique and fascinating glimpse into the ancient world.
+
+People:
+tourists
+playing_popular_kid
+playing_quiet_kid
+playing_athletic_kid
+
+
+Items:
+stick_cane
+
+
+Directions:
+n: museum
+e: forest
+s:
+w: city_square
+true.
+
+?- w.
+Place:
+city_square
+
+You see City Square is a bustling, energetic hub located in the heart of the city.
+It's surrounded by tall skyscrapers,
+historical buildings, and busy streets.
+The square is home to the police station, city hall,
+and other important government buildings,
+making it a central location for civic activities and public events.
+
+People:
+politician
+janitor_tom
+
+
+Items:
+broken_glass
+yesterdays_newspaper
+
+
+Directions:
+n:
+e: westbourne_road
+s: police_station
+w: baker_street
+true.
+
+?- talk(janitor_tom).
+You can ask janitor_tom about:
+hello
+sick
+alibi
+true.
+
+?- ask(janitor_tom, hello).
+Hi! I'm janitor_tom!
+true.
+
+?- ask(janitor_tom, sick).
+*Caugh* *Caugh* Good morning, I'd like some meds, because recently... uh... I've had a very... uh... cold, I've caught a cold and... I'm very sick.
+true.
+
+?- ask(janitor_tom, alibi).
+I? yyyy .... I was at ... home, yes I was at home ... why are you looking at me so suspiciously? all day ... yy *Caugh* *Caugh* ... I spent with my wife, yes I spent all day with my wife ... ask her *Caugh* *Caugh*
+true.
+
+?- talk(politician).
+You can ask politician about:
+hello
+money
+true.
+
+?- ask(politician, hello).
+Hi! I'm politician!
+true.
+
+?- ask(politician, money).
+We are working to make our future brighter!
+true.
+
+?- e.
+Place:
+westbourne_road
+
+You see Westbourne Road is a winding street that
+leads to a dense forest on the outskirts of the city.
+It's a peaceful drive, with few buildings and little traffic along the way.
+Visitors can find an antique museum showcasing
+Egyptian antiquities on this road,
+offering a unique and fascinating glimpse into the ancient world.
+
+People:
+tourists
+playing_popular_kid
+playing_quiet_kid
+playing_athletic_kid
+
+
+Items:
+stick_cane
+
+
+Directions:
+n: museum
+e: forest
+s:
+w: city_square
+true.
+
+?- talk(tourists).
+You can ask tourists about:
+hello
+missing_artifact
+true.
+
+?- ask(tourists, missing_artifact).
+Nie mówię po angielsku.
+Nie rozumiem co do mnie mówisz!
+true.
+
+?- talk(playing_popular_kid).
+You can ask playing_popular_kid about:
+hello
+something_suspicious
+true.
+
+?- ask(playing_popular_kid, hello).
+Hi! I'm playing_popular_kid!
+true.
+
+?- ask(playing_popular_kid, something_suspicious).
+I? ha, you hear it guys, he's asking me about some shady things. I haven't seen anything, nor do I do anything suspicious.
+true.
+
+?- talk(playing_quiet_kid).
+You can ask playing_quiet_kid about:
+hello
+something_suspicious
+true.
+
+?- ask(playing_quiet_kid, hello).
+Hi! I'm playing_quiet_kid!
+true.
+
+?- ask(playing_quiet_kid, something_suspicious).
+Who are you? I don't talk to strangers ... I saw someone bury something in the woods near an old tree
+true.
+
+?- talk(playing_athletic_kid).
+You can ask playing_athletic_kid about:
+hello
+something_suspicious
+true.
+
+?- ask(playing_athletic_kid, hello).
+Hi! I'm playing_athletic_kid!
+true.
+
+?- ask(playing_athletic_kid, something_suspicious).
+You have a strange coat hahaha, you look like an old grandpa. ... Pass it to me! ... I didn't see anything ... Who are you passing to !? ... I'm going to play, I don't have time
+true.
+
+?- e.
+Place:
+forest
+
+You are in The forest located on the outskirts of the town
+where the hut is located is dense and lush,
+with tall trees reaching towards the sky.
+The forest floor is covered in a thick layer of moss and fallen leaves,
+providing a soft cushion for every step.
+The air is filled with the sweet scent of pine
+and the sound of birds chirping in the trees.
+
+People:
+old_freak
+
+
+Items:
+stone
+stick
+red_leaves
+green_leaf
+frog
+four_leaf_clover
+
+
+Directions:
+n: forest
+e: forest_path
+s: forest
+w: westbourne_road
+true.
+
+?- talk(old_freak).
+You can ask old_freak about:
+hello
+age
+knowledge
+food
+true.
+
+?- ask(old_freak, hello).
+Hi! I'm old_freak!
+true.
+
+?- ask(old_freak, age).
+I'am 104 years old!
+true.
+
+?- ask(old_freak, knowledge).
+I know it all!
+true.
+
+?- ask(old_freak, food).
+Boss! Can you give me some spare change? I'd like to buy something to eat!
+true.
+
+?- n.
+Place:
+forest
+
+You are in The forest located on the outskirts of the town
+where the hut is located is dense and lush,
+with tall trees reaching towards the sky.
+The forest floor is covered in a thick layer of moss and fallen leaves,
+providing a soft cushion for every step.
+The air is filled with the sweet scent of pine
+and the sound of birds chirping in the trees.
+
+People:
+old_freak
+
+
+Items:
+stone
+stick
+red_leaves
+green_leaf
+frog
+four_leaf_clover
+
+
+Directions:
+n: forest
+e: forest_path
+s: forest
+w: westbourne_road
+true.
+
+?- s.
+Place:
+forest
+
+You are in The forest located on the outskirts of the town
+where the hut is located is dense and lush,
+with tall trees reaching towards the sky.
+The forest floor is covered in a thick layer of moss and fallen leaves,
+providing a soft cushion for every step.
+The air is filled with the sweet scent of pine
+and the sound of birds chirping in the trees.
+
+People:
+old_freak
+
+
+Items:
+stone
+stick
+red_leaves
+green_leaf
+frog
+four_leaf_clover
+
+
+Directions:
+n: forest
+e: forest_path
+s: forest
+w: westbourne_road
+true.
+
+?- e.
+Place:
+forest_path
+
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: forest
+e: forest_glade
+s: forest
+w: forest
+true.
+
+?- e.
+Place:
+forest_glade
+
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: toms_house
+e: forest
+s: old_tree
+w: forest_path
+true.
+
+?- s.
+Place:
+old_tree
+
+You see ancient and massive tree,
+Its gnarled roots stretch out from the base, and the bark is rough and textured
+Its branches stretch high into the sky, providing shelter and shade for the creatures that call the forest home.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: forest_glade
+e: digging_marks - you need shovel
+s: forest
+w: forest
+true.
+
+?- n.
+Place:
+forest_glade
+
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: toms_house
+e: forest
+s: old_tree
+w: forest_path
+true.
+
+?- n.
+Place:
+toms_house
+
+You see the small cozy house in the middle of the forest,
+You notice a white picket fence surrounding the property.
+The windows of the house are covered with dark curtains,
+making it difficult to see inside.
+A rusty old mailbox hangs on a post near the entrance.
+
+People:
+judy
+
+
+Items:
+black_and_white_magazine
+cobweb
+old_key
+
+
+Directions:
+n: forest
+e: forest
+s: forest_glade
+w: forest
+true.
+
+?- talk(judy).
+You can ask judy about:
+hello
+janitors_alibi
+true.
+
+?- ask(judy, hello).
+Hi! I'm judy!
+true.
+
+?- ask(judy, janitors_alibi).
+My husband? spent the whole day outside by the house chopping wood
+true.
+
+?- take(old_key).
+Your inventory is full! Drop something before picking old_key up!
+true.
+
+?- inventory.
+Items 5/5:
+powder
+hammer
+key_card
+knife
+mikes_criminal_record
+
+true.
+
+?- drop(mikes_criminal_record).
+OK.
+true.
+
+?- drop(knife).
+OK.
+true.
+
+?- take(old_key).
+OK.
+true.
+
+?- n.
+Place:
+forest
+
+You are in The forest located on the outskirts of the town
+where the hut is located is dense and lush,
+with tall trees reaching towards the sky.
+The forest floor is covered in a thick layer of moss and fallen leaves,
+providing a soft cushion for every step.
+The air is filled with the sweet scent of pine
+and the sound of birds chirping in the trees.
+
+People:
+old_freak
+
+
+Items:
+stone
+stick
+red_leaves
+green_leaf
+frog
+four_leaf_clover
+
+
+Directions:
+n: forest
+e: forest_path
+s: forest
+w: westbourne_road
+true.
+
+?- w.
+Place:
+westbourne_road
+
+You see Westbourne Road is a winding street that
+leads to a dense forest on the outskirts of the city.
+It's a peaceful drive, with few buildings and little traffic along the way.
+Visitors can find an antique museum showcasing
+Egyptian antiquities on this road,
+offering a unique and fascinating glimpse into the ancient world.
+
+People:
+tourists
+playing_popular_kid
+playing_quiet_kid
+playing_athletic_kid
+
+
+Items:
+stick_cane
+
+
+Directions:
+n: museum
+e: forest
+s:
+w: city_square
+true.
+
+?- n.
+Place:
+museum
+
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: reception
+e:
+s: westbourne_road
+w:
+true.
+
+?- n.
+Place:
+reception
+
+You see reception desk at the museum located near the entrance
+and is staffed by friendly personnel who welcome visitors and provide information.
+The desk is adorned with brochures,
+maps, and other promotional materials to help guide visitors through the museum.
+
+People:
+attendant_julie
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n: greek_exhibit_hall
+e: bathroom
+s: museum
+w: gift_shop
+true.
+
+?- n.
+Place:
+greek_exhibit_hall
+
+You are at Greek exhibition in the museum showcases
+a collection of ancient artifacts, including pottery, statues, and jewelry.
+The items are displayed in glass cases
+with detailed information about their history and significance.
+The exhibit provides a fascinating glimpse
+into the art and culture of ancient Greece.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: egyptian_exhibit_hall
+e: cctv_room - you need key_card
+s: reception
+w: janitors_closet - you need old_key
+true.
+
+?- w.
+You successfully entered janitors_closet with old_key!
+Place:
+janitors_closet
+
+You are in janitor's closet.
+It is a small and cluttered space filled with cleaning supplies,
+mops, brooms, and other maintenance tools.
+It is typically located in a discreet corner of the building,
+out of sight of visitors.
+
+You are alone here!
+
+Items:
+wobbly_shovel
+
+
+Directions:
+n:
+e: greek_exhibit_hall - you need old_key
+s:
+w:
+true.
+
+?- take(wobbly_shovel).
+OK.
+true.
+
+?- inspect(wobbly_shovel).
+This shovel is too weak, I'm about to break it, I need to find something to make it stronger.
+true.
+
+?- e.
+You successfully entered greek_exhibit_hall with old_key!
+Place:
+greek_exhibit_hall
+
+You are at Greek exhibition in the museum showcases
+a collection of ancient artifacts, including pottery, statues, and jewelry.
+The items are displayed in glass cases
+with detailed information about their history and significance.
+The exhibit provides a fascinating glimpse
+into the art and culture of ancient Greece.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: egyptian_exhibit_hall
+e: cctv_room - you need key_card
+s: reception
+w: janitors_closet - you need old_key
+true.
+
+?- s.
+Place:
+reception
+
+You see reception desk at the museum located near the entrance
+and is staffed by friendly personnel who welcome visitors and provide information.
+The desk is adorned with brochures,
+maps, and other promotional materials to help guide visitors through the museum.
+
+People:
+attendant_julie
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n: greek_exhibit_hall
+e: bathroom
+s: museum
+w: gift_shop
+true.
+
+?- s.
+Place:
+museum
+
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: reception
+e:
+s: westbourne_road
+w:
+true.
+
+?- s.
+Place:
+westbourne_road
+
+You see Westbourne Road is a winding street that
+leads to a dense forest on the outskirts of the city.
+It's a peaceful drive, with few buildings and little traffic along the way.
+Visitors can find an antique museum showcasing
+Egyptian antiquities on this road,
+offering a unique and fascinating glimpse into the ancient world.
+
+People:
+tourists
+playing_popular_kid
+playing_quiet_kid
+playing_athletic_kid
+
+
+Items:
+stick_cane
+
+
+Directions:
+n: museum
+e: forest
+s:
+w: city_square
+true.
+
+?- w.
+Place:
+city_square
+
+You see City Square is a bustling, energetic hub located in the heart of the city.
+It's surrounded by tall skyscrapers,
+historical buildings, and busy streets.
+The square is home to the police station, city hall,
+and other important government buildings,
+making it a central location for civic activities and public events.
+
+People:
+politician
+
+
+Items:
+broken_glass
+yesterdays_newspaper
+
+
+Directions:
+n:
+e: westbourne_road
+s: police_station
+w: baker_street
+true.
+
+?- w.
+Place:
+baker_street
+
+You see Baker Street is a quaint, off-the-beaten-track street nestled between two hills.
+It's lined with charming, old-fashioned buildings,
+including your office and house, as well as a cozy cafe and a vintage bookstore.
+The street exudes a sense of peaceful seclusion,
+making it the perfect spot for the detective
+to solve cases away from the bustle of the city.
+
+People:
+book_worms
+
+
+Items:
+flyer
+litter
+
+
+Directions:
+n: detectives_office
+e: city_square
+s: detectives_house
+w:
+true.
+
+?- s.
+Place:
+detectives_house
+
+Your house has a cozy living room with a fireplace and vintage posters,
+and a fully-equipped modern kitchen with a sleek fridge. Outside, the mailbox
+stands by the front door, waiting for the detective's daily dose of letters,
+packages, and clues.
+
+People:
+dorothy
+
+
+Items:
+fork
+spoon
+tea_spoon
+cup
+screwdriver
+plate
+bowl
+dvd
+
+
+Directions:
+n: baker_street
+e: mailbox
+s:
+w: fridge
+true.
+
+?- inventory.
+Items 5/5:
+powder
+hammer
+key_card
+old_key
+wobbly_shovel
+
+true.
+
+?- drop(key_card).
+OK.
+true.
+
+?- take(screwdriver).
+OK.
+true.
+
+?- use(wobbly_shovel, screwdriver).
+You made shovel from wobbly_shovel using screwdriver!
+true.
+
+?- inventory.
+Items 5/5:
+powder
+hammer
+old_key
+screwdriver
+shovel
+
+true.
+
+?- n.
+Place:
+baker_street
+
+You see Baker Street is a quaint, off-the-beaten-track street nestled between two hills.
+It's lined with charming, old-fashioned buildings,
+including your office and house, as well as a cozy cafe and a vintage bookstore.
+The street exudes a sense of peaceful seclusion,
+making it the perfect spot for the detective
+to solve cases away from the bustle of the city.
+
+People:
+book_worms
+
+
+Items:
+flyer
+litter
+
+
+Directions:
+n: detectives_office
+e: city_square
+s: detectives_house
+w:
+true.
+
+?- e.
+Place:
+city_square
+
+You see City Square is a bustling, energetic hub located in the heart of the city.
+It's surrounded by tall skyscrapers,
+historical buildings, and busy streets.
+The square is home to the police station, city hall,
+and other important government buildings,
+making it a central location for civic activities and public events.
+
+People:
+politician
+
+
+Items:
+broken_glass
+yesterdays_newspaper
+
+
+Directions:
+n:
+e: westbourne_road
+s: police_station
+w: baker_street
+true.
+
+?- e.
+Place:
+westbourne_road
+
+You see Westbourne Road is a winding street that
+leads to a dense forest on the outskirts of the city.
+It's a peaceful drive, with few buildings and little traffic along the way.
+Visitors can find an antique museum showcasing
+Egyptian antiquities on this road,
+offering a unique and fascinating glimpse into the ancient world.
+
+People:
+tourists
+playing_popular_kid
+playing_quiet_kid
+playing_athletic_kid
+
+
+Items:
+stick_cane
+
+
+Directions:
+n: museum
+e: forest
+s:
+w: city_square
+true.
+
+?- e.
+Place:
+forest
+
+You are in The forest located on the outskirts of the town
+where the hut is located is dense and lush,
+with tall trees reaching towards the sky.
+The forest floor is covered in a thick layer of moss and fallen leaves,
+providing a soft cushion for every step.
+The air is filled with the sweet scent of pine
+and the sound of birds chirping in the trees.
+
+People:
+old_freak
+
+
+Items:
+stone
+stick
+red_leaves
+green_leaf
+frog
+four_leaf_clover
+
+
+Directions:
+n: forest
+e: forest_path
+s: forest
+w: westbourne_road
+true.
+
+?- e.
+Place:
+forest_path
+
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: forest
+e: forest_glade
+s: forest
+w: forest
+true.
+
+?- e.
+Place:
+forest_glade
+
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: toms_house
+e: forest
+s: old_tree
+w: forest_path
+true.
+
+?- s.
+Place:
+old_tree
+
+You see ancient and massive tree,
+Its gnarled roots stretch out from the base, and the bark is rough and textured
+Its branches stretch high into the sky, providing shelter and shade for the creatures that call the forest home.
+
+You are alone here!
+
+There is nothing interesting to pick up here
+
+Directions:
+n: forest_glade
+e: digging_marks - you need shovel
+s: forest
+w: forest
+true.
+
+?- e.
+You successfully entered digging_marks with shovel!
+Place:
+digging_marks
+
+You see the freshly dug hole that is already filled,
+the soil is still loose and there are no footprints around the area, 
+suddenly something must have buried here
+
+You are alone here!
+
+Items:
+missing_statue
+red_jacket
+white_gloves
+
+
+Directions:
+n: forest
+e: forest
+s: forest
+w: old_tree - you need shovel
+true.
+
+?- inventory.
+Items 5/5:
+powder
+hammer
+old_key
+screwdriver
+shovel
+
+true.
+
+?- drop(hammer).
+OK.
+true.
+
+?- drop(old_key).
+OK.
+true.
+
+?- drop(screwdriver).
+OK.
+true.
+
+?- take(missing_statue).
+OK.
+true.
+
+?- inspect(missing_statue).
+TODO: GIT? Golden statue from the museum! but why did someone bury her here? It's a good thing I found it, but maybe there are fingerprints on it that will help me find the burglars, I'll have to check it out.
+true.
+
+?- take(red_jacket).
+OK.
+true.
+
+?- inspect(red_jacket).
+TODO: GIT? Red torn jacket, wasn't the burglar wearing one during the burglary? I wonder if there's any fingerprints on it, I'll have to check it out
+true.
+
+?- take(white_gloves).
+OK.
+true.
+
+?- inspect(white_gloves).
+TODO: GIT? About the white gloves, they must be the same gloves the burglar was wearing on the win, I need to check for fingerprints.
+true.
+
+?- n.
+Place:
+forest
+
+You are in The forest located on the outskirts of the town
+where the hut is located is dense and lush,
+with tall trees reaching towards the sky.
+The forest floor is covered in a thick layer of moss and fallen leaves,
+providing a soft cushion for every step.
+The air is filled with the sweet scent of pine
+and the sound of birds chirping in the trees.
+
+People:
+old_freak
+
+
+Items:
+stone
+stick
+red_leaves
+green_leaf
+frog
+four_leaf_clover
+
+
+Directions:
+n: forest
+e: forest_path
+s: forest
+w: westbourne_road
+true.
+
+?- w.
+Place:
+westbourne_road
+
+You see Westbourne Road is a winding street that
+leads to a dense forest on the outskirts of the city.
+It's a peaceful drive, with few buildings and little traffic along the way.
+Visitors can find an antique museum showcasing
+Egyptian antiquities on this road,
+offering a unique and fascinating glimpse into the ancient world.
+
+People:
+tourists
+playing_popular_kid
+playing_quiet_kid
+playing_athletic_kid
+
+
+Items:
+stick_cane
+
+
+Directions:
+n: museum
+e: forest
+s:
+w: city_square
+true.
+
+?- w.
+Place:
+city_square
+
+You see City Square is a bustling, energetic hub located in the heart of the city.
+It's surrounded by tall skyscrapers,
+historical buildings, and busy streets.
+The square is home to the police station, city hall,
+and other important government buildings,
+making it a central location for civic activities and public events.
+
+People:
+politician
+
+
+Items:
+broken_glass
+yesterdays_newspaper
+
+
+Directions:
+n:
+e: westbourne_road
+s: police_station
+w: baker_street
+true.
+
+?- w.
+Place:
+baker_street
+
+You see Baker Street is a quaint, off-the-beaten-track street nestled between two hills.
+It's lined with charming, old-fashioned buildings,
+including your office and house, as well as a cozy cafe and a vintage bookstore.
+The street exudes a sense of peaceful seclusion,
+making it the perfect spot for the detective
+to solve cases away from the bustle of the city.
+
+People:
+book_worms
+
+
+Items:
+flyer
+litter
+
+
+Directions:
+n: detectives_office
+e: city_square
+s: detectives_house
+w:
+true.
+
+?- n.
+Place:
+detectives_office
+
+Your office is a compact yet efficient space, with a sturdy wooden desk
+positioned against one wall. A state-of-the-art fingerprint detector
+is mounted on another wall nearby, which the detective uses
+to analyze crime scenes and identify suspects. The walls are lined
+with bookshelves filled with forensic manuals and reference materials,
+and a large window offers a panoramic view of the city's skyline.
+
+People:
+new_client
+
+
+Items:
+old_magazine
+thing
+
+
+Directions:
+n: desk
+e: fingerprints_detector - you need powder
+s: baker_street
+w:
+true.
+
+?- e.
+You successfully entered fingerprints_detector with powder!
+Place:
+fingerprints_detector
+
+Your fingerprint detector is a state-of-the-art device mounted on the wall
+of the office. It's used to collect and analyze fingerprints found at crime
+scenes, helping the detective to identify suspects and solve cases.
+
+You are alone here!
+
+Items:
+metal_debris
+shattered_glass
+
+
+Directions:
+n:
+e:
+s:
+w: detectives_office - you need powder
+true.
+
+?- scan(missing_statue).
+Detector found guard_mike's fingerprints on missing_statue!
+true.
+
+?- scan(red_jacket).
+Detector found janitor_tom's fingerprints on red_jacket!
+true.
+
+?- scan(white_gloves).
+Detector found janitor_tom's fingerprints on white_gloves!
+true.
+
+?- w.
+You successfully entered detectives_office with powder!
+Place:
+detectives_office
+
+Your office is a compact yet efficient space, with a sturdy wooden desk
+positioned against one wall. A state-of-the-art fingerprint detector
+is mounted on another wall nearby, which the detective uses
+to analyze crime scenes and identify suspects. The walls are lined
+with bookshelves filled with forensic manuals and reference materials,
+and a large window offers a panoramic view of the city's skyline.
+
+People:
+new_client
+
+
+Items:
+old_magazine
+thing
+
+
+Directions:
+n: desk
+e: fingerprints_detector - you need powder
+s: baker_street
+w:
+true.
+
+?- s.
+Place:
+baker_street
+
+You see Baker Street is a quaint, off-the-beaten-track street nestled between two hills.
+It's lined with charming, old-fashioned buildings,
+including your office and house, as well as a cozy cafe and a vintage bookstore.
+The street exudes a sense of peaceful seclusion,
+making it the perfect spot for the detective
+to solve cases away from the bustle of the city.
+
+People:
+book_worms
+
+
+Items:
+flyer
+litter
+
+
+Directions:
+n: detectives_office
+e: city_square
+s: detectives_house
+w:
+true.
+
+?- e.
+Place:
+city_square
+
+You see City Square is a bustling, energetic hub located in the heart of the city.
+It's surrounded by tall skyscrapers,
+historical buildings, and busy streets.
+The square is home to the police station, city hall,
+and other important government buildings,
+making it a central location for civic activities and public events.
+
+People:
+politician
+
+
+Items:
+broken_glass
+yesterdays_newspaper
+
+
+Directions:
+n:
+e: westbourne_road
+s: police_station
+w: baker_street
+true.
+
+?- e.
+Place:
+westbourne_road
+
+You see Westbourne Road is a winding street that
+leads to a dense forest on the outskirts of the city.
+It's a peaceful drive, with few buildings and little traffic along the way.
+Visitors can find an antique museum showcasing
+Egyptian antiquities on this road,
+offering a unique and fascinating glimpse into the ancient world.
+
+People:
+tourists
+playing_popular_kid
+playing_quiet_kid
+playing_athletic_kid
+
+
+Items:
+stick_cane
+
+
+Directions:
+n: museum
+e: forest
+s:
+w: city_square
+true.
+
+?- n.
+Place:
+museum
+
+
+People:
+museum_director_john
+
+
+There is nothing interesting to pick up here
+
+Directions:
+n: reception
+e:
+s: westbourne_road
+w:
+true.
+
+?- talk(museum_director_john).
+You can ask museum_director_john about:
+hello
+missing_statue
+true.
+
+?- ask(museum_director_john, hello).
+Hi! I'm museum_director_john!
+true.
+
+?- ask(museum_director_john, missing_statue).
+Hello, we are very grateful to you for helping us solve the mystery of the missing golden statue. Not only did you find the criminals, but you also found the missing artifact, thanks to you, visitors will still be able to admire it after we reopen the Egyptian hall. The thieves, unfortunately, Mike and Tom managed to escape, but I'm not worried because thanks to you, they are wanted by the police and they will be caught.
+OK.
+
+You WON! The game is over!
+Please enter the "halt." command.
+true.
+
+?- halt.
