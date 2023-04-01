@@ -1,11 +1,11 @@
-:- multifile 
-    holding/1, 
-    items_number/1, 
-    person_at/2, 
-    subject/3, 
-    drop/1, 
-    conversation_result/2, 
-    asked_mike_about_criminal_record/0, 
+:- multifile
+    holding/1,
+    items_number/1,
+    person_at/2,
+    subject/3,
+    drop/1,
+    conversation_result/2,
+    asked_mike_about_criminal_record/0,
     gossiped_with_renovator_theodore/0.
 
 % Info
@@ -52,22 +52,22 @@ person_at(politician, city_square).
 subject(politician, money, 'We are working to make our future brighter!').
 
 person_at(janitor_tom, city_square) :- asked_mike_about_criminal_record, gossiped_with_renovator_theodore.
-subject(janitor_tom, sick, 'TODO: *Caugh* *Caugh* - przyszedł kupić leki - (wydaje się udawać chorobę)').
-subject(janitor_tom, alibi, 'TODO: był w swoim domu w lesie - jego żona może potwierdzić - pojawia się jego dom w lesie').
+subject(janitor_tom, sick, '*Caugh* *Caugh* Good morning, I''d like some meds, because recently... uh... I''ve had a very... uh... cold, I''ve caught a cold and... I''m very sick.').
+subject(janitor_tom, alibi, 'I? yyyy .... I was at ... home, yes I was at home ... why are you looking at me so suspiciously? all day ... yy *Caugh* *Caugh* ... I spent with my wife, yes I spent all day with my wife ... ask her *Caugh* *Caugh*').
 conversation_result(janitor_tom, alibi) :- retractall(janitors_house_available), assert(janitors_house_available).
 
 person_at(tourists, westbourne_road).
 subject(tourists, missing_artifact, 'Nie mówię po angielsku.\nNie rozumiem co do mnie mówisz!').
 
 person_at(playing_popular_kid, westbourne_road).
-subject(playing_popular_kid, something_suspicious, 'TODO: niczego nie widział').
+subject(playing_popular_kid, something_suspicious, 'I? ha, you hear it guys, he''s asking me about some shady things. I haven''t seen anything, nor do I do anything suspicious.').
 
 person_at(playing_quiet_kid, westbourne_road).
-subject(playing_quiet_kid, something_suspicious, 'TODO: ktoś coś zakopał koło starego drzewa w lesie (pojawia się stare drzewo)').
+subject(playing_quiet_kid, something_suspicious, 'Who are you? I don''t talk to strangers ... I saw someone bury something in the woods near an old tree').
 conversation_result(playing_quiet_kid, something_suspicious) :- retractall(old_tree_available), assert(old_tree_available).
 
 person_at(playing_athletic_kid, westbourne_road).
-subject(playing_athletic_kid, something_suspicious, 'TODO: niczego nie widział').
+subject(playing_athletic_kid, something_suspicious, 'You have a strange coat hahaha, you look like an old grandpa. ... Pass it to me! ... I didn''t see anything ... Who are you passing to !? ... I''m going to play, I don''t have time').
 
 person_at(old_freak, forest).
 subject(old_freak, age, 'I''am 104 years old!').

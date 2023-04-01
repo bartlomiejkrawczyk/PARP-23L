@@ -92,15 +92,15 @@ info(renovated_exhibit) :-
 % People
 
 person_at(attendant_julie, reception).
-subject(attendant_julie, missing_artifact, 'TODO: ona odpowiada, że ukradziono go z hali egipskiej').
-subject(attendant_julie, alibi, 'TODO: byłam w domu z mężem - jest on policjantem i może potwierdzić').
-subject(attendant_julie, potental_witnesses, 'TODO: kasjerka - która zamykała wtedy sklep - po lewo w sklepie z pamiątkam, renowator - który siedział dalej nad renowacją, na końcu sal').
-subject(attendant_julie, gossip, 'TODO').
+subject(attendant_julie, missing_artifact, 'The burglary happened a few days ago, the burglars broke into the Egyptian hall, they stole the artifact from there.').
+subject(attendant_julie, alibi, 'As for me, I couldn''t do it, I spent the whole day with my husband, he is a police officer, you can talk to him, you will find him at the police station.').
+subject(attendant_julie, potental_witnesses, 'You can try to talk to the cashier who is on the left in the gift shop, she must have been in the museum at the time, she must have been closing the shop. You can also try to interrogate the renovator who is at the end of the hall and is still renovating the hall.').
+subject(attendant_julie, gossip, 'I would bet that the restorer must have stolen the statue, he seemed suspicious to me from the beginning, only he is constantly hanging around monuments.').
 subject(attendant_julie, janitor, 'He called sick and haven''t shown in work for a while.'). % TODO
 subject(attendant_julie, closed_exhibit, 'Here you go! You can take this key to the renovated exhibit!') :-
     seen_closed_exhibit.
 
-conversation_result(attendant_julie, closed_exhibit) :- 
+conversation_result(attendant_julie, closed_exhibit) :-
     assert(at(key_to_the_exhibit, reception)),
     retractall(subject(attendant_julie, closed_exhibit, _)),
     assert(subject(attendant_julie, closed_exhibit, 'I have already given you the key to the exibit!')),
@@ -108,65 +108,66 @@ conversation_result(attendant_julie, closed_exhibit) :-
 
 person_at(guard_mike, cctv_room) :- talked_with_anne.
 
-subject(guard_mike, alibi, 'TODO: cctv room - nagranie jak siedzi przed ekranem i kilka razy wychodzi do toalety - akurat był w toalecie (damskiej) gdy ukradli').
-conversation_result(guard_mike, alibi) :- 
-    retractall(talked_with_mike), 
+subject(guard_mike, alibi, '
+I am clean as you can see on camera number 1, here I am sitting in front of the camera screen in the camera room. And if there are burglars, you can see on the fourth camera that I go into the women''s toilet.').
+conversation_result(guard_mike, alibi) :-
+    retractall(talked_with_mike),
     assert(talked_with_mike).
 
-subject(guard_mike, key_card, 'TODO: odpowiada, że każdy z pracowników ma taką kartę').
+subject(guard_mike, key_card, 'Each of the museum employees has such a card, it is used to move around the museum').
 
-subject(guard_mike, artifact_dvd, 'TODO: widać tylko złodzieja w czerwonej kurtce + rekawiczkach') :-
+subject(guard_mike, artifact_dvd, 'Hmm ... on camera number 10 there is a man in a red jacket, black trousers and a black hat, doing something in the Egyptian hall, also wearing white gloves.') :-
     asked_about_fingerprints.
-subject(guard_mike, artifact_dvd, 'TODO: na początku widać tylko złodzieja w czerwonej kurtce') :-
+subject(guard_mike, artifact_dvd, 'Oh, look at camera number 9 here for a moment there is a man in a red jacket') :-
     \+ asked_about_fingerprints.
 
-subject(guard_mike, anna_dvd, 'TODO: potwierdza jej alibi').
-subject(guard_mike, womans_toilet, 'TODO: w męskiej jest brudno, więc po godzinach chodzi do damskiej').
-subject(guard_mike, criminal_record, 'TODO: tłumaczy się, że ma nie podważalne alibi, a teraz jest zmienionym człowiekiem') :-
+subject(guard_mike, anna_dvd, 'Look at camera number 20, our cashier Anna was standing behind the counter at the time, looking through some leaflet').
+subject(guard_mike, womans_toilet, 'Have you ever been to the men''s toilet at our museum? they are terrible, I hate going there, that''s why I always go to the women''s toilet.').
+subject(guard_mike, criminal_record, 'These are some slander and fabricated evidence, and besides, even if it were me, I haven''t been dealing with such things for twelve years, I''m a different person, I''ve changed, really if it were me, I certainly wouldn''t do such things things, I have a family of children to feed.') :-
     holding(mikes_criminal_record).
 
-conversation_result(guard_mike, criminal_record) :- 
+conversation_result(guard_mike, criminal_record) :-
     retractall(asked_mike_about_criminal_record),
     assert(asked_mike_about_criminal_record).
 
 person_at(cashier_anne, gift_shop).
 subject(cashier_anne, missing_artifact, 'TODO').
-subject(cashier_anne, artifact_replica, 'TODO: mozesz kupic').
-subject(cashier_anne, gossip, 'TODO').
+subject(cashier_anne, artifact_replica, 'How can I help you? Maybe you want to buy a gold statue artifact replica?').
+subject(cashier_anne, gossip, 'Did you talk to the guide, maybe he stole it when no one was looking, he often walks around with unaware kids, he seems strange').
 
-subject(cashier_anne, alibi, 'TODO: widać ją na kamerze - możesz sprawdzić czy w tym czasie było ją widać ').
-conversation_result(cashier_anne, alibi) :- 
-    retractall(talked_with_anne), 
+subject(cashier_anne, alibi, 'There are cameras all over the store, you can check them and you''ll find out I was behind the counter at the time.').
+conversation_result(cashier_anne, alibi) :-
+    retractall(talked_with_anne),
     assert(talked_with_anne).
 
 person_at(guide_mary, roman_exhibit_hall).
-subject(guide_mary, tour, 'TODO').
+subject(guide_mary, tour, 'To the right we can see a large statue of Julius Ceraz, from the Battle of Alesia, this battle was fought between the Roman army besieging the Gallic city of Alesia and the forces of the rebel Gauls. It took place in 52 BCE. during the conquest of Gaul by Gaius Julius Caesar. The actions of Roman forces near Alesia are the largest siege operation in the history of ancient wars.').
 subject(guide_mary, missing_artifact, 'TODO').
-subject(guide_mary, alibi, 'TODO').
-subject(guide_mary, gossip, 'TODO').
+subject(guide_mary, alibi, 'I not only work at the museum here, I have many other activities, that day I was anticipating a school trip, we were in the nearby park at the time').
+subject(guide_mary, gossip, 'I don''t know anything, but they say in the city that he''s an orchard, after all, he always closes the whole museum.').
 
 person_at(renovator_theodore, renovated_exhibit).
-subject(renovator_theodore, admire, 'TODO: podziwiasz prace').
+subject(renovator_theodore, admire, 'I''m glad there are people like you, I hope you get things sorted out as soon as possible.').
 subject(renovator_theodore, missing_artifact, 'TODO').
-subject(renovator_theodore, alibi, 'TODO: siedział w closed_exhibit cały czas, nie ma tu kamer - nikt tego nie potwierdzi').
+subject(renovator_theodore, alibi, 'That day I had a lot of work, I was very busy and I spent the whole day in the renovated hall, you will surely find someone who will confirm it.').
 
-subject(renovator_theodore, gossip, 'TODO: od kilku dni nie ma woźnego (he called in sick) i nie ma kto posprzątać zniszczonego wokół wystawy').
-conversation_result(renovator_theodore, gossip) :- 
-    retractall(gossiped_with_renovator_theodore), 
+subject(renovator_theodore, gossip, 'A terrible mess is still in the Egyptian hall, there is no one to clean it up, the janitor just after the burglary says that he got sick.').
+conversation_result(renovator_theodore, gossip) :-
+    retractall(gossiped_with_renovator_theodore),
     assert(gossiped_with_renovator_theodore).
 
-subject(renovator_theodore, missing_tool, 'TODO: czy coś ci nie zniknęło ostatnio - tak zniknęło (hammer)') :-
+subject(renovator_theodore, missing_tool, 'Wait, I''ll check right now, I don''t think so ... And that''s your fate, I don''t see my hammer anywhere, I must have left it somewhere.') :-
     hammer_scanned.
 
-conversation_result(renovator_theodore, missing_tool) :- 
-        retractall(asked_about_hammer), 
+conversation_result(renovator_theodore, missing_tool) :-
+        retractall(asked_about_hammer),
         assert(asked_about_hammer).
 
-subject(renovator_theodore, fingerprints, 'TODO: tłumaczy się, że to jest narzędzie które zgubił i złodziej musiał mieć rękawiczki - na płycie dvd która nagrała złodzieja teraz widnieje kurtka czerwona + białe rękawiczki xD') :-
+subject(renovator_theodore, fingerprints, 'Well, if my fingerprints are normal, unless it''s my tool? Then the thief must have had gloves, I haven''t used it in days') :-
     asked_about_hammer.
 
-conversation_result(renovator_theodore, fingerprints) :- 
-    retractall(asked_about_fingerprints), 
+conversation_result(renovator_theodore, fingerprints) :-
+    retractall(asked_about_fingerprints),
     assert(asked_about_fingerprints).
 
 
@@ -175,7 +176,7 @@ person_at(museum_director_john, museum) :-
     red_jacket_scanned,
     white_gloves_scanned.
 
-subject(museum_director_john, missing_statue, 'TODO: congratulate on finding statue and say that mike and tom escaped and thanks to you are looked by police').
+subject(museum_director_john, missing_statue, 'Hello, we are very grateful to you for helping us solve the mystery of the missing golden statue. Not only did you find the criminals, but you also found the missing artifact, thanks to you, visitors will still be able to admire it after we reopen the Egyptian hall. The thieves, unfortunately, Mike and Tom managed to escape, but I''m not worried because thanks to you, they are wanted by the police and they will be caught.').
 conversation_result(museum_director_john, missing_statue) :-
     drop(missing_statue),
     retractall(at(missing_statue, _)),
@@ -187,8 +188,8 @@ conversation_result(museum_director_john, missing_statue) :-
 
 at(wobbly_shovel, janitors_closet).
 produce(wobbly_shovel, screwdriver, shovel).
-info(wobbly_shovel) :- write('TODO: nic nie uda się wykopać łopatą w tym stanie, muszę ją wzmocnić').
-info(shovel) :- write('TODO: po przykręceniu luźnej śrubki łopata jest w dobrym stanie').
+info(wobbly_shovel) :- write('This shovel is too weak, I''m about to break it, I need to find something to make it stronger.').
+info(shovel) :- write('Now the shovel is suitable for work, it is certainly much stronger, maybe now it will be possible to dig something with it').
 
 at(shattered_glass, display_case).
 at(metal_debris, display_case).
@@ -200,8 +201,8 @@ at(red_piece_of_fabric, garden).
 at(dvd, cctv_room) :- talked_with_anne.
 info(dvd) :- write('You review the CCTV footage from the museum''s security cameras, but it doesn''t\nprovide any clear visuals of the thief''s face. However, you do notice that\nthe thief was wearing a distinctive red jacket.').
 
-info(hammer) :- write('TODO: młotek musiał być użyty do zniszczenia szkła ochronnego, mogę przetestować go w poszukiwaniu śladów palców').
-fingerprints(hammer, renovator_theodore):- 
+info(hammer) :- write('The burglars must have broken the protective glass with this hammer, I have to take it and see if there are any fingerprints on it').
+fingerprints(hammer, renovator_theodore):-
     retractall(hammer_scanned),
     assert(hammer_scanned).
 
