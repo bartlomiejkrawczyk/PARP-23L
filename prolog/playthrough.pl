@@ -365,4 +365,414 @@ show_result :- ansi_format([bold, fg(white)], 'true.\n', []).
 :- show('s.').
 ?- s, show_result.
 
+:- show('talk(policeman).').
+?- talk(policeman), show_result.
+
+:- show('ask(policeman, hello).').
+?- ask(policeman, hello), show_result.
+:- show('ask(policeman, help).').
+?- ask(policeman, help), show_result.
+
+:- show('w.').
+?- w, show_result.
+
+:- show('talk(scary_prisoner).').
+?- talk(scary_prisoner), show_result.
+
+:- show('ask(scary_prisoner, hello).').
+?- ask(scary_prisoner, hello), show_result.
+:- show('ask(scary_prisoner, reason).').
+?- ask(scary_prisoner, reason), show_result.
+
+:- show('take(makeshift_knife).').
+?- take(makeshift_knife), show_result.
+
+:- show('inspect(makeshift_knife).').
+?- inspect(makeshift_knife), show_result.
+
+:- show('look_around.').
+?- look_around, show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('talk(sheriff).').
+?- talk(sheriff), show_result.
+
+:- show('ask(sheriff, hello).').
+?- ask(sheriff, hello), show_result.
+:- show('ask(sheriff, case).').
+?- ask(sheriff, case), show_result.
+:- show('ask(sheriff, employees_criminal_record).').
+?- ask(sheriff, employees_criminal_record), show_result.
+
+:- show('drop(makeshift_knife).').
+?- drop(makeshift_knife), show_result.
+
+:- show('w.').
+?- w, show_result.
+
+:- show('n.').
+?- n, show_result.
+
+:- show('w.').
+?- w, show_result.
+
+:- show('s.').
+?- s, show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('take(letter).').
+?- take(letter), show_result.
+
+:- show('inspect(letter).').
+?- inspect(letter), show_result.
+
+:- show('instructions.').
+?- instructions, show_result.
+
+:- show('w.').
+?- w, show_result.
+
+:- show('take(knife).').
+?- take(knife), show_result.
+
+:- show('inventory.').
+?- inventory, show_result.
+
+:- show('drop(dvd).').
+?- drop(dvd), show_result.
+
+:- show('take(knife).').
+?- take(knife), show_result.
+
+:- show('use(letter, knife).').
+?- use(letter, knife), show_result.
+
+:- show('inventory.').
+?- inventory, show_result.
+
+:- show('inspect(mikes_criminal_record).').
+?- inspect(mikes_criminal_record), show_result.
+
+:- show('n.').
+?- n, show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('n.').
+?- n, show_result.
+
+:- show('n.').
+?- n, show_result.
+
+:- show('n.').
+?- n, show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('talk(guard_mike).').
+?- talk(guard_mike), show_result.
+
+:- show('ask(guard_mike, criminal_record).').
+?- ask(guard_mike, criminal_record), show_result.
+
+:- show('w.').
+?- w, show_result.
+
+:- show('s.').
+?- s, show_result.
+
+:- show('s.').
+?- s, show_result.
+
+:- show('s.').
+?- s, show_result.
+
+:- show('w.').
+?- w, show_result.
+
+:- show('talk(janitor_tom).').
+?- talk(janitor_tom), show_result.
+
+:- show('ask(janitor_tom, hello).').
+?- ask(janitor_tom, hello), show_result.
+:- show('ask(janitor_tom, sick).').
+?- ask(janitor_tom, sick), show_result.
+:- show('ask(janitor_tom, alibi).').
+?- ask(janitor_tom, alibi), show_result.
+
+:- show('talk(politician).').
+?- talk(politician), show_result.
+
+:- show('ask(politician, hello).').
+?- ask(politician, hello), show_result.
+:- show('ask(politician, money).').
+?- ask(politician, money), show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('talk(tourists).').
+?- talk(tourists), show_result.
+
+:- show('ask(tourists, missing_artifact).').
+?- ask(tourists, missing_artifact), show_result.
+
+:- show('talk(playing_popular_kid).').
+?- talk(playing_popular_kid), show_result.
+
+:- show('ask(playing_popular_kid, hello).').
+?- ask(playing_popular_kid, hello), show_result.
+:- show('ask(playing_popular_kid, something_suspicious).').
+?- ask(playing_popular_kid, something_suspicious), show_result.
+
+:- show('talk(playing_quiet_kid).').
+?- talk(playing_quiet_kid), show_result.
+
+:- show('ask(playing_quiet_kid, hello).').
+?- ask(playing_quiet_kid, hello), show_result.
+:- show('ask(playing_quiet_kid, something_suspicious).').
+?- ask(playing_quiet_kid, something_suspicious), show_result.
+
+:- show('talk(playing_athletic_kid).').
+?- talk(playing_athletic_kid), show_result.
+
+:- show('ask(playing_athletic_kid, hello).').
+?- ask(playing_athletic_kid, hello), show_result.
+:- show('ask(playing_athletic_kid, something_suspicious).').
+?- ask(playing_athletic_kid, something_suspicious), show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('talk(old_freak).').
+?- talk(old_freak), show_result.
+
+:- show('ask(old_freak, hello).').
+?- ask(old_freak, hello), show_result.
+:- show('ask(old_freak, age).').
+?- ask(old_freak, age), show_result.
+:- show('ask(old_freak, knowledge).').
+?- ask(old_freak, knowledge), show_result.
+:- show('ask(old_freak, food).').
+?- ask(old_freak, food), show_result.
+
+:- show('n.').
+?- n, show_result.
+
+:- show('s.').
+?- s, show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('s.').
+?- s, show_result.
+
+:- show('n.').
+?- n, show_result.
+
+:- show('n.').
+?- n, show_result.
+
+:- show('talk(judy).').
+?- talk(judy), show_result.
+
+:- show('ask(judy, hello).').
+?- ask(judy, hello), show_result.
+:- show('ask(judy, janitors_alibi).').
+?- ask(judy, janitors_alibi), show_result.
+
+:- show('take(old_key).').
+?- take(old_key), show_result.
+
+:- show('inventory.').
+?- inventory, show_result.
+
+:- show('drop(mikes_criminal_record).').
+?- drop(mikes_criminal_record), show_result.
+:- show('drop(knife).').
+?- drop(knife), show_result.
+
+:- show('take(old_key).').
+?- take(old_key), show_result.
+
+:- show('n.').
+?- n, show_result.
+
+:- show('w.').
+?- w, show_result.
+
+:- show('n.').
+?- n, show_result.
+
+:- show('n.').
+?- n, show_result.
+
+:- show('n.').
+?- n, show_result.
+
+:- show('w.').
+?- w, show_result.
+
+:- show('take(wobbly_shovel).').
+?- take(wobbly_shovel), show_result.
+
+:- show('inspect(wobbly_shovel).').
+?- inspect(wobbly_shovel), show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('s.').
+?- s, show_result.
+
+:- show('s.').
+?- s, show_result.
+
+:- show('s.').
+?- s, show_result.
+
+:- show('w.').
+?- w, show_result.
+
+:- show('w.').
+?- w, show_result.
+
+:- show('s.').
+?- s, show_result.
+
+:- show('inventory.').
+?- inventory, show_result.
+
+:- show('drop(key_card).').
+?- drop(key_card), show_result.
+
+:- show('take(screwdriver).').
+?- take(screwdriver), show_result.
+
+:- show('use(wobbly_shovel, screwdriver).').
+?- use(wobbly_shovel, screwdriver), show_result.
+
+:- show('inventory.').
+?- inventory, show_result.
+
+:- show('n.').
+?- n, show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('s.').
+?- s, show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('inventory.').
+?- inventory, show_result.
+
+:- show('drop(hammer).').
+?- drop(hammer), show_result.
+
+:- show('drop(old_key).').
+?- drop(old_key), show_result.
+
+:- show('drop(screwdriver).').
+?- drop(screwdriver), show_result.
+
+:- show('take(missing_statue).').
+?- take(missing_statue), show_result.
+:- show('inspect(missing_statue).').
+?- inspect(missing_statue), show_result.
+
+:- show('take(red_jacket).').
+?- take(red_jacket), show_result.
+:- show('inspect(red_jacket).').
+?- inspect(red_jacket), show_result.
+
+:- show('take(white_gloves).').
+?- take(white_gloves), show_result.
+:- show('inspect(white_gloves).').
+?- inspect(white_gloves), show_result.
+
+
+:- show('n.').
+?- n, show_result.
+
+:- show('w.').
+?- w, show_result.
+
+:- show('w.').
+?- w, show_result.
+
+:- show('w.').
+?- w, show_result.
+
+:- show('n.').
+?- n, show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('scan(missing_statue).').
+?- scan(missing_statue), show_result.
+
+:- show('scan(red_jacket).').
+?- scan(red_jacket), show_result.
+
+:- show('scan(white_gloves).').
+?- scan(white_gloves), show_result.
+
+:- show('w.').
+?- w, show_result.
+
+:- show('s.').
+?- s, show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('e.').
+?- e, show_result.
+
+:- show('n.').
+?- n, show_result.
+
+:- show('talk(museum_director_john).').
+?- talk(museum_director_john), show_result.
+
+:- show('ask(museum_director_john, hello).').
+?- ask(museum_director_john, hello), show_result.
+:- show('ask(museum_director_john, missing_statue).').
+?- ask(museum_director_john, missing_statue), show_result.
+
+:- show('halt.').
+:- halt.
 
