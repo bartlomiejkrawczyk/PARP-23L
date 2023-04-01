@@ -42,4 +42,4 @@ go(Direction) :-
     look_around.
 
 go(_) :-
-    write('You can''t go that way.').
+    write('You can''t go that way.\n').

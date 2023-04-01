@@ -31,7 +31,7 @@ You have solved the case! You arrest Tom and Mike and return the artifact to the
 3. Rozmawiasz z recepcjonistką Julią
     - na temat **hello** - Hi! I'm attendant_julie!
     - na temat **missing_artifact** - ona odpowiada, że ukradziono go z hali egipskiej
-    - na temat **potental_witnesses** - listuje pracowników, którzy pracowali w trakcie zdarzenia i gdzie ich znaleźć
+    - na temat **potential_witnesses** - listuje pracowników, którzy pracowali w trakcie zdarzenia i gdzie ich znaleźć
         1. kasjerka - która zamykała wtedy sklep - po lewo w sklepie z pamiątkami
         2. renowator - który siedział dalej nad renowacją, na końcu sali
     - na temat **alibi** - byłam w domu z mężem - jest on policjantem i może potwierdzić
