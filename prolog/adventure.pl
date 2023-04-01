@@ -24,7 +24,8 @@
         red_jacket_scanned/0,
         white_gloves_scanned/0,
         hammer_scanned/0,
-        can_finish/0.
+        can_finish/0,
+        person_at/2.
 
 :- 
     retractall(at(_, _)),
