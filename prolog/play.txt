@@ -735,7 +735,7 @@ To the right we can see a large statue of Julius Ceraz, from the Battle of Alesi
 true.
 
 ?- ask(guide_mary, missing_artifact).
-TODO
+Golden statue shows the god Amun first came into prominence at the beginning of the Middle Kingdom. From the New Kingdom onward, Amun was arguably the most important god in the Egyptian pantheon
 true.
 
 ?- ask(guide_mary, alibi).
@@ -849,7 +849,7 @@ Hi! I'm cashier_anne!
 true.
 
 ?- ask(cashier_anne, missing_artifact).
-TODO
+I liked this golden statue, customers of the souvenir shop were eager to buy its replica.
 true.
 
 ?- ask(cashier_anne, artifact_replica).
@@ -1393,7 +1393,7 @@ I'm glad there are people like you, I hope you get things sorted out as soon as 
 true.
 
 ?- ask(renovator_theodore, missing_artifact).
-TODO
+And there's always someone hanging around this statue, I'm not surprised that someone stole it.
 true.
 
 ?- ask(renovator_theodore, alibi).
@@ -2173,7 +2173,7 @@ OK.
 true.
 
 ?- inspect(letter).
-TODO: list od policji - muszę go otworzyć
+Police Station, Chief Tony Hank. Registered letter from the police, I need to find a knife to open it
 true.
 
 ?- instructions.
@@ -2266,7 +2266,7 @@ mikes_criminal_record
 true.
 
 ?- inspect(mikes_criminal_record).
-TODO
+Mike Black, was arrested 2 years ago for stealing two very expensive new bikes from a bike shop. He was fined $5,000 and sentenced to three months of community service.
 true.
 
 ?- n.
@@ -3516,7 +3516,7 @@ OK.
 true.
 
 ?- inspect(missing_statue).
-TODO: GIT? Golden statue from the museum! but why did someone bury her here? It's a good thing I found it, but maybe there are fingerprints on it that will help me find the burglars, I'll have to check it out.
+Golden statue from the museum! but why did someone bury her here? It's a good thing I found it, but maybe there are fingerprints on it that will help me find the burglars, I'll have to check it out.
 true.
 
 ?- take(red_jacket).
@@ -3524,7 +3524,7 @@ OK.
 true.
 
 ?- inspect(red_jacket).
-TODO: GIT? Red torn jacket, wasn't the burglar wearing one during the burglary? I wonder if there's any fingerprints on it, I'll have to check it out
+Red torn jacket, wasn't the burglar wearing one during the burglary? I wonder if there's any fingerprints on it, I'll have to check it out
 true.
 
 ?- take(white_gloves).
@@ -3532,7 +3532,7 @@ OK.
 true.
 
 ?- inspect(white_gloves).
-TODO: GIT? About the white gloves, they must be the same gloves the burglar was wearing on the win, I need to check for fingerprints.
+About the white gloves, they must be the same gloves the burglar was wearing on the win, I need to check for fingerprints.
 true.
 
 ?- n.
