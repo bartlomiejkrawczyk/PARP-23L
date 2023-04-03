@@ -30,22 +30,22 @@ at(cobweb, toms_house).
 
 at(old_key, toms_house).
 fingerprints(old_key, janitor_tom).
-info(old_key) :- write('TODO: This key leads to janitors closet').
+info(old_key) :- write('This old key leads to janitors closet, I should try to open that door').
 
 at(missing_statue, digging_marks).
-info(missing_statue) :- write('TODO: GIT? Golden statue from the museum! but why did someone bury her here? It''s a good thing I found it, but maybe there are fingerprints on it that will help me find the burglars, I''ll have to check it out.').
+info(missing_statue) :- write('Golden statue from the museum! but why did someone bury her here? It''s a good thing I found it, but maybe there are fingerprints on it that will help me find the burglars, I''ll have to check it out.').
 fingerprints(missing_statue, guard_mike) :-
     retractall(statue_scanned),
     assert(statue_scanned).
 
 at(red_jacket, digging_marks).
-info(red_jacket) :- write('TODO: GIT? Red torn jacket, wasn''t the burglar wearing one during the burglary? I wonder if there''s any fingerprints on it, I''ll have to check it out').
+info(red_jacket) :- write('Red torn jacket, wasn''t the burglar wearing one during the burglary? I wonder if there''s any fingerprints on it, I''ll have to check it out').
 fingerprints(red_jacket, janitor_tom) :-
     retractall(red_jacket_scanned),
     assert(red_jacket_scanned).
 
 at(white_gloves, digging_marks).
-info(white_gloves) :- write('TODO: GIT? About the white gloves, they must be the same gloves the burglar was wearing on the win, I need to check for fingerprints.').
+info(white_gloves) :- write('About the white gloves, they must be the same gloves the burglar was wearing on the win, I need to check for fingerprints.').
 fingerprints(white_gloves, janitor_tom) :-
     retractall(white_gloves_scanned),
     assert(white_gloves_scanned).

@@ -77,5 +77,5 @@ at(ketchup, fridge).
 
 at(letter, mailbox) :- asked_for_criminal_record, talked_with_mike.
 produce(letter, knife, mikes_criminal_record).
-info(letter) :- write('TODO: list od policji - muszę go otworzyć').
-info(mikes_criminal_record) :- write('TODO').
+info(letter) :- write('Police Station, Chief Tony Hank. Registered letter from the police, I need to find a knife to open it').
+info(mikes_criminal_record) :- write('Mike Black, was arrested 2 years ago for stealing two very expensive new bikes from a bike shop. He was fined $5,000 and sentenced to three months of community service.').

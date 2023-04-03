@@ -132,7 +132,7 @@ conversation_result(guard_mike, criminal_record) :-
     assert(asked_mike_about_criminal_record).
 
 person_at(cashier_anne, gift_shop).
-subject(cashier_anne, missing_artifact, 'TODO').
+subject(cashier_anne, missing_artifact, 'I liked this golden statue, customers of the souvenir shop were eager to buy its replica.').
 subject(cashier_anne, artifact_replica, 'How can I help you? Maybe you want to buy a gold statue artifact replica?').
 subject(cashier_anne, gossip, 'Did you talk to the guide, maybe he stole it when no one was looking, he often walks around with unaware kids, he seems strange').
 
@@ -143,13 +143,13 @@ conversation_result(cashier_anne, alibi) :-
 
 person_at(guide_mary, roman_exhibit_hall).
 subject(guide_mary, tour, 'To the right we can see a large statue of Julius Ceraz, from the Battle of Alesia, this battle was fought between the Roman army besieging the Gallic city of Alesia and the forces of the rebel Gauls. It took place in 52 BCE. during the conquest of Gaul by Gaius Julius Caesar. The actions of Roman forces near Alesia are the largest siege operation in the history of ancient wars.').
-subject(guide_mary, missing_artifact, 'TODO').
+subject(guide_mary, missing_artifact, 'Golden statue shows the god Amun first came into prominence at the beginning of the Middle Kingdom. From the New Kingdom onward, Amun was arguably the most important god in the Egyptian pantheon').
 subject(guide_mary, alibi, 'I not only work at the museum here, I have many other activities, that day I was anticipating a school trip, we were in the nearby park at the time').
 subject(guide_mary, gossip, 'I don''t know anything, but they say in the city that he''s an orchard, after all, he always closes the whole museum.').
 
 person_at(renovator_theodore, renovated_exhibit).
 subject(renovator_theodore, admire, 'I''m glad there are people like you, I hope you get things sorted out as soon as possible.').
-subject(renovator_theodore, missing_artifact, 'TODO').
+subject(renovator_theodore, missing_artifact, 'And there''s always someone hanging around this statue, I''m not surprised that someone stole it.').
 subject(renovator_theodore, alibi, 'That day I had a lot of work, I was very busy and I spent the whole day in the renovated hall, you will surely find someone who will confirm it.').
 
 subject(renovator_theodore, gossip, 'A terrible mess is still in the Egyptian hall, there is no one to clean it up, the janitor just after the burglary says that he got sick.').
