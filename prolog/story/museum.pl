@@ -97,7 +97,7 @@ subject(attendant_julie, alibi, 'As for me, I couldn''t do it, I spent the whole
 subject(attendant_julie, potential_witnesses, 'You can try to talk to the cashier who is on the left in the gift shop, she must have been in the museum at the time, she must have been closing the shop. You can also try to interrogate the renovator who is at the end of the hall and is still renovating the hall.').
 subject(attendant_julie, gossip, 'I would bet that the restorer must have stolen the statue, he seemed suspicious to me from the beginning, only he is constantly hanging around monuments.').
 subject(attendant_julie, janitor, 'He called sick and haven''t shown in work for a while.') :-
-    seen_closed_exhibit. % TODO - show after seen janitor
+    seen_closed_exhibit.
 subject(attendant_julie, closed_exhibit, 'Here you go! You can take this key to the renovated exhibit!') :-
     seen_closed_exhibit.
 
