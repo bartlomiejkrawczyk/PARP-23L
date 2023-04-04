@@ -1,4 +1,4 @@
-# Haskel
+# Haskell
 
 ## Problem
 
