@@ -89,6 +89,101 @@ To jest poprawne rozwiązanie, ale nie chce się kompilować `(!!)` dla zwykłej
   | otherwise = (!!) xs (y - 1)
 ```
 
+# Wykład 3
 
+**Zadanie 1.** Napisz wszystkie możliwe funkcje o typach:
+```haskell
+f :: a -> a
+f' :: (a,b) -> (b,a)
+```
 
+```haskell
+f x = x
+f' (x, y) = (y, x)
+```
 
+**Zadanie 2.** Napisz funkcję `any`, sprawdzającą czy na liście znajduje się element spełniający podany predykat:
+```haskell
+> any (=='0') "12304560"
+True
+```
+
+Rozwiązanie:
+```haskell
+any' f [] = False
+any' f (x : xs)
+  | f x = True
+  | otherwise = any' f xs
+```
+
+# Wykład 4
+
+**Zadanie 1.** Dla poniższego typu reprezentującego liczby naturalne:
+```hs
+data Nat = Zero | Succ Nat
+```
+napisz funkcję konwersji ze standardowej liczby całkowitej:
+```hs
+toNat :: Int -> Maybe Nat
+```
+która zwróci `Nothing` w przypadku liczby ujemnej
+
+Rozwiązanie:
+```hs
+data Nat = Zero | Succ Nat deriving (Show)
+
+toNat' :: Int -> Nat
+toNat' 0 = Zero
+toNat' x = Succ $ toNat' $ x - 1
+
+toNat :: Int -> Maybe Nat
+toNat 0 = Nothing
+toNat x
+  | x > 0 = Just $ toNat' x
+  | otherwise = Nothing
+```
+
+**Zadanie 2.** Dla poniższego typu reprezentującego drzewa:
+```hs
+data Tree a = Node a [Tree a]
+```
+napisz funkcję zwracającą ich głębokość
+
+```hs
+data Tree a = Node a [Tree a]
+
+t = Node 1 [Node 2 [], Node 3 [Node 4 [Node 5 [Node 6 [], Node 7 []]]]]
+
+depth (Node x []) = 1
+depth (Node x xs) = 1 + maximum (map depth xs)
+```
+
+**Zadanie 3.** Dla poniższego typu reprezentującego drzewa:
+```hs
+data Tree a = Empty | Node a (Tree a) (Tree a)
+```
+napisz funkcję zwracającą ich zwierciadlane odbicie (lewe i prawe poddrzewa są zamienione)
+
+```hs
+data Tree a = Empty | Node a (Tree a) (Tree a) deriving (Show)
+
+t = Node 1 (Node 2 Empty Empty) (Node 3 Empty (Node 4 Empty Empty))
+
+mirror Empty = Empty
+mirror (Node x l r) = Node x (mirror r) (mirror l)
+```
+
+**Zadanie 4.** Uzupełnij poniższą deklarację:
+```hs
+instance Eq a => Eq (Maybe a) where
+  ...
+```
+
+```hs
+data Maybe' a = Empty' | Just' a deriving (Show)
+
+instance (Eq a) => Eq (Maybe' a) where
+  (Just' a) == (Just' b) = a == b
+  Empty' == Empty' = True
+  _ == _ = False
+```
