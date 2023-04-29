@@ -7,7 +7,7 @@ import Story.House
 
 data State = State
   { finish :: Bool,
-    inventory :: [String],
+    inventory :: [Item],
     currentLocation :: String,
     locations :: [Location]
   }
