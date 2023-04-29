@@ -89,9 +89,7 @@ gameIteration state = do
       state <- applyCommand (talk person) state
       gameLoop state
     ["ask", person, subject] -> do
-      putStrLn person
-      putStrLn subject
-      -- TODO
+      state <- applyCommand (ask person subject) state
       gameLoop state
     ["look", "around"] -> do
       newState' <- listDirections state
