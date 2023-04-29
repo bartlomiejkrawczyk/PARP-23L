@@ -65,9 +65,8 @@ gameIteration state = do
       newState' <- applyCommand (dropObject object) state
       gameLoop newState'
     ["inspect", object] -> do
-      putStrLn object
-      -- TODO
-      gameLoop state
+      newState' <- applyCommand (inspectObject object) state
+      gameLoop newState'
     ["scan", object] -> do
       putStrLn object
       -- TODO

@@ -38,6 +38,17 @@ dropObject object state =
                 inventory = filter (\x -> name x /= object) $ inventory state
               }
 
+inspectObject :: String -> State -> Result
+inspectObject object state =
+  let location = retrieveLocation state
+      items' = filter (\x -> name x == object) $ inventory state
+   in if null items'
+        then failure ["You aren't holding it!"] state
+        else
+          success
+            (concatMap itemDescription items')
+            state
+
 listInventory :: State -> Result
 listInventory state =
   let location = retrieveLocation state
