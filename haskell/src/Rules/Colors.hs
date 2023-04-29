@@ -33,3 +33,5 @@ colorCyan' = "\ESC[96m"
 colorWhite = "\ESC[37m"
 
 colorWhite' = "\ESC[97m"
+
+applyColor color string = color ++ string ++ colorDefault
