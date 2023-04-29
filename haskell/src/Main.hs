@@ -71,10 +71,8 @@ gameIteration state = do
       newState' <- applyCommand (scanObject object) state
       gameLoop newState'
     ["use", item, tool] -> do
-      putStrLn item
-      putStrLn tool
-      -- TODO
-      gameLoop state
+      newState' <- applyCommand (useTool item tool) state
+      gameLoop newState'
     ("inventory" : _) -> do
       newState' <- applyCommand listInventory state
       gameLoop newState'
