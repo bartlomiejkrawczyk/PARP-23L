@@ -2,6 +2,7 @@ module Main where
 
 import Rules.Colors
 import Rules.Help
+import Rules.Inventory
 import Rules.Look
 import Rules.Movement
 import Rules.State
@@ -58,9 +59,8 @@ gameIteration state = do
       state <- look' state
       gameLoop state
     ["take", object] -> do
-      putStrLn object
-      -- TODO
-      gameLoop state
+      newState' <- applyCommand (takeObject object) state
+      gameLoop newState'
     ["drop", object] -> do
       putStrLn object
       -- TODO
@@ -79,9 +79,8 @@ gameIteration state = do
       -- TODO
       gameLoop state
     ("inventory" : _) -> do
-      putStrLn "Items:"
-      -- TODO
-      gameLoop state
+      newState' <- applyCommand listInventory state
+      gameLoop newState'
     ("people" : _) -> do
       newState' <- listPeople state
       gameLoop newState'

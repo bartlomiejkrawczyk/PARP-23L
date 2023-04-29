@@ -1,6 +1,6 @@
 module Story.House where
 
-import Rules.Inventory
+import Rules.Item
 import Rules.Location
 import Rules.Person
 

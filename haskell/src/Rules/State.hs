@@ -1,13 +1,13 @@
 module Rules.State where
 
-import Rules.Inventory
+import Rules.Item
 import Rules.Location
 import Story.City
 import Story.House
 
 data State = State
   { finish :: Bool,
-    inventory :: [Item],
+    inventory :: [String],
     currentLocation :: String,
     locations :: [Location]
   }

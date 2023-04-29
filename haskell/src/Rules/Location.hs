@@ -1,6 +1,6 @@
 module Rules.Location where
 
-import Rules.Inventory
+import Rules.Item
 import Rules.Person
 import Rules.Utility
 
