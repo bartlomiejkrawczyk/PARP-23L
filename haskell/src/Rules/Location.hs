@@ -6,11 +6,18 @@ import Rules.Utility
 
 data Direction = North | South | East | West deriving (Eq, Ord)
 
+data Path = Path String | LockedPath String String | InvalidPath deriving (Eq)
+
+instance Named Path where
+  name (Path a) = a
+  name (LockedPath a _) = a
+  name InvalidPath = ""
+
 data Paths = Paths
-  { north :: String,
-    south :: String,
-    east :: String,
-    west :: String
+  { north :: Path,
+    south :: Path,
+    east :: Path,
+    west :: Path
   }
   deriving (Eq)
 

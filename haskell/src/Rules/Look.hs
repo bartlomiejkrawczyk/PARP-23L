@@ -32,9 +32,29 @@ lookAround state =
   let location = retrieveLocation state
       paths' = paths location
    in success
-        [ "n: " ++ north paths',
-          "s: " ++ south paths',
-          "e: " ++ east paths',
-          "w: " ++ west paths'
+        [ "n: "
+            ++ name (north paths')
+            ++ ( case north paths' of
+                   LockedPath a item -> " - you need " ++ item
+                   _ -> ""
+               ),
+          "s: "
+            ++ name (south paths')
+            ++ ( case south paths' of
+                   LockedPath a item -> " - you need " ++ item
+                   _ -> ""
+               ),
+          "e: "
+            ++ name (east paths')
+            ++ ( case east paths' of
+                   LockedPath a item -> " - you need " ++ item
+                   _ -> ""
+               ),
+          "w: "
+            ++ name (west paths')
+            ++ ( case west paths' of
+                   LockedPath a item -> " - you need " ++ item
+                   _ -> ""
+               )
         ]
         state

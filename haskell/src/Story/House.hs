@@ -43,10 +43,10 @@ house =
       simpleItem "bowl"
     ]
     ( Paths
-        "Baker Street"
-        ""
-        "Fridge"
-        "Mailbox"
+        (Path "Baker Street")
+        InvalidPath
+        (Path "Fridge")
+        (Path "Mailbox")
     )
 
 fridge =
@@ -83,10 +83,10 @@ fridge =
       simpleItem "ketchup"
     ]
     ( Paths
-        ""
-        ""
-        ""
-        "Detective's house"
+        InvalidPath
+        InvalidPath
+        InvalidPath
+        (Path "Detective's house")
     )
 
 -- TODO: implement message when letter is available
@@ -100,10 +100,10 @@ mailbox =
     []
     []
     ( Paths
-        ""
-        ""
-        "Detective's house"
-        ""
+        InvalidPath
+        InvalidPath
+        (Path "Detective's house")
+        InvalidPath
     )
 
 houseLocations =

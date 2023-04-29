@@ -22,10 +22,10 @@ bakerStreet =
     []
     []
     ( Paths
-        ""
-        "Detective's house"
-        ""
-        ""
+        InvalidPath
+        (Path "Detective's house")
+        InvalidPath
+        InvalidPath
     )
 
 cityLocations =

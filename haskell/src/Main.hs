@@ -25,8 +25,11 @@ applyCommand command state =
   let result = command state
       messages' = messages result
       newState' = newState result
+      correct' = correct result
    in do
-        printLines messages'
+        if correct'
+          then printLines messages'
+          else printLines (colorRed : messages' ++ [colorDefault])
         putStrLn ""
         return newState'
 

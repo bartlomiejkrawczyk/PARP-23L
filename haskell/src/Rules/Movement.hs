@@ -11,9 +11,45 @@ retrieveLocation state =
    in location
 
 go :: String -> State -> Result
-go direction state
-  | direction == "n" = success [] state {currentLocation = north (paths (retrieveLocation state))}
-  | direction == "s" = success [] state {currentLocation = south (paths (retrieveLocation state))}
-  | direction == "e" = success [] state {currentLocation = east (paths (retrieveLocation state))}
-  | direction == "w" = success [] state {currentLocation = west (paths (retrieveLocation state))}
-  | otherwise = failure [] state
+-- TODO: check if can go in that direction first
+go direction state =
+  let location = retrieveLocation state
+      paths' = paths location
+   in case direction of
+        "n" ->
+          ( case north paths' of
+              Path _ -> success [] state {currentLocation = name $ north paths'}
+              LockedPath _ item ->
+                if not (any (\x -> name x == item) (inventory state))
+                  then failure [] state
+                  else success [] state {currentLocation = name $ north paths'}
+              InvalidPath -> failure ["You can't go that way!"] state
+          )
+        "s" ->
+          ( case south paths' of
+              Path _ -> success [] state {currentLocation = name $ south paths'}
+              LockedPath _ item ->
+                if not (any (\x -> name x == item) (inventory state))
+                  then failure [] state
+                  else success [] state {currentLocation = name $ south paths'}
+              InvalidPath -> failure ["You can't go that way!"] state
+          )
+        "e" ->
+          ( case east paths' of
+              Path _ -> success [] state {currentLocation = name $ east paths'}
+              LockedPath _ item ->
+                if not (any (\x -> name x == item) (inventory state))
+                  then failure [] state
+                  else success [] state {currentLocation = name $ east paths'}
+              InvalidPath -> failure ["You can't go that way!"] state
+          )
+        "w" ->
+          ( case west paths' of
+              Path _ -> success [] state {currentLocation = name $ west paths'}
+              LockedPath _ item ->
+                if not (any (\x -> name x == item) (inventory state))
+                  then failure [] state
+                  else success [] state {currentLocation = name $ west paths'}
+              InvalidPath -> failure ["You can't go that way!"] state
+          )
+        _ -> failure [] state
