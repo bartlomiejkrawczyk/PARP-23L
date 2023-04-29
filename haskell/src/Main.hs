@@ -3,6 +3,7 @@ module Main where
 import Rules.Colors
 import Rules.Help
 import Rules.Look
+import Rules.Movement
 import Rules.State
 import System.IO
 
@@ -52,6 +53,7 @@ gameIteration state = do
   cmd <- readCommand
   case cmd of
     (direction : _) | direction `elem` ["n", "s", "e", "w"] -> do
+      state <- applyCommand (go direction) state
       state <- look' state
       gameLoop state
     ["take", object] -> do

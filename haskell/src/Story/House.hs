@@ -43,7 +43,7 @@ house =
       simpleItem "bowl"
     ]
     ( Paths
-        ""
+        "Baker Street"
         ""
         "Fridge"
         "Mailbox"
@@ -100,7 +100,7 @@ mailbox =
     []
     []
     ( Paths
-        "Baker Street"
+        ""
         ""
         "Detective's house"
         ""

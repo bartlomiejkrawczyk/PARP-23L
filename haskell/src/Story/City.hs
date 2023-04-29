@@ -23,8 +23,8 @@ bakerStreet =
     []
     ( Paths
         ""
-        ""
         "Detective's house"
+        ""
         ""
     )
 
