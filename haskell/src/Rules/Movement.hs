@@ -21,7 +21,7 @@ go direction state =
               Path _ -> success [] state {currentLocation = name $ north paths'}
               LockedPath _ item ->
                 if not (any (\x -> name x == item) (inventory state))
-                  then failure [] state
+                  then failure ["You have to carry " ++ item ++ " to visit this location!"] state
                   else success [] state {currentLocation = name $ north paths'}
               InvalidPath -> failure ["You can't go that way!"] state
           )
@@ -30,7 +30,7 @@ go direction state =
               Path _ -> success [] state {currentLocation = name $ south paths'}
               LockedPath _ item ->
                 if not (any (\x -> name x == item) (inventory state))
-                  then failure [] state
+                  then failure ["You have to carry " ++ item ++ " to visit this location!"] state
                   else success [] state {currentLocation = name $ south paths'}
               InvalidPath -> failure ["You can't go that way!"] state
           )
@@ -39,7 +39,7 @@ go direction state =
               Path _ -> success [] state {currentLocation = name $ east paths'}
               LockedPath _ item ->
                 if not (any (\x -> name x == item) (inventory state))
-                  then failure [] state
+                  then failure ["You have to carry " ++ item ++ " to visit this location!"] state
                   else success [] state {currentLocation = name $ east paths'}
               InvalidPath -> failure ["You can't go that way!"] state
           )
@@ -48,7 +48,7 @@ go direction state =
               Path _ -> success [] state {currentLocation = name $ west paths'}
               LockedPath _ item ->
                 if not (any (\x -> name x == item) (inventory state))
-                  then failure [] state
+                  then failure ["You have to carry " ++ item ++ " to visit this location!"] state
                   else success [] state {currentLocation = name $ west paths'}
               InvalidPath -> failure ["You can't go that way!"] state
           )
