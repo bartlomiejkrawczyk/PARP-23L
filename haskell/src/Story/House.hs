@@ -100,7 +100,7 @@ mailbox =
     []
     []
     ( Paths
-        ""
+        "Baker Street"
         ""
         "Detective's house"
         ""

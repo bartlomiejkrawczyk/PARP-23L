@@ -6,16 +6,6 @@ import Rules.Look
 import Rules.State
 import System.IO
 
-listPeople :: State -> IO State
-listPeople state =
-  let result = lookPeople state
-      messages' = messages result
-      newState' = newState result
-   in do
-        putStrLn $ applyColor colorBlue "People:"
-        printLines messages'
-        return newState'
-
 printLines :: [String] -> IO ()
 printLines xs = putStr (unlines xs)
 
@@ -27,12 +17,42 @@ readCommand = do
   putStr colorDefault
   return $ words xs
 
+applyCommand :: (State -> Result) -> State -> IO State
+applyCommand command state =
+  let result = command state
+      messages' = messages result
+      newState' = newState result
+   in do
+        printLines messages'
+        putStrLn ""
+        return newState'
+
+listPeople :: State -> IO State
+listPeople state = do
+  putStrLn $ applyColor colorBlue "People:"
+  applyCommand lookPeople state
+
+listDirections :: State -> IO State
+listDirections state = do
+  putStrLn $ applyColor colorBlue "Directions:"
+  applyCommand lookAround state
+
+look' :: State -> IO State
+look' state = do
+  putStrLn $ applyColor colorBlue "Place:"
+  state <- applyCommand lookName state
+  state <- applyCommand lookDescription state
+  state <- listPeople state
+  state <- applyCommand lookItems state
+  listDirections state
+
 gameIteration :: State -> IO ()
 gameIteration state = do
   cmd <- readCommand
   case cmd of
     (direction : _) | direction `elem` ["n", "s", "e", "w"] -> do
       printLines ["dupa"]
+      state <- look' state
       gameLoop state
     ["take", object] -> do
       putStrLn object
@@ -62,6 +82,12 @@ gameIteration state = do
     ["ask", person, subject] -> do
       putStrLn person
       putStrLn subject
+      gameLoop state
+    ["look", "around"] -> do
+      newState' <- listDirections state
+      gameLoop newState'
+    ("look" : _) -> do
+      state <- look' state
       gameLoop state
     ("instructions" : _) -> do
       printLines instructionsText
@@ -102,4 +128,5 @@ main :: IO ()
 main = do
   printLines introductionText
   printLines instructionsText
+  look' initialState
   gameLoop initialState

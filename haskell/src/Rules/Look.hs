@@ -21,6 +21,12 @@ lookPeople state =
       people' = people location
    in success (map name people') state
 
+lookItems :: State -> Result
+lookItems state =
+  let location = retrieveLocation state
+      items' = items location
+   in success (map name items') state
+
 lookAround :: State -> Result
 lookAround state =
   let location = retrieveLocation state
