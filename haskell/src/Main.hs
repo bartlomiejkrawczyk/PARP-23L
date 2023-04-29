@@ -23,22 +23,68 @@ gameIteration state = do
     [direction] | direction `elem` ["n", "s", "e", "w"] -> do
       printLines ["dupa"]
       gameLoop state
+    ["take", object] -> do
+      putStrLn object
+      gameLoop state
+    ["drop", object] -> do
+      putStrLn object
+      gameLoop state
+    ["inspect", object] -> do
+      putStrLn object
+      gameLoop state
+    ["scan", object] -> do
+      putStrLn object
+      gameLoop state
+    ["use", item, tool] -> do
+      putStrLn item
+      putStrLn tool
+      gameLoop state
+    ["inventory"] -> do
+      putStrLn "Items:"
+      gameLoop state
+    ["people"] -> do
+      putStrLn "People:"
+      gameLoop state
+    ["talk", person] -> do
+      putStrLn person
+      gameLoop state
+    ["ask", person, subject] -> do
+      putStrLn person
+      putStrLn subject
+      gameLoop state
     ["instructions"] -> do
       printLines instructionsText
       gameLoop state
     ["quit"] -> do
-      gameLoop $ State True
-    _ -> do
+      printLines finishText
+      gameLoop state
+    ["halt"] -> do
+      gameLoop state {finish = True}
+    (command : _) | command `elem` ["take", "drop", "inspect", "scan"] -> do
+      putStrLn $ "Usage: " ++ command ++ " OBJECT"
+      gameLoop state
+    ("use" : _) -> do
+      putStrLn "Usage: use ITEM TOOL"
+      gameLoop state
+    ("talk" : _) -> do
+      putStrLn "Usage: talk PERSON"
+      gameLoop state
+    ("ask" : _) -> do
+      putStrLn "Usage: ask PERSON SUBJECT"
+      gameLoop state
+    (command : _) -> do
       printLines
-        [ applyColor colorRed "Unknown command.",
+        [ applyColor colorRed "Unknown command: " ++ command,
           ""
         ]
+      gameLoop state
+    _ -> do
       gameLoop state
 
 gameLoop :: State -> IO ()
 gameLoop state =
   if finish state
-    then printLines wonText
+    then return ()
     else gameIteration state
 
 main :: IO ()

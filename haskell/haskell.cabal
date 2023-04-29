@@ -10,7 +10,7 @@ extra-source-files:  README.md
 
 executable haskell
   main-is:             Main.hs
-  other-modules:       Rules.Colors, Rules.Help, Rules.State
+  other-modules:       Rules.Colors, Rules.Help, Rules.Object, Rules.State, Rules.Utility
   build-depends:       base ^>=4.17.0.0
   hs-source-dirs:      src
   default-language:    Haskell2010

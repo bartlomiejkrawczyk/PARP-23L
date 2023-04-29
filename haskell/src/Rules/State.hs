@@ -1,5 +1,10 @@
 module Rules.State where
 
-newtype State = State {finish :: Bool}
+import Rules.Object
 
-initialState = State False
+data State = State
+  { finish :: Bool,
+    inventory :: [Object]
+  }
+
+initialState = State False []
