@@ -1,10 +1,19 @@
 module Rules.State where
 
-import Rules.Object
+import Rules.Inventory
+import Rules.Location
+import Story.House
 
 data State = State
   { finish :: Bool,
-    inventory :: [Object]
+    inventory :: [Item],
+    currentLocation :: String,
+    map :: [Location]
   }
 
-initialState = State False []
+initialState =
+  State
+    False
+    []
+    "Detective's house"
+    []

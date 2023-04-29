@@ -20,7 +20,7 @@ gameIteration :: State -> IO ()
 gameIteration state = do
   cmd <- readCommand
   case cmd of
-    [direction] | direction `elem` ["n", "s", "e", "w"] -> do
+    (direction : _) | direction `elem` ["n", "s", "e", "w"] -> do
       printLines ["dupa"]
       gameLoop state
     ["take", object] -> do
@@ -39,10 +39,10 @@ gameIteration state = do
       putStrLn item
       putStrLn tool
       gameLoop state
-    ["inventory"] -> do
+    ("inventory" : _) -> do
       putStrLn "Items:"
       gameLoop state
-    ["people"] -> do
+    ("people" : _) -> do
       putStrLn "People:"
       gameLoop state
     ["talk", person] -> do
@@ -52,13 +52,13 @@ gameIteration state = do
       putStrLn person
       putStrLn subject
       gameLoop state
-    ["instructions"] -> do
+    ("instructions" : _) -> do
       printLines instructionsText
       gameLoop state
-    ["quit"] -> do
+    ("quit" : _) -> do
       printLines finishText
       gameLoop state
-    ["halt"] -> do
+    ("halt" : _) -> do
       gameLoop state {finish = True}
     (command : _) | command `elem` ["take", "drop", "inspect", "scan"] -> do
       putStrLn $ "Usage: " ++ command ++ " OBJECT"
