@@ -2,8 +2,19 @@ module Main where
 
 import Rules.Colors
 import Rules.Help
+import Rules.Look
 import Rules.State
 import System.IO
+
+listPeople :: State -> IO State
+listPeople state =
+  let result = lookPeople state
+      messages' = messages result
+      newState' = newState result
+   in do
+        putStrLn $ applyColor colorBlue "People:"
+        printLines messages'
+        return newState'
 
 printLines :: [String] -> IO ()
 printLines xs = putStr (unlines xs)
@@ -43,8 +54,8 @@ gameIteration state = do
       putStrLn "Items:"
       gameLoop state
     ("people" : _) -> do
-      putStrLn "People:"
-      gameLoop state
+      newState' <- listPeople state
+      gameLoop newState'
     ["talk", person] -> do
       putStrLn person
       gameLoop state

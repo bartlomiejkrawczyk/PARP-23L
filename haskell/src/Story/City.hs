@@ -27,3 +27,7 @@ bakerStreet =
         "Detective's house"
         ""
     )
+
+cityLocations =
+  [ bakerStreet
+  ]

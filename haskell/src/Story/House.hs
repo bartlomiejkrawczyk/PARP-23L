@@ -11,7 +11,7 @@ vodka =
   Item
     "vodka"
     ["TODO"]
-    ["Tim"]
+    "Tim"
 
 -- People
 
@@ -105,3 +105,9 @@ mailbox =
         "Detective's house"
         ""
     )
+
+houseLocations =
+  [ house,
+    mailbox,
+    fridge
+  ]
