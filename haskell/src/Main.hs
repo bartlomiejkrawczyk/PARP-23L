@@ -43,6 +43,7 @@ look' state = do
   state <- applyCommand lookName state
   state <- applyCommand lookDescription state
   state <- listPeople state
+  putStrLn $ applyColor colorBlue "Items:"
   state <- applyCommand lookItems state
   listDirections state
 
@@ -51,37 +52,44 @@ gameIteration state = do
   cmd <- readCommand
   case cmd of
     (direction : _) | direction `elem` ["n", "s", "e", "w"] -> do
-      printLines ["dupa"]
       state <- look' state
       gameLoop state
     ["take", object] -> do
       putStrLn object
+      -- TODO
       gameLoop state
     ["drop", object] -> do
       putStrLn object
+      -- TODO
       gameLoop state
     ["inspect", object] -> do
       putStrLn object
+      -- TODO
       gameLoop state
     ["scan", object] -> do
       putStrLn object
+      -- TODO
       gameLoop state
     ["use", item, tool] -> do
       putStrLn item
       putStrLn tool
+      -- TODO
       gameLoop state
     ("inventory" : _) -> do
       putStrLn "Items:"
+      -- TODO
       gameLoop state
     ("people" : _) -> do
       newState' <- listPeople state
       gameLoop newState'
     ["talk", person] -> do
       putStrLn person
+      -- TODO
       gameLoop state
     ["ask", person, subject] -> do
       putStrLn person
       putStrLn subject
+      -- TODO
       gameLoop state
     ["look", "around"] -> do
       newState' <- listDirections state
