@@ -5,6 +5,7 @@ import Rules.Help
 import Rules.Look
 import Rules.Movement
 import Rules.State
+import Rules.Talk
 import System.IO
 
 printLines :: [String] -> IO ()
@@ -85,8 +86,7 @@ gameIteration state = do
       newState' <- listPeople state
       gameLoop newState'
     ["talk", person] -> do
-      putStrLn person
-      -- TODO
+      state <- applyCommand (talk person) state
       gameLoop state
     ["ask", person, subject] -> do
       putStrLn person
