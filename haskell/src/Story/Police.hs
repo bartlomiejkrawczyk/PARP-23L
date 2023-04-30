@@ -10,7 +10,7 @@ makeshiftKnife =
   Item
     "makeshift_knife"
     [ "Better take it from here!",
-      "I don''t want it to fall into the wrong hands"
+      "I don't want it to fall into the wrong hands"
     ]
     Nothing
 
@@ -31,7 +31,7 @@ sheriff =
   Person
     "sheriff"
     [ Subject "case" "We are looking for a #1 wanted interpol criminal.\nHe was seen fleeing into the forest!",
-      Subject "employees_criminal_record" "What are you here for? Can''t you see we don''t have time now? We''ll mail everything to you, now get out, because as you can see, we''re very busy."
+      Subject "employees_criminal_record" "What are you here for? Can't you see we don't have time now? We'll mail everything to you, now get out, because as you can see, we're very busy."
     ]
 
 -- Locations

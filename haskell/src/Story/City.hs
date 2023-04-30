@@ -15,7 +15,7 @@ stickCane =
 fourLeafClover =
   Item
     "four_leaf_clover"
-    [ "It''s your lucky day!",
+    [ "It's your lucky day!",
       "Not every day you find a four leaf clover!",
       "Better keep it to bring you luck on your case"
     ]
@@ -25,7 +25,7 @@ fourLeafClover =
 bookWorms =
   Person
     "book_worms"
-    [Subject "book" "I'am reading now! Can''t you see!"]
+    [Subject "book" "I'am reading now! Can't you see!"]
 
 politician =
   Person
@@ -38,7 +38,7 @@ politician =
 janitorTom =
   Person
     "janitor_Tom"
-    [ Subject "sick" "*Caugh* *Caugh* Good morning, I'd like some meds, because recently... uh... I''ve had a very... uh... cold, I''ve caught a cold and... I''m very sick.",
+    [ Subject "sick" "*Caugh* *Caugh* Good morning, I'd like some meds, because recently... uh... I've had a very... uh... cold, I've caught a cold and... I'm very sick.",
       Subject "alibi" "I? yyyy .... I was at ... home, yes I was at home ... why are you looking at me so suspiciously? all day ... yy *Caugh* *Caugh* ... I spent with my wife, yes I spent all day with my wife ... ask her *Caugh* *Caugh*"
     ]
 
@@ -61,7 +61,7 @@ playingQuietKid =
 playingAthleticKid =
   Person
     "playing_athletic_kid"
-    [Subject "something_suspicious" "You have a strange coat hahaha, you look like an old grandpa. ... Pass it to me! ... I didn't see anything ... Who are you passing to !? ... I''m going to play, I don''t have time"]
+    [Subject "something_suspicious" "You have a strange coat hahaha, you look like an old grandpa. ... Pass it to me! ... I didn't see anything ... Who are you passing to !? ... I'm going to play, I don't have time"]
 
 -- TODO: implement give beer
 oldFreak =
@@ -79,7 +79,7 @@ bakerStreet =
   Location
     "Baker Street"
     [ "You see Baker Street is a quaint, off-the-beaten-track street nestled between two hills.",
-      "It''s lined with charming, old-fashioned buildings,",
+      "It's lined with charming, old-fashioned buildings,",
       "including your office and house, as well as a cozy cafe and a vintage bookstore.",
       "The street exudes a sense of peaceful seclusion,",
       "making it the perfect spot for the detective",
@@ -124,7 +124,7 @@ westbourneRoad =
     "Westbourne Road"
     [ "You see Westbourne Road is a winding street that",
       "leads to a dense forest on the outskirts of the city.",
-      "It''s a peaceful drive, with few buildings and little traffic along the way.",
+      "It's a peaceful drive, with few buildings and little traffic along the way.",
       "Visitors can find an antique museum showcasing",
       "Egyptian antiquities on this road,",
       "offering a unique and fascinating glimpse into the ancient world."

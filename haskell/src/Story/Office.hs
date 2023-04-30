@@ -23,7 +23,7 @@ office =
       "is mounted on another wall nearby, which the detective uses",
       "to analyze crime scenes and identify suspects. The walls are lined",
       "with bookshelves filled with forensic manuals and reference materials,",
-      "and a large window offers a panoramic view of the city''s skyline."
+      "and a large window offers a panoramic view of the city's skyline."
     ]
     [newClient]
     []
@@ -38,8 +38,8 @@ desk =
   Location
     "Desk"
     [ "Your desk is a sturdy wooden piece of furniture positioned against one wall",
-      "of the office. It''s cluttered with files, folders, a lamp, and various office",
-      "supplies, reflecting the detective''s busy and methodical work style."
+      "of the office. It's cluttered with files, folders, a lamp, and various office",
+      "supplies, reflecting the detective's busy and methodical work style."
     ]
     []
     [ simpleItem "files",
@@ -63,7 +63,7 @@ fingerprintsDetector =
   Location
     "Fingerprints detector"
     [ "Your fingerprint detector is a state-of-the-art device mounted on the wall",
-      "of the office. It''s used to collect and analyze fingerprints found at crime",
+      "of the office. It's used to collect and analyze fingerprints found at crime",
       "scenes, helping the detective to identify suspects and solve cases."
     ]
     []

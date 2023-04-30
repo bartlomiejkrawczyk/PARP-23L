@@ -29,7 +29,7 @@ house =
     "Detective's house"
     [ "Your house has a cozy living room with a fireplace and vintage posters,",
       "and a fully-equipped modern kitchen with a sleek fridge. Outside, the mailbox",
-      "stands by the front door, waiting for the detective''s daily dose of letters,",
+      "stands by the front door, waiting for the detective's daily dose of letters,",
       "packages, and clues."
     ]
     [dorothy]
