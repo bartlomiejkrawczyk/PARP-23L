@@ -4,6 +4,8 @@ import Rules.Item
 import Rules.Location
 import Story.City
 import Story.House
+import Story.Office
+import Story.Police
 
 data State = State
   { finish :: Bool,
@@ -25,4 +27,4 @@ initialState =
     False
     []
     "Detective's house"
-    (houseLocations ++ cityLocations)
+    (houseLocations ++ cityLocations ++ officeLocations ++ policeLocations)

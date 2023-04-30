@@ -1,5 +1,6 @@
 module Rules.Inventory where
 
+import Data.Maybe (fromJust, isNothing)
 import Rules.Colors
 import Rules.Item
 import Rules.Location
@@ -59,11 +60,11 @@ scanObject object state =
           if name location /= "Fingerprints detector"
             then failure ["You need a Fingerprints detector to scan for fingerprints!"] state
             else
-              if fingerprints (head items') == ""
+              if isNothing (fingerprints (head items'))
                 then success ["The only fingerprints you find on " ++ object ++ " are your fingerprints!"] state
                 else
                   success
-                    ["Detector found " ++ fingerprints (head items') ++ "'s fingerprings on " ++ name (head items') ++ "!"]
+                    ["Detector found " ++ fromJust (fingerprints (head items')) ++ "'s fingerprings on " ++ name (head items') ++ "!"]
                     state
 
 listInventory :: State -> Result
@@ -84,7 +85,7 @@ recipes =
             "two very expensive new bikes from a bike shop.",
             "He was fined $5,000 and sentenced to three months of community service."
           ]
-          ""
+          Nothing
       ),
     Recipe
       "wobbly_shovel"
@@ -94,7 +95,7 @@ recipes =
           [ "Now the shovel is suitable for work, it is certainly much stronger,",
             "maybe now it will be possible to dig something with it"
           ]
-          ""
+          Nothing
       )
   ]
 

@@ -6,15 +6,15 @@ import Rules.Person
 
 -- Items
 
--- TODO: add fingerprints functionality to item + add description
 vodka =
   Item
     "vodka"
-    ["TODO"]
-    "Tim"
+    ["Your friend tim left if after a party!"]
+    $ Just "Tim"
 
 -- People
 
+-- TODO: add vodka subject
 dorothy =
   Person
     "Dorothy"
