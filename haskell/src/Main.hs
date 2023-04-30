@@ -100,8 +100,7 @@ gameIteration state = do
     ("quit" : _) -> do
       printLines finishText
       gameLoop state
-    ("halt" : _) -> do
-      gameLoop state {finish = True}
+    ("halt" : _) -> gameLoop state {finish = True}
     (command : _) | command `elem` ["take", "drop", "inspect", "scan"] -> do
       putStrLn $ "Usage: " ++ command ++ " OBJECT"
       gameLoop state
@@ -120,8 +119,7 @@ gameIteration state = do
           ""
         ]
       gameLoop state
-    _ -> do
-      gameLoop state
+    _ -> gameLoop state
 
 gameLoop :: State -> IO ()
 gameLoop state =
