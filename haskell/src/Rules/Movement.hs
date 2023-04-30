@@ -11,7 +11,6 @@ retrieveLocation state =
    in location
 
 go :: String -> State -> Result
--- TODO: check if can go in that direction first
 go direction state =
   let location = retrieveLocation state
       paths' = paths location
