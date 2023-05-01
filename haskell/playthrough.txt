@@ -11,10 +11,10 @@ inspect thing
 drop thing
 s
 s
-talk dorothy
-ask dorothy hello
-ask dorothy love
-ask dorothy dinner
+talk Dorothy
+ask Dorothy hello
+ask Dorothy love
+ask Dorothy dinner
 w
 take powder
 inspect powder
