@@ -140,7 +140,7 @@ ask scary_prisoner hello
 ask scary_prisoner reason
 take makeshift_knife
 inspect makeshift_knife
-look_around
+look around
 e
 e
 talk sheriff

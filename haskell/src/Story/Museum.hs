@@ -327,7 +327,7 @@ cctvRoom =
 
 renovatedExhibit =
   Location
-    "CCTV Room"
+    "Renovated Exhibit"
     [ "You see an exhibition under renovation.",
       "Due to ongoing renovation work,",
       "the exhibition in the museum is currently inaccessible to visitors,",
