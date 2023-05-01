@@ -17,6 +17,7 @@ readCommand = do
   putStr (colorGreen ++ "> ")
   hFlush stdout
   xs <- getLine
+  putStrLn xs
   putStr colorDefault
   return $ words xs
 

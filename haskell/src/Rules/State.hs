@@ -27,5 +27,5 @@ initialState =
   State
     False
     []
-    "Detective's house"
+    "Detective's office"
     (houseLocations ++ cityLocations ++ officeLocations ++ policeLocations ++ museumLocations)
