@@ -45,8 +45,8 @@ house =
     ( Paths
         (Path "Baker Street")
         InvalidPath
-        (Path "Fridge")
         (Path "Mailbox")
+        (Path "Fridge")
     )
 
 fridge =
@@ -85,8 +85,8 @@ fridge =
     ( Paths
         InvalidPath
         InvalidPath
-        InvalidPath
         (Path "Detective's house")
+        InvalidPath
     )
 
 -- TODO: implement message when letter is available
@@ -102,8 +102,8 @@ mailbox =
     ( Paths
         InvalidPath
         InvalidPath
-        (Path "Detective's house")
         InvalidPath
+        (Path "Detective's house")
     )
 
 houseLocations =
