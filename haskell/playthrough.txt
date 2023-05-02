@@ -1,0 +1,277 @@
+e
+n
+s
+talk new_client
+ask new_client hello
+ask new_client magazines
+ask new_client wait
+take thing
+inventory
+inspect thing
+drop thing
+s
+s
+talk Dorothy
+ask Dorothy hello
+ask Dorothy love
+ask Dorothy dinner
+w
+take powder
+inspect powder
+e
+e
+w
+n
+e
+e
+n
+n
+talk attendant_Julie
+ask attendant_Julie hello
+ask attendant_Julie missing_artifact
+ask attendant_Julie alibi
+ask attendant_Julie potential_witnesses
+ask attendant_Julie gossip
+ask attendant_Julie janitor
+n
+n
+w
+take shattered_glass
+inspect shattered_glass
+scan shattered_glass
+take metal_debris
+inspect metal_debris
+take hammer
+inspect hammer
+inventory
+e
+n
+n
+talk guide_Mary
+ask guide_Mary hello
+ask guide_Mary tour
+ask guide_Mary missing_artifact
+ask guide_Mary alibi
+ask guide_Mary gossip
+s
+s
+s
+w
+talk cashier_Anne
+ask cashier_Anne hello
+ask cashier_Anne missing_artifact
+ask cashier_Anne artifact_replica
+ask cashier_Anne gossip
+ask cashier_Anne alibi
+e
+s
+s
+w
+w
+n
+e
+inventory
+scan hammer
+scan metal_debris
+scan shattered_glass
+drop metal_debris
+drop shattered_glass
+look
+inventory
+w
+s
+e
+e
+n
+n
+talk attendant_Julie
+ask attendant_Julie janitor
+ask attendant_Julie closed_exhibit
+ask attendant_Julie closed_exhibit
+look
+take key_to_the_exhibit
+n
+n
+n
+n
+talk renovator_Theodore
+ask renovator_Theodore hello
+ask renovator_Theodore admire
+ask renovator_Theodore missing_artifact
+ask renovator_Theodore alibi
+ask renovator_Theodore gossip
+ask renovator_Theodore missing_tool
+s
+s
+e
+take key_card
+inventory
+drop key_to_the_exhibit
+w
+s
+e
+take dvd
+inspect dvd
+talk guard_Mike
+ask guard_Mike hello
+ask guard_Mike alibi
+ask guard_Mike key_card
+ask guard_Mike artifact_dvd
+ask guard_Mike anna_dvd
+ask guard_Mike womans_toilet
+w
+s
+e
+n
+s
+s
+n
+w
+s
+s
+w
+s
+talk policeman
+ask policeman hello
+ask policeman help
+w
+talk scary_prisoner
+ask scary_prisoner hello
+ask scary_prisoner reason
+take makeshift_knife
+inspect makeshift_knife
+look around
+e
+e
+talk sheriff
+ask sheriff hello
+ask sheriff case
+ask sheriff employees_criminal_record
+drop makeshift_knife
+w
+n
+w
+s
+e
+take letter
+inspect letter
+instructions
+w
+take knife
+inventory
+drop dvd
+take knife
+use letter knife
+inventory
+inspect mikes_criminal_record
+n
+e
+e
+n
+n
+n
+e
+talk guard_Mike
+ask guard_Mike criminal_record
+w
+s
+s
+s
+w
+talk janitor_Tom
+ask janitor_Tom hello
+ask janitor_Tom sick
+ask janitor_Tom alibi
+talk politician
+ask politician hello
+ask politician money
+e
+talk tourists
+ask tourists missing_artifact
+talk playing_popular_kid
+ask playing_popular_kid hello
+ask playing_popular_kid something_suspicious
+talk playing_quiet_kid
+ask playing_quiet_kid hello
+ask playing_quiet_kid something_suspicious
+talk playing_athletic_kid
+ask playing_athletic_kid hello
+ask playing_athletic_kid something_suspicious
+e
+talk old_freak
+ask old_freak hello
+ask old_freak age
+ask old_freak knowledge
+ask old_freak food
+n
+s
+e
+e
+s
+n
+n
+talk judy
+ask judy hello
+ask judy janitors_alibi
+take old_key
+inventory
+drop mikes_criminal_record
+drop knife
+take old_key
+n
+w
+n
+n
+n
+w
+take wobbly_shovel
+inspect wobbly_shovel
+e
+s
+s
+s
+w
+w
+s
+inventory
+drop key_card
+take screwdriver
+use wobbly_shovel screwdriver
+inventory
+n
+e
+e
+e
+e
+e
+s
+e
+inventory
+drop hammer
+drop old_key
+drop screwdriver
+take missing_statue
+inspect missing_statue
+take red_jacket
+inspect red_jacket
+take white_gloves
+inspect white_gloves
+n
+w
+w
+w
+n
+e
+scan missing_statue
+scan red_jacket
+scan white_gloves
+w
+s
+e
+e
+n
+talk museum_director_John
+ask museum_director_John hello
+ask museum_director_John missing_statue
+quit
+halt
