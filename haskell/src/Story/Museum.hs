@@ -69,7 +69,7 @@ guardMike =
       ConditionalSubject (NoFactCondition (Fact "asked_about_fingerprints")) "artifact_dvd" "Hmm ... on camera number 10 there is a man in a red jacket, black trousers and a black hat, doing something in the Egyptian hall, also wearing white gloves." Nothing,
       ConditionalSubject (FactCondition (Fact "asked_about_fingerprints")) "artifact_dvd" "Oh, look at camera number 9 here for a moment there is a man in a red jacket" Nothing,
       Subject "anna_dvd" "Look at camera number 20, our cashier Anna was standing behind the counter at the time, looking through some leaflet" Nothing,
-      Subject "womans_toilet" "Have you ever been to the men's toilet at our museum? they are terrible, I hate going there, that's why I always go to the women's toilet." Nothing,
+      ConditionalSubject (FactCondition (Fact "talked_with_mike")) "womans_toilet" "Have you ever been to the men's toilet at our museum? they are terrible, I hate going there, that's why I always go to the women's toilet." Nothing,
       ConditionalSubject
         (HoldingCondition "mikes_criminal_record")
         "criminal_record"
@@ -108,8 +108,11 @@ renovatorTheodore =
       Subject
         "missing_artifact"
         "And there's always someone hanging around this statue, I'm not surprised that someone stole it."
+        Nothing,
+      Subject
+        "gossip"
+        "A terrible mess is still in the Egyptian hall, there is no one to clean it up, the janitor just after the burglary says that he got sick."
         (Just $ ConversationResult (Fact "gossiped_with_renovator_theodore")),
-      Subject "gossip" "A terrible mess is still in the Egyptian hall, there is no one to clean it up, the janitor just after the burglary says that he got sick." Nothing,
       Subject "alibi" "That day I had a lot of work, I was very busy and I spent the whole day in the renovated hall, you will surely find someone who will confirm it." Nothing,
       ConditionalSubject
         (FactCondition (Fact "hammer_scanned"))
@@ -123,7 +126,6 @@ renovatorTheodore =
         $ Just (ConversationResult $ Fact "asked_about_fingerprints")
     ]
 
--- TODO: finish game
 museumDirectorJohn =
   ConditionPerson
     "museum_director_John"
