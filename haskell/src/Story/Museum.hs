@@ -127,7 +127,11 @@ renovatorTheodore =
 museumDirectorJohn =
   ConditionPerson
     "museum_director_John"
-    [Subject "missing_artifact" "Hello, we are very grateful to you for helping us solve the mystery of the missing golden statue. Not only did you find the criminals, but you also found the missing artifact, thanks to you, visitors will still be able to admire it after we reopen the Egyptian hall. The thieves, unfortunately, Mike and Tom managed to escape, but I'm not worried because thanks to you, they are wanted by the police and they will be caught." Nothing]
+    [ Subject
+        "missing_artifact"
+        "Hello, we are very grateful to you for helping us solve the mystery of the missing golden statue. Not only did you find the criminals, but you also found the missing artifact, thanks to you, visitors will still be able to admire it after we reopen the Egyptian hall. The thieves, unfortunately, Mike and Tom managed to escape, but I'm not worried because thanks to you, they are wanted by the police and they will be caught."
+        (Just $ ConversationResult (Fact "game_over"))
+    ]
     $ MultiCondition [FactCondition (Fact "missing_statue_scanned"), FactCondition (Fact "red_jacket_scanned"), FactCondition (Fact "white_gloves_scanned")]
 
 -- Locations

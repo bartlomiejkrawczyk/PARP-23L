@@ -1,6 +1,8 @@
 module Main where
 
+import Rules.Checking
 import Rules.Colors
+import Rules.Fact
 import Rules.Help
 import Rules.Inventory
 import Rules.Look
@@ -123,10 +125,11 @@ gameIteration state = do
     _ -> gameLoop state
 
 gameLoop :: State -> IO ()
-gameLoop state =
-  if finish state
-    then return ()
-    else gameIteration state
+gameLoop state
+  | finish state = return ()
+  | checkCondition state (FactCondition $ Fact "game_over") =
+      printLines wonText
+  | otherwise = gameIteration state
 
 main :: IO ()
 main = do
