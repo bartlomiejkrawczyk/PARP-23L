@@ -58,9 +58,8 @@ attendantJulie =
         (Just $ ConversationResult (Fact "asked_about_closed_exhibit"))
     ]
 
--- TODO: if talked_with_anne
 guardMike =
-  Person
+  ConditionPerson
     "guard_Mike"
     [ Subject
         "alibi"
@@ -77,6 +76,12 @@ guardMike =
         "These are some slander and fabricated evidence, and besides, even if it were me, I haven't been dealing with such things for twelve years, I'm a different person, I've changed, really if it were me, I certainly wouldn't do such things things, I have a family of children to feed."
         (Just $ ConversationResult (Fact "asked_mike_about_criminal_record"))
     ]
+    $ MultiCondition
+      [ FactCondition (Fact "talked_with_anne"),
+        NoFactCondition (Fact "white_gloves_scanned"),
+        NoFactCondition (Fact "red_jacket_scanned"),
+        NoFactCondition (Fact "missing_statue_scanned")
+      ]
 
 cashierAnne =
   Person
@@ -120,9 +125,10 @@ renovatorTheodore =
 
 -- TODO: finish game
 museumDirectorJohn =
-  Person
+  ConditionPerson
     "museum_director_John"
     [Subject "missing_artifact" "Hello, we are very grateful to you for helping us solve the mystery of the missing golden statue. Not only did you find the criminals, but you also found the missing artifact, thanks to you, visitors will still be able to admire it after we reopen the Egyptian hall. The thieves, unfortunately, Mike and Tom managed to escape, but I'm not worried because thanks to you, they are wanted by the police and they will be caught." Nothing]
+    $ MultiCondition [FactCondition (Fact "missing_statue_scanned"), FactCondition (Fact "red_jacket_scanned"), FactCondition (Fact "white_gloves_scanned")]
 
 -- Locations
 museum =
@@ -345,7 +351,7 @@ cctvRoom =
       "allowing the staff to keep a watchful eye on the premises",
       "and ensure the safety of visitors and staff."
     ]
-    [guardMike] -- TODO: if talked_with_anne
+    [guardMike]
     [dvd]
     ( Paths
         InvalidPath

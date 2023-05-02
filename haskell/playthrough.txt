@@ -272,6 +272,6 @@ e
 n
 talk museum_director_John
 ask museum_director_John hello
-ask museum_director_John missing_statue
+ask museum_director_John missing_artifact
 quit
 halt

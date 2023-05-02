@@ -4,6 +4,7 @@ import Rules.Checking
 import Rules.Fact
 import Rules.Item
 import Rules.Location
+import Rules.Person (Person (ConditionPerson))
 import Rules.State
 import Rules.Utility
 
@@ -23,10 +24,21 @@ lookDescription state =
   let location = retrieveLocation state
    in success (locationDescription location) state
 
+isPersonActive :: State -> Person -> Bool
+isPersonActive state person =
+  case person of
+    ConditionPerson _ _ condition -> checkCondition state condition
+    _ -> True
+
+listActivePeople :: State -> Location -> [Person]
+listActivePeople state location =
+  let allPeople = people location
+   in filter (isPersonActive state) allPeople
+
 lookPeople :: State -> Result
 lookPeople state =
   let location = retrieveLocation state
-      people' = people location
+      people' = listActivePeople state location
    in success (map name people') state
 
 isItemActive :: State -> Item -> Bool

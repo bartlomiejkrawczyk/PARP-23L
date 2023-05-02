@@ -35,14 +35,13 @@ politician =
     "politician"
     [Subject "money" "We are working to make our future brighter!" Nothing]
 
--- TODO: Activate Tom when asked_mike_about_criminal_record, gossiped_with_renovator_theodore
-
 janitorTom =
-  Person
+  ConditionPerson
     "janitor_Tom"
     [ Subject "sick" "*Caugh* *Caugh* Good morning, I'd like some meds, because recently... uh... I've had a very... uh... cold, I've caught a cold and... I'm very sick." Nothing,
       Subject "alibi" "I? yyyy .... I was at ... home, yes I was at home ... why are you looking at me so suspiciously? all day ... yy *Caugh* *Caugh* ... I spent with my wife, yes I spent all day with my wife ... ask her *Caugh* *Caugh*" $ Just (ConversationResult $ Fact "talked_with_janitor_Tom")
     ]
+    $ MultiCondition [FactCondition (Fact "asked_mike_about_criminal_record"), FactCondition (Fact "gossiped_with_renovator_theodore"), NoFactCondition (Fact "seen_Digging marks")]
 
 tourists =
   Person

@@ -40,7 +40,7 @@ askSuccess state subject =
 personInfo :: State -> String -> (Location, [Person], [Subject])
 personInfo state person =
   let location = retrieveLocation state
-      people' = filter (\x -> name x == person) $ people location
+      people' = filter (\x -> name x == person) $ listActivePeople state location
       allSubjects = subjects $ head people'
    in (location, people', allSubjects)
 

@@ -13,7 +13,10 @@ data Subject
 instance Named Subject where
   name = subjectName
 
-data Person = Person {personName :: String, subjects :: [Subject]} deriving (Eq)
+data Person
+  = Person {personName :: String, subjects :: [Subject]}
+  | ConditionPerson {personName :: String, subjects :: [Subject], atCondition :: Condition}
+  deriving (Eq)
 
 instance Named Person where
   name = personName
