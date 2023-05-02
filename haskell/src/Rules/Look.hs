@@ -3,9 +3,14 @@ module Rules.Look where
 import Rules.Checking
 import Rules.Fact
 import Rules.Location
-import Rules.Movement
 import Rules.State
 import Rules.Utility
+
+retrieveLocation :: State -> Location
+retrieveLocation state =
+  let locationName = currentLocation state
+      location = head $ filter (\x -> name x == locationName) $ locations state
+   in location
 
 lookName :: State -> Result
 lookName state =
@@ -32,7 +37,7 @@ lookItems state =
 lookAround :: State -> Result
 lookAround state =
   let location = retrieveLocation state
-      paths' = paths location
+      paths' = getActivePaths state (paths location)
       stateWithSeenNorth = addFact state (Fact $ "seen_" ++ name (north paths'))
       stateWithSeenSouth = addFact stateWithSeenNorth (Fact $ "seen_" ++ name (south paths'))
       stateWithSeenEast = addFact stateWithSeenSouth (Fact $ "seen_" ++ name (east paths'))
@@ -52,3 +57,29 @@ lookAtPath path =
            LockedPath a item -> " - you need " ++ item
            _ -> ""
        )
+
+isPathActive :: State -> Path -> Bool
+isPathActive state path =
+  case path of
+    Path {} -> True
+    LockedPath {} -> True
+    InvalidPath {} -> False
+    ConditionalPath _ condition _ -> checkCondition state condition
+
+getActivePath :: State -> Path -> Path
+getActivePath state path =
+  if isPathActive state path
+    then case path of
+      ConditionalPath activePath _ _ -> activePath
+      _ -> path
+    else case path of
+      ConditionalPath _ _ anotherPath -> anotherPath
+      _ -> InvalidPath
+
+getActivePaths :: State -> Paths -> Paths
+getActivePaths state paths =
+  let northPath = getActivePath state (north paths)
+      southPath = getActivePath state (south paths)
+      eastPath = getActivePath state (east paths)
+      westPath = getActivePath state (west paths)
+   in Paths {north = northPath, south = southPath, east = eastPath, west = westPath}

@@ -118,7 +118,7 @@ museumDirectorJohn =
 museum =
   Location
     "Museum"
-    ["TODO: add description"]
+    []
     [museumDirectorJohn]
     []
     ( Paths

@@ -5,6 +5,7 @@ import Rules.Item
 import Rules.Location
 import Story.City
 import Story.House
+import Story.Janitor
 import Story.Museum
 import Story.Office
 import Story.Police
@@ -31,4 +32,4 @@ initialState =
     []
     []
     "Detective's office"
-    (houseLocations ++ cityLocations ++ officeLocations ++ policeLocations ++ museumLocations)
+    (houseLocations ++ cityLocations ++ officeLocations ++ policeLocations ++ museumLocations ++ janitorLocations)

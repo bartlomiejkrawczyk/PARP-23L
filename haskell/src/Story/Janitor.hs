@@ -1,5 +1,6 @@
 module Story.Janitor where
 
+import Rules.Fact
 import Rules.Item
 import Rules.Location
 import Rules.Person
@@ -41,7 +42,7 @@ judy =
 
 tomsHouse =
   Location
-    "Tom's house"
+    "Tom's House"
     [ "You see the small cozy house in the middle of the forest,",
       "You notice a white picket fence surrounding the property.",
       "The windows of the house are covered with dark curtains,",
@@ -55,14 +56,14 @@ tomsHouse =
     ]
     ( Paths
         (Path "Forest")
-        (Path "Forest glade")
+        (Path "Forest Glade")
         (Path "Forest")
         (Path "Forest")
     )
 
 oldTree =
   Location
-    "Old tree"
+    "Old Tree"
     [ "You see ancient and massive tree,",
       "Its gnarled roots stretch out from the base, and the bark is rough and textured",
       "Its branches stretch high into the sky, providing shelter and shade for the creatures that call the forest home."
@@ -70,7 +71,7 @@ oldTree =
     []
     []
     ( Paths
-        (Path "Forest glade") -- TODO: if avalaible
+        (Path "Forest Glade")
         (Path "Forest")
         (LockedPath "Digging marks" "shovel")
         (Path "Forest")
@@ -92,12 +93,25 @@ diggingMarks =
         (Path "Forest")
         (Path "Forest")
         (Path "Forest")
-        (LockedPath "Old tree" "shovel")
+        (LockedPath "Old Tree" "shovel")
     )
 
--- TODO: Link forest and janitors locations
+forestGlade =
+  Location
+    "Forest Glade"
+    []
+    []
+    []
+    ( Paths
+        (Path "Tom's House")
+        (ConditionalPath (Path "Old Tree") (FactCondition $ Fact "something_suspicious") (Path "Forest"))
+        (Path "Forest")
+        (Path "Forest Path")
+    )
+
 janitorLocations =
-  [ tomsHouse,
+  [ forestGlade,
+    tomsHouse,
     oldTree,
     diggingMarks
   ]

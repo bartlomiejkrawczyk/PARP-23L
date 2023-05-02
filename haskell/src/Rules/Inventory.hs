@@ -6,7 +6,7 @@ import Rules.Colors
 import Rules.Fact
 import Rules.Item
 import Rules.Location
-import Rules.Movement
+import Rules.Look
 import Rules.Recipe
 import Rules.State
 import Rules.Utility

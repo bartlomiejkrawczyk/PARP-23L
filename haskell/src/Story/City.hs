@@ -62,7 +62,6 @@ playingAthleticKid =
     "playing_athletic_kid"
     [Subject "something_suspicious" "You have a strange coat hahaha, you look like an old grandpa. ... Pass it to me! ... I didn't see anything ... Who are you passing to !? ... I'm going to play, I don't have time" Nothing]
 
--- TODO: implement beer disappearing
 oldFreak =
   Person
     "old_freak"
@@ -168,9 +167,23 @@ forest =
         (Path "Westbourne Road")
     )
 
+forestPath =
+  Location
+    "Forest Path"
+    []
+    []
+    []
+    ( Paths
+        (Path "Forest")
+        (Path "Forest")
+        (ConditionalPath (Path "Forest Glade") (FactCondition $ Fact "talked_with_janitor_Tom") (Path "Forest"))
+        (Path "Forest")
+    )
+
 cityLocations =
   [ bakerStreet,
     citySquare,
     westbourneRoad,
-    forest
+    forest,
+    forestPath
   ]

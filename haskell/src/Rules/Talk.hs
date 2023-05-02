@@ -5,7 +5,7 @@ import Rules.Checking
 import Rules.Colors
 import Rules.Fact
 import Rules.Location
-import Rules.Movement
+import Rules.Look
 import Rules.Person
 import Rules.State
 import Rules.Utility
