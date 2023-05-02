@@ -1,6 +1,5 @@
 module Rules.Fact where
 
-import Rules.Item
 import Rules.Utility
 
 newtype Fact = Fact {eventName :: String} deriving (Eq)

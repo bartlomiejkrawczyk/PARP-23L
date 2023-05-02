@@ -11,7 +11,8 @@ vodka =
   Item
     "vodka"
     ["Your friend tim left if after a party!"]
-    $ Just "Tim"
+    (Just "Tim")
+    Nothing
 
 -- People
 

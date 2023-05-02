@@ -11,6 +11,7 @@ wobblyShovel =
     "wobbly_shovel"
     ["This shovel is too weak, I'm about to break it, I need to find something to make it stronger."]
     Nothing
+    Nothing
 
 dvd =
   Item
@@ -20,12 +21,14 @@ dvd =
       "the thief was wearing a distinctive red jacket."
     ]
     Nothing
+    (Just $ FactCondition (Fact "talked_with_anne"))
 
 hammer =
   Item
     "hammer"
     ["'The burglars must have broken the protective glass with this hammer, I have to take it and see if there are any fingerprints on it"]
-    $ Just "Renovator Theodore"
+    (Just "Renovator Theodore")
+    Nothing
 
 -- People
 

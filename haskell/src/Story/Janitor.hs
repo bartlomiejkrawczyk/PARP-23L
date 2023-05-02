@@ -11,25 +11,29 @@ oldKey =
   Item
     "old_key"
     ["This old key leads to Janitor's Closet, I should try to open that door"]
-    $ Just "Janitor Tom"
+    (Just "Janitor Tom")
+    Nothing
 
 missingStatue =
   Item
     "missing_statue"
     ["Golden statue from the museum! but why did someone bury her here? It's a good thing I found it, but maybe there are fingerprints on it that will help me find the burglars, I'll have to check it out."]
-    $ Just "Guard Mike"
+    (Just "Guard Mike")
+    Nothing
 
 redJacket =
   Item
     "red_jacket"
     ["Red torn jacket, wasn't the burglar wearing one during the burglary? I wonder if there's any fingerprints on it, I'll have to check it out"]
-    $ Just "Janitor Tom"
+    (Just "Janitor Tom")
+    Nothing
 
 whiteGloves =
   Item
     "white_gloves"
     ["About the white gloves, they must be the same gloves the burglar was wearing on the win, I need to check for fingerprints."]
-    $ Just "Janitor Tom"
+    (Just "Janitor Tom")
+    Nothing
 
 -- People
 

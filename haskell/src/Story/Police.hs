@@ -14,6 +14,14 @@ makeshiftKnife =
       "I don't want it to fall into the wrong hands"
     ]
     Nothing
+    Nothing
+
+weed =
+  Item
+    "weed"
+    ["I guess I'm lucky today that I found it."]
+    Nothing
+    (Just $ HoldingCondition "four_leaf_clover")
 
 -- People
 
@@ -84,7 +92,6 @@ policemanOffice =
         (Path "Police Station")
     )
 
--- TODO: weed if holding clover
 cage =
   Location
     "Cage"
@@ -97,7 +104,7 @@ cage =
     ]
     [scaryPrisoner]
     [ makeshiftKnife,
-      simpleItem "weed"
+      weed
     ]
     ( Paths
         InvalidPath

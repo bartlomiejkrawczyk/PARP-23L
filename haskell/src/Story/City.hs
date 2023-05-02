@@ -12,6 +12,7 @@ stickCane =
     "stick_cane"
     ["Some kid must have brought it from the forest"]
     Nothing
+    Nothing
 
 fourLeafClover =
   Item
@@ -20,6 +21,7 @@ fourLeafClover =
       "Not every day you find a four leaf clover!",
       "Better keep it to bring you luck on your case"
     ]
+    Nothing
     Nothing
 
 -- People

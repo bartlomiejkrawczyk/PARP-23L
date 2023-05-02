@@ -2,6 +2,7 @@ module Rules.Look where
 
 import Rules.Checking
 import Rules.Fact
+import Rules.Item
 import Rules.Location
 import Rules.State
 import Rules.Utility
@@ -28,10 +29,21 @@ lookPeople state =
       people' = people location
    in success (map name people') state
 
+isItemActive :: State -> Item -> Bool
+isItemActive state item =
+  case item of
+    Item _ _ _ Nothing -> True
+    Item _ _ _ (Just condition) -> checkCondition state condition
+
+listActiveItems :: State -> Location -> [Item]
+listActiveItems state location =
+  let allItems = items location
+   in filter (isItemActive state) allItems
+
 lookItems :: State -> Result
 lookItems state =
   let location = retrieveLocation state
-      items' = items location
+      items' = listActiveItems state location
    in success (map name items') state
 
 lookAround :: State -> Result

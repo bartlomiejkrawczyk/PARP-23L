@@ -16,6 +16,7 @@ recipes =
             "He was fined $5,000 and sentenced to three months of community service."
           ]
           Nothing
+          Nothing
       ),
     Recipe
       "wobbly_shovel"
@@ -25,6 +26,7 @@ recipes =
           [ "Now the shovel is suitable for work, it is certainly much stronger,",
             "maybe now it will be possible to dig something with it"
           ]
+          Nothing
           Nothing
       )
   ]

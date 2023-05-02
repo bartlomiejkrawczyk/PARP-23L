@@ -20,7 +20,7 @@ removeItemFromLocation item location state = (location {items = filter (/= item)
 takeObject :: String -> State -> Result
 takeObject object state =
   let location = retrieveLocation state
-      items' = filter (\x -> name x == object) $ items location
+      items' = filter (\x -> name x == object) $ listActiveItems state location
    in if null items'
         then failure ["I don't see it here."] state
         else
