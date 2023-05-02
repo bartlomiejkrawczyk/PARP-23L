@@ -30,6 +30,13 @@ hammer =
     (Just "Renovator Theodore")
     Nothing
 
+keyToTheExhibit =
+  Item
+    "key_to_the_exhibit"
+    []
+    (Just "Attendant Julie")
+    (Just $ FactCondition (Fact "asked_about_closed_exhibit"))
+
 -- People
 
 attendantJulie =
@@ -140,7 +147,7 @@ reception =
       "maps, and other promotional materials to help guide visitors through the museum."
     ]
     [attendantJulie]
-    [simpleItem "key_to_the_exhibit"]
+    [keyToTheExhibit]
     ( Paths
         (Path "Greek Exhibit Hall")
         (Path "Museum")
@@ -339,7 +346,7 @@ cctvRoom =
       "and ensure the safety of visitors and staff."
     ]
     [guardMike] -- TODO: if talked_with_anne
-    [dvd] -- TODO: if talked_with_anne
+    [dvd]
     ( Paths
         InvalidPath
         InvalidPath

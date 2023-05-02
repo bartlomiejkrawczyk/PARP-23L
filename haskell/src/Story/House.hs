@@ -14,6 +14,13 @@ vodka =
     (Just "Tim")
     Nothing
 
+letter =
+  Item
+    "letter"
+    ["Police Station, Chief Tony Hank. Registered letter from the police, I need to find a knife to open it"]
+    (Just "Sheriff Tony Hank")
+    (Just $ MultiCondition [FactCondition (Fact "asked_for_criminal_record"), FactCondition (Fact "talked_with_mike")])
+
 -- People
 
 dorothy =
@@ -91,8 +98,6 @@ fridge =
         InvalidPath
     )
 
--- TODO: implement message when letter is available
-
 mailbox =
   Location
     "Mailbox"
@@ -100,7 +105,7 @@ mailbox =
       "with small dents and scratches."
     ]
     []
-    []
+    [letter]
     ( Paths
         InvalidPath
         InvalidPath

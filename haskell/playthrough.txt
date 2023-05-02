@@ -210,9 +210,9 @@ e
 s
 n
 n
-talk judy
-ask judy hello
-ask judy janitors_alibi
+talk Judy
+ask Judy hello
+ask Judy janitors_alibi
 take old_key
 inventory
 drop mikes_criminal_record

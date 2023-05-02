@@ -15,7 +15,7 @@ recipes =
             "two very expensive new bikes from a bike shop.",
             "He was fined $5,000 and sentenced to three months of community service."
           ]
-          Nothing
+          (Just "Sheriff Tony Hank")
           Nothing
       ),
     Recipe
