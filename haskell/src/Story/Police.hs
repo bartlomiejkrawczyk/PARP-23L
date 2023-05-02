@@ -1,5 +1,6 @@
 module Story.Police where
 
+import Rules.Fact
 import Rules.Item
 import Rules.Location
 import Rules.Person
@@ -26,12 +27,14 @@ policeman =
     "policeman"
     [Subject "help" "I cannot help you. I'm busy at the moment!" Nothing]
 
--- TODO: add conversation result
 sheriff =
   Person
     "sheriff"
     [ Subject "case" "We are looking for a #1 wanted interpol criminal.\nHe was seen fleeing into the forest!" Nothing,
-      Subject "employees_criminal_record" "What are you here for? Can't you see we don't have time now? We'll mail everything to you, now get out, because as you can see, we're very busy." Nothing
+      Subject
+        "employees_criminal_record"
+        "What are you here for? Can't you see we don't have time now? We'll mail everything to you, now get out, because as you can see, we're very busy."
+        (Just $ ConversationResult (Fact "asked_for_criminal_record"))
     ]
 
 -- Locations

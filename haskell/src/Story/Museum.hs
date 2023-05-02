@@ -49,20 +49,23 @@ attendantJulie =
     ]
 
 -- TODO: if talked_with_anne
--- TODO: add conversation result
 guardMike =
   Person
     "guard_Mike"
-    [ Subject "alibi" "I am clean as you can see on camera number 1, here I am sitting in front of the camera screen in the camera room. And if there are burglars, you can see on the fourth camera that I go into the women's toilet." Nothing,
+    [ Subject
+        "alibi"
+        "I am clean as you can see on camera number 1, here I am sitting in front of the camera screen in the camera room. And if there are burglars, you can see on the fourth camera that I go into the women's toilet."
+        (Just $ ConversationResult (Fact "talked_with_mike")),
       Subject "key_card" "Each of the museum employees has such a card, it is used to move around the museum" Nothing,
-      -- TODO: if asked_about_fingerprints
-      Subject "artifact_dvd" "Hmm ... on camera number 10 there is a man in a red jacket, black trousers and a black hat, doing something in the Egyptian hall, also wearing white gloves." Nothing,
-      -- TODO: if not asked_about_fingerprints
-      Subject "artifact_dvd_" "Oh, look at camera number 9 here for a moment there is a man in a red jacket" Nothing,
+      ConditionalSubject (NoFactCondition (Fact "asked_about_fingerprints")) "artifact_dvd" "Hmm ... on camera number 10 there is a man in a red jacket, black trousers and a black hat, doing something in the Egyptian hall, also wearing white gloves." Nothing,
+      ConditionalSubject (FactCondition (Fact "asked_about_fingerprints")) "artifact_dvd" "Oh, look at camera number 9 here for a moment there is a man in a red jacket" Nothing,
       Subject "anna_dvd" "Look at camera number 20, our cashier Anna was standing behind the counter at the time, looking through some leaflet" Nothing,
       Subject "womans_toilet" "Have you ever been to the men's toilet at our museum? they are terrible, I hate going there, that's why I always go to the women's toilet." Nothing,
-      -- TODO: if holding(mikes_criminal_record), add conversation result
-      Subject "criminal_record" "These are some slander and fabricated evidence, and besides, even if it were me, I haven't been dealing with such things for twelve years, I'm a different person, I've changed, really if it were me, I certainly wouldn't do such things things, I have a family of children to feed." Nothing
+      ConditionalSubject
+        (HoldingCondition "mikes_criminal_record")
+        "criminal_record"
+        "These are some slander and fabricated evidence, and besides, even if it were me, I haven't been dealing with such things for twelve years, I'm a different person, I've changed, really if it were me, I certainly wouldn't do such things things, I have a family of children to feed."
+        (Just $ ConversationResult (Fact "asked_mike_about_criminal_record"))
     ]
 
 cashierAnne =
@@ -71,8 +74,7 @@ cashierAnne =
     [ Subject "missing_artifact" "I liked this golden statue, customers of the souvenir shop were eager to buy its replica." Nothing,
       Subject "artifact_replica" "How can I help you? Maybe you want to buy a gold statue artifact replica?" Nothing,
       Subject "gossip" "Did you talk to the guide, maybe he stole it when no one was looking, he often walks around with unaware kids, he seems strange" Nothing,
-      -- TODO: add talk_with_anne
-      Subject "alibi" "There are cameras all over the store, you can check them and you'll find out I was behind the counter at the time." Nothing
+      Subject "alibi" "There are cameras all over the store, you can check them and you'll find out I was behind the counter at the time." (Just $ ConversationResult (Fact "talked_with_anne"))
     ]
 
 guideMary =
@@ -88,8 +90,10 @@ renovatorTheodore =
   Person
     "renovator_Theodore"
     [ Subject "admire" "I'm glad there are people like you, I hope you get things sorted out as soon as possible." Nothing,
-      Subject "missing_artifact" "And there's always someone hanging around this statue, I'm not surprised that someone stole it." Nothing,
-      -- TODO: add conversation result
+      Subject
+        "missing_artifact"
+        "And there's always someone hanging around this statue, I'm not surprised that someone stole it."
+        (Just $ ConversationResult (Fact "gossiped_with_renovator_theodore")),
       Subject "gossip" "A terrible mess is still in the Egyptian hall, there is no one to clean it up, the janitor just after the burglary says that he got sick." Nothing,
       Subject "alibi" "That day I had a lot of work, I was very busy and I spent the whole day in the renovated hall, you will surely find someone who will confirm it." Nothing,
       ConditionalSubject
@@ -97,7 +101,6 @@ renovatorTheodore =
         "missing_tool"
         "Wait, I'll check right now, I don't think so ... And that's your fate, I don't see my hammer anywhere, I must have left it somewhere."
         $ Just (ConversationResult $ Fact "asked_about_hammer"),
-      -- TODO: if hammer_scaned and conversation result
       ConditionalSubject
         (FactCondition (Fact "asked_about_hammer"))
         "fingerprints"

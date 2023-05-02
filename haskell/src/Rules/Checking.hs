@@ -9,6 +9,7 @@ checkCondition :: State -> Condition -> Bool
 checkCondition state condition =
   case condition of
     FactCondition _ -> fact condition `elem` facts state
+    NoFactCondition _ -> fact condition `notElem` facts state
     _ -> requiredItemName condition `elem` map itemName (inventory state)
 
 addFact :: State -> Fact -> State

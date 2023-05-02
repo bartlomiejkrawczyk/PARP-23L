@@ -52,7 +52,6 @@ playingPopularKid =
     "playing_popular_kid"
     [Subject "something_suspicious" "I? ha, you hear it guys, he's asking me about some shady things. I haven't seen anything, nor do I do anything suspicious." Nothing]
 
--- TODO: add conversetion_result
 playingQuietKid =
   Person
     "playing_quiet_kid"
@@ -63,7 +62,7 @@ playingAthleticKid =
     "playing_athletic_kid"
     [Subject "something_suspicious" "You have a strange coat hahaha, you look like an old grandpa. ... Pass it to me! ... I didn't see anything ... Who are you passing to !? ... I'm going to play, I don't have time" Nothing]
 
--- TODO: implement give beer
+-- TODO: implement beer disappearing
 oldFreak =
   Person
     "old_freak"
