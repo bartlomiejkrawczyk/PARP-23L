@@ -1,5 +1,6 @@
 module Rules.State where
 
+import Rules.Fact
 import Rules.Item
 import Rules.Location
 import Story.City
@@ -11,6 +12,7 @@ import Story.Police
 data State = State
   { finish :: Bool,
     inventory :: [Item],
+    facts :: [Fact],
     currentLocation :: String,
     locations :: [Location]
   }
@@ -26,6 +28,7 @@ failure messages state = Result messages state False
 initialState =
   State
     False
+    []
     []
     "Detective's house"
     (houseLocations ++ cityLocations ++ officeLocations ++ policeLocations ++ museumLocations)

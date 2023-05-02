@@ -1,7 +1,9 @@
 module Rules.Inventory where
 
 import Data.Maybe (fromJust, isNothing)
+import Rules.Checking
 import Rules.Colors
+import Rules.Fact
 import Rules.Item
 import Rules.Location
 import Rules.Movement
@@ -54,18 +56,19 @@ scanObject :: String -> State -> Result
 scanObject object state =
   let location = retrieveLocation state
       items' = filter (\x -> name x == object) $ inventory state
+      item = head items'
    in if null items'
         then failure ["You aren't holding it!"] state
         else
           if name location /= "Fingerprints detector"
             then failure ["You need a Fingerprints detector to scan for fingerprints!"] state
             else
-              if isNothing (fingerprints (head items'))
+              if isNothing (fingerprints item)
                 then success ["The only fingerprints you find on " ++ object ++ " are your fingerprints!"] state
                 else
                   success
-                    ["Detector found " ++ fromJust (fingerprints (head items')) ++ "'s fingerprings on " ++ name (head items') ++ "!"]
-                    state
+                    ["Detector found " ++ fromJust (fingerprints item) ++ "'s fingerprings on " ++ name item ++ "!"]
+                    $ addFact state (Fact $ name item ++ "_scanned")
 
 listInventory :: State -> Result
 listInventory state =

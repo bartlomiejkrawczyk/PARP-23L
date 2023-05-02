@@ -38,7 +38,7 @@ whiteGloves =
 judy =
   Person
     "Judy"
-    [Subject "janitors_alibi" "My husband? spent the whole day outside by the house chopping wood"]
+    [Subject "janitors_alibi" "My husband? spent the whole day outside by the house chopping wood" Nothing]
 
 -- Locations
 

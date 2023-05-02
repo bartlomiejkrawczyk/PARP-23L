@@ -9,8 +9,8 @@ import Rules.Person
 newClient =
   Person
     "new_client"
-    [ Subject "magazines" "Your magazine collection is overwhelming!",
-      Subject "wait" "Ok. I will wait till you solve your current case!"
+    [ Subject "magazines" "Your magazine collection is overwhelming!" Nothing,
+      Subject "wait" "Ok. I will wait till you solve your current case!" Nothing
     ]
 
 -- Locations

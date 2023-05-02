@@ -1,5 +1,6 @@
 module Story.City where
 
+import Rules.Fact
 import Rules.Item
 import Rules.Location
 import Rules.Person
@@ -25,52 +26,51 @@ fourLeafClover =
 bookWorms =
   Person
     "book_worms"
-    [Subject "book" "I'am reading now! Can't you see!"]
+    [Subject "book" "I'am reading now! Can't you see!" Nothing]
 
 politician =
   Person
     "politician"
-    [Subject "money" "We are working to make our future brighter!"]
+    [Subject "money" "We are working to make our future brighter!" Nothing]
 
 -- TODO: Activate Tom when asked_mike_about_criminal_record, gossiped_with_renovator_theodore
--- TODO: Add conversation_result
 
 janitorTom =
   Person
     "janitor_Tom"
-    [ Subject "sick" "*Caugh* *Caugh* Good morning, I'd like some meds, because recently... uh... I've had a very... uh... cold, I've caught a cold and... I'm very sick.",
-      Subject "alibi" "I? yyyy .... I was at ... home, yes I was at home ... why are you looking at me so suspiciously? all day ... yy *Caugh* *Caugh* ... I spent with my wife, yes I spent all day with my wife ... ask her *Caugh* *Caugh*"
+    [ Subject "sick" "*Caugh* *Caugh* Good morning, I'd like some meds, because recently... uh... I've had a very... uh... cold, I've caught a cold and... I'm very sick." Nothing,
+      Subject "alibi" "I? yyyy .... I was at ... home, yes I was at home ... why are you looking at me so suspiciously? all day ... yy *Caugh* *Caugh* ... I spent with my wife, yes I spent all day with my wife ... ask her *Caugh* *Caugh*" $ Just (ConversationResult $ Fact "talked_with_janitor_Tom")
     ]
 
 tourists =
   Person
     "tourists"
-    [Subject "missing_artifact" "Nie mówię po angielsku.\nNie rozumiem co do mnie mówisz!"]
+    [Subject "missing_artifact" "Nie mówię po angielsku.\nNie rozumiem co do mnie mówisz!" Nothing]
 
 playingPopularKid =
   Person
     "playing_popular_kid"
-    [Subject "something_suspicious" "I? ha, you hear it guys, he's asking me about some shady things. I haven't seen anything, nor do I do anything suspicious."]
+    [Subject "something_suspicious" "I? ha, you hear it guys, he's asking me about some shady things. I haven't seen anything, nor do I do anything suspicious." Nothing]
 
 -- TODO: add conversetion_result
 playingQuietKid =
   Person
     "playing_quiet_kid"
-    [Subject "something_suspicious" "Who are you? I don't talk to strangers ... I saw someone bury something in the woods near an old tree"]
+    [Subject "something_suspicious" "Who are you? I don't talk to strangers ... I saw someone bury something in the woods near an old tree" $ Just (ConversationResult $ Fact "something_suspicious")]
 
 playingAthleticKid =
   Person
     "playing_athletic_kid"
-    [Subject "something_suspicious" "You have a strange coat hahaha, you look like an old grandpa. ... Pass it to me! ... I didn't see anything ... Who are you passing to !? ... I'm going to play, I don't have time"]
+    [Subject "something_suspicious" "You have a strange coat hahaha, you look like an old grandpa. ... Pass it to me! ... I didn't see anything ... Who are you passing to !? ... I'm going to play, I don't have time" Nothing]
 
 -- TODO: implement give beer
 oldFreak =
   Person
     "old_freak"
-    [ Subject "age" "I'am 104 years old!",
-      Subject "knowledge" "I know it all!",
-      Subject "food" "Boss! Can you give me some spare change? I'd like to buy something to eat!",
-      Subject "give_beer" "How can I thank you?"
+    [ Subject "age" "I'am 104 years old!" Nothing,
+      Subject "knowledge" "I know it all!" Nothing,
+      Subject "food" "Boss! Can you give me some spare change? I'd like to buy something to eat!" Nothing,
+      ConditionalSubject (HoldingCondition "beer") "give_beer" "How can I thank you?" Nothing
     ]
 
 -- Locations

@@ -1,5 +1,6 @@
 module Story.Museum where
 
+import Rules.Fact
 import Rules.Item
 import Rules.Location
 import Rules.Person
@@ -31,12 +32,12 @@ hammer =
 attendantJulie =
   Person
     "attendant_Julie"
-    [ Subject "missing_artifact" "The burglary happened a few days ago, the burglars broke into the Egyptian hall, they stole the artifact from there.",
-      Subject "alibi" "As for me, I couldn't do it, I spent the whole day with my husband, he is a police officer, you can talk to him, you will find him at the police station.",
-      Subject "potential_witnesses" "You can try to talk to the cashier who is on the left in the gift shop, she must have been in the museum at the time, she must have been closing the shop. You can also try to interrogate the renovator who is at the end of the hall and is still renovating the hall.",
-      Subject "gossip" "I would bet that the restorer must have stolen the statue, he seemed suspicious to me from the beginning, only he is constantly hanging around monuments.",
-      Subject "janitor" "He called sick and haven't shown in work for a while.", -- TODO: if seen closed exhibit
-      Subject "closed_exhibit" "Here you go! You can take this key to the renovated exhibit!" -- TODO: if seen closed exhibit, and conversation result
+    [ Subject "missing_artifact" "The burglary happened a few days ago, the burglars broke into the Egyptian hall, they stole the artifact from there." Nothing,
+      Subject "alibi" "As for me, I couldn't do it, I spent the whole day with my husband, he is a police officer, you can talk to him, you will find him at the police station." Nothing,
+      Subject "potential_witnesses" "You can try to talk to the cashier who is on the left in the gift shop, she must have been in the museum at the time, she must have been closing the shop. You can also try to interrogate the renovator who is at the end of the hall and is still renovating the hall." Nothing,
+      Subject "gossip" "I would bet that the restorer must have stolen the statue, he seemed suspicious to me from the beginning, only he is constantly hanging around monuments." Nothing,
+      Subject "janitor" "He called sick and haven't shown in work for a while." Nothing, -- TODO: if seen closed exhibit
+      Subject "closed_exhibit" "Here you go! You can take this key to the renovated exhibit!" Nothing -- TODO: if seen closed exhibit, and conversation result
     ]
 
 -- TODO: if talked_with_anne
@@ -44,56 +45,63 @@ attendantJulie =
 guardMike =
   Person
     "guard_Mike"
-    [ Subject "alibi" "I am clean as you can see on camera number 1, here I am sitting in front of the camera screen in the camera room. And if there are burglars, you can see on the fourth camera that I go into the women's toilet.",
-      Subject "key_card" "Each of the museum employees has such a card, it is used to move around the museum",
+    [ Subject "alibi" "I am clean as you can see on camera number 1, here I am sitting in front of the camera screen in the camera room. And if there are burglars, you can see on the fourth camera that I go into the women's toilet." Nothing,
+      Subject "key_card" "Each of the museum employees has such a card, it is used to move around the museum" Nothing,
       -- TODO: if asked_about_fingerprints
-      Subject "artifact_dvd" "Hmm ... on camera number 10 there is a man in a red jacket, black trousers and a black hat, doing something in the Egyptian hall, also wearing white gloves.",
+      Subject "artifact_dvd" "Hmm ... on camera number 10 there is a man in a red jacket, black trousers and a black hat, doing something in the Egyptian hall, also wearing white gloves." Nothing,
       -- TODO: if not asked_about_fingerprints
-      Subject "artifact_dvd_" "Oh, look at camera number 9 here for a moment there is a man in a red jacket",
-      Subject "anna_dvd" "Look at camera number 20, our cashier Anna was standing behind the counter at the time, looking through some leaflet",
-      Subject "womans_toilet" "Have you ever been to the men's toilet at our museum? they are terrible, I hate going there, that's why I always go to the women's toilet.",
+      Subject "artifact_dvd_" "Oh, look at camera number 9 here for a moment there is a man in a red jacket" Nothing,
+      Subject "anna_dvd" "Look at camera number 20, our cashier Anna was standing behind the counter at the time, looking through some leaflet" Nothing,
+      Subject "womans_toilet" "Have you ever been to the men's toilet at our museum? they are terrible, I hate going there, that's why I always go to the women's toilet." Nothing,
       -- TODO: if holding(mikes_criminal_record), add conversation result
-      Subject "criminal_record" "These are some slander and fabricated evidence, and besides, even if it were me, I haven't been dealing with such things for twelve years, I'm a different person, I've changed, really if it were me, I certainly wouldn't do such things things, I have a family of children to feed."
+      Subject "criminal_record" "These are some slander and fabricated evidence, and besides, even if it were me, I haven't been dealing with such things for twelve years, I'm a different person, I've changed, really if it were me, I certainly wouldn't do such things things, I have a family of children to feed." Nothing
     ]
 
 cashierAnne =
   Person
     "cashier_Anne"
-    [ Subject "missing_artifact" "I liked this golden statue, customers of the souvenir shop were eager to buy its replica.",
-      Subject "artifact_replica" "How can I help you? Maybe you want to buy a gold statue artifact replica?",
-      Subject "gossip" "Did you talk to the guide, maybe he stole it when no one was looking, he often walks around with unaware kids, he seems strange",
+    [ Subject "missing_artifact" "I liked this golden statue, customers of the souvenir shop were eager to buy its replica." Nothing,
+      Subject "artifact_replica" "How can I help you? Maybe you want to buy a gold statue artifact replica?" Nothing,
+      Subject "gossip" "Did you talk to the guide, maybe he stole it when no one was looking, he often walks around with unaware kids, he seems strange" Nothing,
       -- TODO: add talk_with_anne
-      Subject "alibi" "There are cameras all over the store, you can check them and you'll find out I was behind the counter at the time."
+      Subject "alibi" "There are cameras all over the store, you can check them and you'll find out I was behind the counter at the time." Nothing
     ]
 
 guideMary =
   Person
     "guide_Mary"
-    [ Subject "tour" "To the right we can see a large statue of Julius Ceraz, from the Battle of Alesia, this battle was fought between the Roman army besieging the Gallic city of Alesia and the forces of the rebel Gauls. It took place in 52 BCE. during the conquest of Gaul by Gaius Julius Caesar. The actions of Roman forces near Alesia are the largest siege operation in the history of ancient wars.",
-      Subject "missing_artifact" "Golden statue shows the god Amun first came into prominence at the beginning of the Middle Kingdom. From the New Kingdom onward, Amun was arguably the most important god in the Egyptian pantheon",
-      Subject "gossip" "I don't know anything, but they say in the city that he's an orchard, after all, he always closes the whole museum.",
-      Subject "alibi" "I not only work at the museum here, I have many other activities, that day I was anticipating a school trip, we were in the nearby park at the time"
+    [ Subject "tour" "To the right we can see a large statue of Julius Ceraz, from the Battle of Alesia, this battle was fought between the Roman army besieging the Gallic city of Alesia and the forces of the rebel Gauls. It took place in 52 BCE. during the conquest of Gaul by Gaius Julius Caesar. The actions of Roman forces near Alesia are the largest siege operation in the history of ancient wars." Nothing,
+      Subject "missing_artifact" "Golden statue shows the god Amun first came into prominence at the beginning of the Middle Kingdom. From the New Kingdom onward, Amun was arguably the most important god in the Egyptian pantheon" Nothing,
+      Subject "gossip" "I don't know anything, but they say in the city that he's an orchard, after all, he always closes the whole museum." Nothing,
+      Subject "alibi" "I not only work at the museum here, I have many other activities, that day I was anticipating a school trip, we were in the nearby park at the time" Nothing
     ]
 
 renovatorTheodore =
   Person
-    "renovator_theodore"
-    [ Subject "admire" "I'm glad there are people like you, I hope you get things sorted out as soon as possible.",
-      Subject "missing_artifact" "And there's always someone hanging around this statue, I'm not surprised that someone stole it.",
+    "renovator_Theodore"
+    [ Subject "admire" "I'm glad there are people like you, I hope you get things sorted out as soon as possible." Nothing,
+      Subject "missing_artifact" "And there's always someone hanging around this statue, I'm not surprised that someone stole it." Nothing,
       -- TODO: add conversation result
-      Subject "gossip" "A terrible mess is still in the Egyptian hall, there is no one to clean it up, the janitor just after the burglary says that he got sick.",
-      Subject "alibi" "That day I had a lot of work, I was very busy and I spent the whole day in the renovated hall, you will surely find someone who will confirm it.",
+      Subject "gossip" "A terrible mess is still in the Egyptian hall, there is no one to clean it up, the janitor just after the burglary says that he got sick." Nothing,
+      Subject "alibi" "That day I had a lot of work, I was very busy and I spent the whole day in the renovated hall, you will surely find someone who will confirm it." Nothing,
+      ConditionalSubject
+        (FactCondition (Fact "hammer_scanned"))
+        "missing_tool"
+        "Wait, I'll check right now, I don't think so ... And that's your fate, I don't see my hammer anywhere, I must have left it somewhere."
+        $ Just (ConversationResult $ Fact "asked_about_hammer"),
       -- TODO: if hammer_scaned and conversation result
-      Subject "missing_tool" "Wait, I'll check right now, I don't think so ... And that's your fate, I don't see my hammer anywhere, I must have left it somewhere.",
-      -- TODO: if hammer_scaned and conversation result
-      Subject "fingerprints" "Well, if my fingerprints are normal, unless it's my tool? Then the thief must have had gloves, I haven't used it in days"
+      ConditionalSubject
+        (FactCondition (Fact "asked_about_hammer"))
+        "fingerprints"
+        "Well, if my fingerprints are normal, unless it's my tool? Then the thief must have had gloves, I haven't used it in days"
+        $ Just (ConversationResult $ Fact "asked_about_fingerprints")
     ]
 
 -- TODO: finish game
 museumDirectorJohn =
   Person
     "museum_director_John"
-    [Subject "missing_artifact" "Hello, we are very grateful to you for helping us solve the mystery of the missing golden statue. Not only did you find the criminals, but you also found the missing artifact, thanks to you, visitors will still be able to admire it after we reopen the Egyptian hall. The thieves, unfortunately, Mike and Tom managed to escape, but I'm not worried because thanks to you, they are wanted by the police and they will be caught."]
+    [Subject "missing_artifact" "Hello, we are very grateful to you for helping us solve the mystery of the missing golden statue. Not only did you find the criminals, but you also found the missing artifact, thanks to you, visitors will still be able to admire it after we reopen the Egyptian hall. The thieves, unfortunately, Mike and Tom managed to escape, but I'm not worried because thanks to you, they are wanted by the police and they will be caught." Nothing]
 
 -- Locations
 museum =
@@ -327,7 +335,7 @@ cctvRoom =
 
 renovatedExhibit =
   Location
-    "CCTV Room"
+    "Renovated Exhibit"
     [ "You see an exhibition under renovation.",
       "Due to ongoing renovation work,",
       "the exhibition in the museum is currently inaccessible to visitors,",

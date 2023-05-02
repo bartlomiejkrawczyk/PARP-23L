@@ -1,5 +1,6 @@
 module Story.House where
 
+import Rules.Fact
 import Rules.Item
 import Rules.Location
 import Rules.Person
@@ -14,12 +15,12 @@ vodka =
 
 -- People
 
--- TODO: add vodka subject
 dorothy =
   Person
     "Dorothy"
-    [ Subject "love" "I love you sweety!",
-      Subject "dinner" "Dinner will be ready soon!"
+    [ Subject "love" "I love you sweety!" Nothing,
+      Subject "dinner" "Dinner will be ready soon!" Nothing,
+      ConditionalSubject (HoldingCondition "vodka") "vodka" "You shouldn't be parading with vodka around town!" Nothing
     ]
 
 -- Locations
