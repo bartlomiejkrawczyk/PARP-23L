@@ -227,7 +227,7 @@ greekExhibitHall =
         (Path "Egyptian Exhibit Hall")
         (Path "Reception")
         (LockedPath "CCTV Room" "key_card")
-        (LockedPath "Janitors Closet" "old_key")
+        (LockedPath "Janitor's Closet" "old_key")
     )
 
 egyptianExhibitHall =

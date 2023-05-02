@@ -10,7 +10,7 @@ import Rules.Person
 oldKey =
   Item
     "old_key"
-    ["This old key leads to janitors closet, I should try to open that door"]
+    ["This old key leads to Janitor's Closet, I should try to open that door"]
     $ Just "Janitor Tom"
 
 missingStatue =
