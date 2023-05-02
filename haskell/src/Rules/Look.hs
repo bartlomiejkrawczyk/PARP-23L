@@ -1,5 +1,7 @@
 module Rules.Look where
 
+import Rules.Checking
+import Rules.Fact
 import Rules.Location
 import Rules.Movement
 import Rules.State
@@ -31,30 +33,22 @@ lookAround :: State -> Result
 lookAround state =
   let location = retrieveLocation state
       paths' = paths location
+      stateWithSeenNorth = addFact state (Fact $ "seen_" ++ name (north paths'))
+      stateWithSeenSouth = addFact stateWithSeenNorth (Fact $ "seen_" ++ name (south paths'))
+      stateWithSeenEast = addFact stateWithSeenSouth (Fact $ "seen_" ++ name (east paths'))
+      stateWithSeenWest = addFact stateWithSeenEast (Fact $ "seen_" ++ name (west paths'))
    in success
-        [ "n: "
-            ++ name (north paths')
-            ++ ( case north paths' of
-                   LockedPath a item -> " - you need " ++ item
-                   _ -> ""
-               ),
-          "s: "
-            ++ name (south paths')
-            ++ ( case south paths' of
-                   LockedPath a item -> " - you need " ++ item
-                   _ -> ""
-               ),
-          "e: "
-            ++ name (east paths')
-            ++ ( case east paths' of
-                   LockedPath a item -> " - you need " ++ item
-                   _ -> ""
-               ),
-          "w: "
-            ++ name (west paths')
-            ++ ( case west paths' of
-                   LockedPath a item -> " - you need " ++ item
-                   _ -> ""
-               )
+        [ "n: " ++ lookAtPath (north paths'),
+          "s: " ++ lookAtPath (south paths'),
+          "e: " ++ lookAtPath (east paths'),
+          "w: " ++ lookAtPath (west paths')
         ]
-        state
+        stateWithSeenWest
+
+lookAtPath :: Path -> String
+lookAtPath path =
+  name path
+    ++ ( case path of
+           LockedPath a item -> " - you need " ++ item
+           _ -> ""
+       )

@@ -10,7 +10,7 @@ extra-source-files:  README.md
 
 executable haskell
   main-is:             Main.hs
-  other-modules:       Rules.Checking, Rules.Colors, Rules.Fact, Rules.Help, Rules.Inventory, Rules.Item, Rules.Location, Rules.Look, Rules.Movement, Rules.Person, Rules.State, Rules.Talk, Rules.Utility, Story.City, Story.House, Story.Office, Story.Police, Story.Janitor, Story.Museum
+  other-modules:       Rules.Checking, Rules.Colors, Rules.Fact, Rules.Help, Rules.Inventory, Rules.Item, Rules.Location, Rules.Look, Rules.Movement, Rules.Person, Rules.Recipe, Rules.State, Rules.Talk, Rules.Utility, Story.City, Story.House, Story.Office, Story.Police, Story.Janitor, Story.Museum
   build-depends:       base ^>=4.17.0.0
   hs-source-dirs:      src
   default-language:    Haskell2010

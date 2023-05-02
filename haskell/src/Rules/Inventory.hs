@@ -7,8 +7,15 @@ import Rules.Fact
 import Rules.Item
 import Rules.Location
 import Rules.Movement
+import Rules.Recipe
 import Rules.State
 import Rules.Utility
+
+addItemToLocation :: Item -> Location -> State -> [Location]
+addItemToLocation item location state = (location {items = item : items location}) : filter (/= location) (locations state)
+
+removeItemFromLocation :: Item -> Location -> State -> [Location]
+removeItemFromLocation item location state = (location {items = filter (/= item) $ items location}) : filter (/= location) (locations state)
 
 takeObject :: String -> State -> Result
 takeObject object state =
@@ -20,12 +27,12 @@ takeObject object state =
           if length (inventory state) >= 5
             then failure ["Your inventory is full! Drop something before picking " ++ object ++ " up!"] state
             else
-              success
-                ["Ok."]
-                state
-                  { locations = (location {items = filter (\x -> name x /= object) $ items location}) : filter (/= location) (locations state),
-                    inventory = head items' : inventory state
-                  }
+              let newState =
+                    state
+                      { locations = removeItemFromLocation (head items') location state,
+                        inventory = head items' : inventory state
+                      }
+               in success ["Ok."] newState
 
 dropObject :: String -> State -> Result
 dropObject object state =
@@ -34,12 +41,12 @@ dropObject object state =
    in if null items'
         then failure ["You aren't holding it!"] state
         else
-          success
-            ["Ok."]
-            state
-              { locations = (location {items = head items' : items location}) : filter (/= location) (locations state),
-                inventory = filter (\x -> name x /= object) $ inventory state
-              }
+          let newState =
+                state
+                  { locations = addItemToLocation (head items') location state,
+                    inventory = filter (\x -> name x /= object) $ inventory state
+                  }
+           in success ["Ok."] newState
 
 inspectObject :: String -> State -> Result
 inspectObject object state =
@@ -47,10 +54,7 @@ inspectObject object state =
       items' = filter (\x -> name x == object) $ inventory state
    in if null items'
         then failure ["You aren't holding it!"] state
-        else
-          success
-            (concatMap itemDescription items')
-            state
+        else success (itemDescription $ head items') state
 
 scanObject :: String -> State -> Result
 scanObject object state =
@@ -66,41 +70,14 @@ scanObject object state =
               if isNothing (fingerprints item)
                 then success ["The only fingerprints you find on " ++ object ++ " are your fingerprints!"] state
                 else
-                  success
-                    ["Detector found " ++ fromJust (fingerprints item) ++ "'s fingerprings on " ++ name item ++ "!"]
-                    $ addFact state (Fact $ name item ++ "_scanned")
+                  let message = ["Detector found " ++ fromJust (fingerprints item) ++ "'s fingerprings on " ++ name item ++ "!"]
+                      newState = addFact state (Fact $ name item ++ "_scanned")
+                   in success message newState
 
 listInventory :: State -> Result
 listInventory state =
   let location = retrieveLocation state
    in success (applyColor colorBlue ("Inventory " ++ show (length $ inventory state) ++ "/5:") : map name (inventory state)) state
-
-data Recipe = Recipe {recipeItem :: String, recipeTool :: String, outcome :: Item}
-
-recipes :: [Recipe]
-recipes =
-  [ Recipe
-      "letter"
-      "knife"
-      ( Item
-          "mikes_criminal_record"
-          [ "Mike Black, was arrested 2 years ago for stealing",
-            "two very expensive new bikes from a bike shop.",
-            "He was fined $5,000 and sentenced to three months of community service."
-          ]
-          Nothing
-      ),
-    Recipe
-      "wobbly_shovel"
-      "screwdriver"
-      ( Item
-          "shovel"
-          [ "Now the shovel is suitable for work, it is certainly much stronger,",
-            "maybe now it will be possible to dig something with it"
-          ]
-          Nothing
-      )
-  ]
 
 useTool :: String -> String -> State -> Result
 useTool item tool state =
@@ -116,9 +93,6 @@ useTool item tool state =
           if null recipes'
             then failure ["You can't use a " ++ tool ++ " on an " ++ item ++ "!"] state
             else
-              success
-                ["You made " ++ name (outcome (head recipes')) ++ " from " ++ item ++ " using " ++ tool ++ "!"]
-                state
-                  { inventory =
-                      outcome (head recipes') : filter (\x -> name x /= item) (inventory state)
-                  }
+              let message = ["You made " ++ name (outcome (head recipes')) ++ " from " ++ item ++ " using " ++ tool ++ "!"]
+                  newState = state {inventory = outcome (head recipes') : filter (\x -> name x /= item) (inventory state)}
+               in success message newState

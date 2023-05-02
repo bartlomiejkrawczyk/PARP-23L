@@ -12,21 +12,18 @@ oldKey =
     ["This old key leads to janitors closet, I should try to open that door"]
     $ Just "Janitor Tom"
 
--- TODO: check if statue was scaned
 missingStatue =
   Item
     "missing_statue"
     ["Golden statue from the museum! but why did someone bury her here? It's a good thing I found it, but maybe there are fingerprints on it that will help me find the burglars, I'll have to check it out."]
     $ Just "Guard Mike"
 
--- TODO: check if jacket was scaned
 redJacket =
   Item
     "red_jacket"
     ["Red torn jacket, wasn't the burglar wearing one during the burglary? I wonder if there's any fingerprints on it, I'll have to check it out"]
     $ Just "Janitor Tom"
 
--- TODO: check if gloves were scaned
 whiteGloves =
   Item
     "white_gloves"
