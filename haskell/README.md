@@ -21,4 +21,17 @@ stands with a cigarette in his hand.
 >
 ```
 
+## Wymagania
+- Poniższe pakiety można zainstalować korzystąc z `ghcup` (The GHCup Haskell Installer)
+- ghc-9.4.4 (The Glorious Glasgow Haskell Compilation System, version 9.4.4)
+- cabal 3.10 (cabal-install version 3.10.1.0)
 
+## Sposób uruchomienia
+- Aby zbudować program i uruchomić rozgrywkę, w katalogu `haskell` należy wywołać:
+```bash
+cabal run
+```
+- Aby uruchomić automatyczne przejście gry, w katalogu `haskell` należy wywołać: 
+```bash
+cabal run < playthrough.txt
+```
