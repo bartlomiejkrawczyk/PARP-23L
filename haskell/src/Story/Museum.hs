@@ -52,10 +52,15 @@ attendantJulie =
         "He called sick and haven't shown in work for a while."
         Nothing,
       ConditionalSubject
-        (FactCondition (Fact "seen_Renovated Exhibit"))
+        (MultiCondition [FactCondition $ Fact "seen_Renovated Exhibit", NoFactCondition $ Fact "asked_about_closed_exhibit"])
         "closed_exhibit"
         "Here you go! You can take this key to the renovated exhibit!"
-        (Just $ ConversationResult (Fact "asked_about_closed_exhibit"))
+        (Just $ ConversationResult (Fact "asked_about_closed_exhibit")),
+      ConditionalSubject
+        (FactCondition (Fact "asked_about_closed_exhibit"))
+        "closed_exhibit"
+        "I have already given you the key to the exibit!"
+        Nothing
     ]
 
 guardMike =
